@@ -1,0 +1,153 @@
+{
+    "actions": [],
+    "allow_rename": 1,
+    "autoname": "naming_series:",
+    "creation": "2026-01-22 20:54:00.000000",
+    "doctype": "DocType",
+    "editable_grid": 1,
+    "engine": "InnoDB",
+    "field_order": [
+        "naming_series",
+        "reference_item",
+        "customer",
+        "column_break_4",
+        "grade_full",
+        "grade_numeric",
+        "variety_notes",
+        "section_break_8",
+        "certification_number",
+        "grading_date",
+        "shipped_date",
+        "column_break_12",
+        "status",
+        "section_break_14",
+        "item_images",
+        "column_break_16",
+        "notes"
+    ],
+    "fields": [
+        {
+            "default": "IGA-ARCH-.#####",
+            "fieldname": "naming_series",
+            "fieldtype": "Select",
+            "label": "Series",
+            "options": "IGA-ARCH-.#####"
+        },
+        {
+            "fieldname": "reference_item",
+            "fieldtype": "Link",
+            "in_list_view": 1,
+            "label": "Reference Item",
+            "options": "Item Reference Catalog",
+            "reqd": 1
+        },
+        {
+            "fieldname": "customer",
+            "fieldtype": "Link",
+            "label": "Customer",
+            "options": "Customer"
+        },
+        {
+            "fieldname": "column_break_4",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "grade_full",
+            "fieldtype": "Data",
+            "in_list_view": 1,
+            "label": "Grade Full",
+            "reqd": 1
+        },
+        {
+            "fieldname": "grade_numeric",
+            "fieldtype": "Int",
+            "label": "Grade Numeric",
+            "read_only": 1
+        },
+        {
+            "fieldname": "variety_notes",
+            "fieldtype": "Small Text",
+            "label": "Variety Notes"
+        },
+        {
+            "fieldname": "section_break_8",
+            "fieldtype": "Section Break",
+            "label": "Certification Details"
+        },
+        {
+            "fieldname": "certification_number",
+            "fieldtype": "Data",
+            "label": "Certification Number",
+            "unique": 1
+        },
+        {
+            "fieldname": "grading_date",
+            "fieldtype": "Date",
+            "label": "Grading Date"
+        },
+        {
+            "fieldname": "shipped_date",
+            "fieldtype": "Date",
+            "label": "Shipped Date"
+        },
+        {
+            "fieldname": "column_break_12",
+            "fieldtype": "Column Break"
+        },
+        {
+            "default": "Graded",
+            "fieldname": "status",
+            "fieldtype": "Select",
+            "in_list_view": 1,
+            "label": "Status",
+            "options": "Graded\nQC\nShipped",
+            "reqd": 1
+        },
+        {
+            "collapsible": 1,
+            "fieldname": "section_break_14",
+            "fieldtype": "Section Break",
+            "label": "Additional Information"
+        },
+        {
+            "fieldname": "item_images",
+            "fieldtype": "Attach Image",
+            "label": "Item Images"
+        },
+        {
+            "fieldname": "column_break_16",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "notes",
+            "fieldtype": "Text",
+            "label": "Notes"
+        }
+    ],
+    "index_web_pages_for_search": 1,
+    "links": [],
+    "modified": "2026-01-22 20:54:00.000000",
+    "modified_by": "Administrator",
+    "module": "International Grading Agency",
+    "name": "Graded Items Archive",
+    "naming_rule": "By \"Naming Series\" field",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "create": 1,
+            "delete": 1,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "System Manager",
+            "share": 1,
+            "write": 1
+        }
+    ],
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "states": [],
+    "track_changes": 1
+}

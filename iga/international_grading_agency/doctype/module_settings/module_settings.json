@@ -1,0 +1,111 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-01-22 20:50:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "reference_code_settings_section",
+  "auto_generate_on_active",
+  "code_format_template",
+  "lock_code_on_active",
+  "column_break_4",
+  "registry_points_formula_section",
+  "grade_weight",
+  "population_weight",
+  "value_weight",
+  "grade_scoring_section",
+  "grade_scoring_configuration"
+ ],
+ "fields": [
+  {
+   "fieldname": "reference_code_settings_section",
+   "fieldtype": "Section Break",
+   "label": "Reference Code Settings"
+  },
+  {
+   "default": "1",
+   "fieldname": "auto_generate_on_active",
+   "fieldtype": "Check",
+   "label": "Auto Generate Code on Active"
+  },
+  {
+   "default": "{TYPE}-{CTY}-{YYYY}-{SEQ3}",
+   "fieldname": "code_format_template",
+   "fieldtype": "Data",
+   "label": "Code Format Template"
+  },
+  {
+   "default": "1",
+   "fieldname": "lock_code_on_active",
+   "fieldtype": "Check",
+   "label": "Lock Code When Active"
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "registry_points_formula_section",
+   "fieldtype": "Section Break",
+   "label": "Registry Points Formula"
+  },
+  {
+   "default": "1.0",
+   "fieldname": "grade_weight",
+   "fieldtype": "Float",
+   "label": "Grade Weight",
+   "precision": "2"
+  },
+  {
+   "default": "1.0",
+   "fieldname": "population_weight",
+   "fieldtype": "Float",
+   "label": "Population Weight",
+   "precision": "2"
+  },
+  {
+   "default": "1.0",
+   "fieldname": "value_weight",
+   "fieldtype": "Float",
+   "label": "Value Weight",
+   "precision": "2"
+  },
+  {
+   "fieldname": "grade_scoring_section",
+   "fieldtype": "Section Break",
+   "label": "Grade Scoring Configuration"
+  },
+  {
+   "fieldname": "grade_scoring_configuration",
+   "fieldtype": "Table",
+   "label": "Grade Scoring",
+   "options": "Grade Scoring Configuration"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2026-01-22 20:50:00.000000",
+ "modified_by": "Administrator",
+ "module": "International Grading Agency",
+ "name": "Module Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

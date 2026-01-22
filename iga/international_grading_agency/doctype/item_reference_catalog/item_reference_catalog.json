@@ -1,0 +1,747 @@
+{
+    "actions": [],
+    "allow_rename": 1,
+    "autoname": "field:title",
+    "creation": "2026-01-22 20:53:00.000000",
+    "doctype": "DocType",
+    "editable_grid": 1,
+    "engine": "InnoDB",
+    "field_order": [
+        "master_section",
+        "ref_code",
+        "title",
+        "collectible_type",
+        "country",
+        "column_break_5",
+        "issuer_authority",
+        "series_set_issue",
+        "calendar_type",
+        "year_ad",
+        "year_ah",
+        "section_break_11",
+        "front_image",
+        "column_break_13",
+        "back_image",
+        "section_break_15",
+        "status",
+        "deprecated_reason",
+        "column_break_18",
+        "last_verified",
+        "section_break_20",
+        "notes_internal",
+        "column_break_22",
+        "market_value_summary",
+        "rarity_index_summary",
+        "coins_tokens_medals_section",
+        "issue_type",
+        "era_period",
+        "quality_type",
+        "column_break_28",
+        "description_ar",
+        "description_en",
+        "section_break_31",
+        "denomination_value",
+        "denomination_unit",
+        "column_break_34",
+        "metal",
+        "purity",
+        "section_break_37",
+        "weight_g",
+        "diameter_mm",
+        "thickness_mm",
+        "column_break_41",
+        "shape",
+        "edge_type",
+        "alignment",
+        "section_break_45",
+        "mint",
+        "mintmark",
+        "mintage_qty",
+        "column_break_49",
+        "designer",
+        "km_catalog",
+        "mh_catalog",
+        "section_break_53",
+        "obv_notes",
+        "rev_notes",
+        "known_variations_note",
+        "banknote_section",
+        "bn_issue_type",
+        "bn_denomination_value",
+        "bn_denomination_unit",
+        "column_break_61",
+        "pick_number",
+        "bn_mh_catalog",
+        "bn_series",
+        "section_break_65",
+        "prefix",
+        "dimensions_mm",
+        "bn_shape",
+        "column_break_69",
+        "printer",
+        "watermark",
+        "security_features",
+        "section_break_73",
+        "signature",
+        "bn_designer",
+        "postcards_section",
+        "publisher",
+        "publisher_no",
+        "pc_series",
+        "column_break_80",
+        "location",
+        "era",
+        "used_unused",
+        "section_break_84",
+        "stamp",
+        "postmark_date",
+        "postmark_place",
+        "column_break_88",
+        "pc_dimensions_mm",
+        "pc_shape",
+        "designer_photographer",
+        "section_break_92",
+        "pc_catalog_ref",
+        "collectible_cards_section",
+        "card_brand",
+        "set_name",
+        "set_code",
+        "column_break_98",
+        "card_number",
+        "character_player",
+        "cc_year",
+        "section_break_102",
+        "parallel_variant",
+        "print_run",
+        "serial_numbered",
+        "column_break_106",
+        "autograph_relic",
+        "cc_dimensions_mm",
+        "cc_shape",
+        "section_break_110",
+        "cc_catalog_ref"
+    ],
+    "fields": [
+        {
+            "fieldname": "master_section",
+            "fieldtype": "Section Break",
+            "label": "MASTER"
+        },
+        {
+            "fieldname": "ref_code",
+            "fieldtype": "Data",
+            "label": "Reference Code (ID)",
+            "read_only": 1,
+            "unique": 1
+        },
+        {
+            "fieldname": "title",
+            "fieldtype": "Data",
+            "in_list_view": 1,
+            "label": "Title",
+            "reqd": 1,
+            "unique": 1
+        },
+        {
+            "fieldname": "collectible_type",
+            "fieldtype": "Select",
+            "in_list_view": 1,
+            "label": "Collectible Type",
+            "options": "Coin\nMedal\nToken\nBanknote\nPostcard\nCollectible Card",
+            "reqd": 1
+        },
+        {
+            "fieldname": "country",
+            "fieldtype": "Data",
+            "in_list_view": 1,
+            "label": "Country",
+            "reqd": 1
+        },
+        {
+            "fieldname": "column_break_5",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "issuer_authority",
+            "fieldtype": "Data",
+            "label": "Issuer / Authority"
+        },
+        {
+            "fieldname": "series_set_issue",
+            "fieldtype": "Data",
+            "label": "Series / Set / Issue"
+        },
+        {
+            "fieldname": "calendar_type",
+            "fieldtype": "Select",
+            "label": "Calendar Type",
+            "options": "AD\nAH\nBoth",
+            "reqd": 1
+        },
+        {
+            "fieldname": "year_ad",
+            "fieldtype": "Int",
+            "label": "Year (AD)"
+        },
+        {
+            "fieldname": "year_ah",
+            "fieldtype": "Int",
+            "label": "Year (AH)"
+        },
+        {
+            "fieldname": "section_break_11",
+            "fieldtype": "Section Break",
+            "label": "Images"
+        },
+        {
+            "fieldname": "front_image",
+            "fieldtype": "Attach Image",
+            "label": "Front/Obverse Image"
+        },
+        {
+            "fieldname": "column_break_13",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "back_image",
+            "fieldtype": "Attach Image",
+            "label": "Back/Reverse Image"
+        },
+        {
+            "fieldname": "section_break_15",
+            "fieldtype": "Section Break",
+            "label": "Status"
+        },
+        {
+            "fieldname": "status",
+            "fieldtype": "Select",
+            "in_list_view": 1,
+            "label": "Status",
+            "options": "Draft\nActive\nDeprecated",
+            "reqd": 1
+        },
+        {
+            "depends_on": "eval:doc.status=='Deprecated'",
+            "fieldname": "deprecated_reason",
+            "fieldtype": "Small Text",
+            "label": "Deprecated Reason"
+        },
+        {
+            "fieldname": "column_break_18",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "last_verified",
+            "fieldtype": "Date",
+            "label": "Last Verified"
+        },
+        {
+            "collapsible": 1,
+            "fieldname": "section_break_20",
+            "fieldtype": "Section Break",
+            "label": "Additional Info"
+        },
+        {
+            "fieldname": "notes_internal",
+            "fieldtype": "Text",
+            "label": "Internal Notes"
+        },
+        {
+            "fieldname": "column_break_22",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "market_value_summary",
+            "fieldtype": "Currency",
+            "label": "Market Value (Summary)"
+        },
+        {
+            "fieldname": "rarity_index_summary",
+            "fieldtype": "Int",
+            "label": "Rarity Index"
+        },
+        {
+            "depends_on": "eval:['Coin','Token','Medal'].includes(doc.collectible_type)",
+            "fieldname": "coins_tokens_medals_section",
+            "fieldtype": "Section Break",
+            "label": "COINS / TOKENS / MEDALS"
+        },
+        {
+            "fieldname": "issue_type",
+            "fieldtype": "Select",
+            "label": "Issue Type",
+            "options": "Circulation\nCommemorative\nCirculation-Commemorative\nPattern\nSpecimen Issue\nTrial"
+        },
+        {
+            "fieldname": "era_period",
+            "fieldtype": "Data",
+            "label": "Era / Period"
+        },
+        {
+            "fieldname": "quality_type",
+            "fieldtype": "Select",
+            "label": "Quality Type",
+            "options": "MS\nPF\nPL\nMATT"
+        },
+        {
+            "fieldname": "column_break_28",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "description_ar",
+            "fieldtype": "Small Text",
+            "label": "Description (Arabic)"
+        },
+        {
+            "fieldname": "description_en",
+            "fieldtype": "Small Text",
+            "label": "Description (English)"
+        },
+        {
+            "fieldname": "section_break_31",
+            "fieldtype": "Section Break",
+            "label": "Denomination & Metal"
+        },
+        {
+            "fieldname": "denomination_value",
+            "fieldtype": "Data",
+            "label": "Denomination Value"
+        },
+        {
+            "fieldname": "denomination_unit",
+            "fieldtype": "Data",
+            "label": "Denomination Unit"
+        },
+        {
+            "fieldname": "column_break_34",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "metal",
+            "fieldtype": "Select",
+            "label": "Metal",
+            "options": "Gold\nSilver\nCopper\nBronze\nCuNi\nNickel\nSteel\nOther"
+        },
+        {
+            "fieldname": "purity",
+            "fieldtype": "Float",
+            "label": "Purity",
+            "precision": "3"
+        },
+        {
+            "fieldname": "section_break_37",
+            "fieldtype": "Section Break",
+            "label": "Physical Specifications"
+        },
+        {
+            "fieldname": "weight_g",
+            "fieldtype": "Float",
+            "label": "Weight (g)",
+            "precision": "2"
+        },
+        {
+            "fieldname": "diameter_mm",
+            "fieldtype": "Float",
+            "label": "Diameter (mm)",
+            "precision": "2"
+        },
+        {
+            "fieldname": "thickness_mm",
+            "fieldtype": "Float",
+            "label": "Thickness (mm)",
+            "precision": "2"
+        },
+        {
+            "fieldname": "column_break_41",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "shape",
+            "fieldtype": "Select",
+            "label": "Shape",
+            "options": "Round\nSquare\nRectangular\nIrregular"
+        },
+        {
+            "fieldname": "edge_type",
+            "fieldtype": "Select",
+            "label": "Edge Type",
+            "options": "Reeded\nPlain\nLettered\nSecurity"
+        },
+        {
+            "fieldname": "alignment",
+            "fieldtype": "Select",
+            "label": "Alignment",
+            "options": "Coin alignment\nMedal alignment"
+        },
+        {
+            "fieldname": "section_break_45",
+            "fieldtype": "Section Break",
+            "label": "Minting & Production"
+        },
+        {
+            "fieldname": "mint",
+            "fieldtype": "Data",
+            "label": "Mint"
+        },
+        {
+            "fieldname": "mintmark",
+            "fieldtype": "Data",
+            "label": "Mintmark"
+        },
+        {
+            "fieldname": "mintage_qty",
+            "fieldtype": "Int",
+            "label": "Mintage Qty"
+        },
+        {
+            "fieldname": "column_break_49",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "designer",
+            "fieldtype": "Data",
+            "label": "Designer"
+        },
+        {
+            "fieldname": "km_catalog",
+            "fieldtype": "Data",
+            "label": "KM #"
+        },
+        {
+            "fieldname": "mh_catalog",
+            "fieldtype": "Data",
+            "label": "MH #"
+        },
+        {
+            "collapsible": 1,
+            "fieldname": "section_break_53",
+            "fieldtype": "Section Break",
+            "label": "Design Notes"
+        },
+        {
+            "fieldname": "obv_notes",
+            "fieldtype": "Small Text",
+            "label": "Obverse Notes"
+        },
+        {
+            "fieldname": "rev_notes",
+            "fieldtype": "Small Text",
+            "label": "Reverse Notes"
+        },
+        {
+            "fieldname": "known_variations_note",
+            "fieldtype": "Small Text",
+            "label": "Known Variations Note"
+        },
+        {
+            "depends_on": "eval:doc.collectible_type=='Banknote'",
+            "fieldname": "banknote_section",
+            "fieldtype": "Section Break",
+            "label": "BANKNOTE"
+        },
+        {
+            "fieldname": "bn_issue_type",
+            "fieldtype": "Select",
+            "label": "Issue Type",
+            "options": "Circulation\nCommemorative\nCirculation-Commemorative\nPattern\nProof Issue\nSpecimen Issue\nTrial"
+        },
+        {
+            "fieldname": "bn_denomination_value",
+            "fieldtype": "Data",
+            "label": "Denomination Value"
+        },
+        {
+            "fieldname": "bn_denomination_unit",
+            "fieldtype": "Data",
+            "label": "Denomination Unit"
+        },
+        {
+            "fieldname": "column_break_61",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "pick_number",
+            "fieldtype": "Data",
+            "label": "Pick #"
+        },
+        {
+            "fieldname": "bn_mh_catalog",
+            "fieldtype": "Data",
+            "label": "MH #"
+        },
+        {
+            "fieldname": "bn_series",
+            "fieldtype": "Data",
+            "label": "Series"
+        },
+        {
+            "fieldname": "section_break_65",
+            "fieldtype": "Section Break",
+            "label": "Physical Details"
+        },
+        {
+            "fieldname": "prefix",
+            "fieldtype": "Data",
+            "label": "Prefix"
+        },
+        {
+            "fieldname": "dimensions_mm",
+            "fieldtype": "Data",
+            "label": "Dimensions (mm)"
+        },
+        {
+            "fieldname": "bn_shape",
+            "fieldtype": "Select",
+            "label": "Shape",
+            "options": "Rectangular\nOther"
+        },
+        {
+            "fieldname": "column_break_69",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "printer",
+            "fieldtype": "Data",
+            "label": "Printer"
+        },
+        {
+            "fieldname": "watermark",
+            "fieldtype": "Data",
+            "label": "Watermark"
+        },
+        {
+            "fieldname": "security_features",
+            "fieldtype": "Small Text",
+            "label": "Security Features"
+        },
+        {
+            "collapsible": 1,
+            "fieldname": "section_break_73",
+            "fieldtype": "Section Break",
+            "label": "Additional Details"
+        },
+        {
+            "fieldname": "signature",
+            "fieldtype": "Data",
+            "label": "Signature(s)"
+        },
+        {
+            "fieldname": "bn_designer",
+            "fieldtype": "Data",
+            "label": "Designer"
+        },
+        {
+            "depends_on": "eval:doc.collectible_type=='Postcard'",
+            "fieldname": "postcards_section",
+            "fieldtype": "Section Break",
+            "label": "POSTCARDS"
+        },
+        {
+            "fieldname": "publisher",
+            "fieldtype": "Data",
+            "label": "Publisher"
+        },
+        {
+            "fieldname": "publisher_no",
+            "fieldtype": "Data",
+            "label": "Publisher/Card No."
+        },
+        {
+            "fieldname": "pc_series",
+            "fieldtype": "Data",
+            "label": "Series"
+        },
+        {
+            "fieldname": "column_break_80",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "location",
+            "fieldtype": "Data",
+            "label": "Location"
+        },
+        {
+            "fieldname": "era",
+            "fieldtype": "Select",
+            "label": "Era",
+            "options": "Pre-1900\n1900-1918\n1919-1945\nModern"
+        },
+        {
+            "fieldname": "used_unused",
+            "fieldtype": "Select",
+            "label": "Used/Unused",
+            "options": "Used\nUnused"
+        },
+        {
+            "fieldname": "section_break_84",
+            "fieldtype": "Section Break",
+            "label": "Postal Details"
+        },
+        {
+            "fieldname": "stamp",
+            "fieldtype": "Data",
+            "label": "Stamp"
+        },
+        {
+            "depends_on": "eval:doc.used_unused=='Used'",
+            "fieldname": "postmark_date",
+            "fieldtype": "Date",
+            "label": "Postmark Date"
+        },
+        {
+            "depends_on": "eval:doc.used_unused=='Used'",
+            "fieldname": "postmark_place",
+            "fieldtype": "Data",
+            "label": "Postmark Place"
+        },
+        {
+            "fieldname": "column_break_88",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "pc_dimensions_mm",
+            "fieldtype": "Data",
+            "label": "Dimensions (mm)"
+        },
+        {
+            "fieldname": "pc_shape",
+            "fieldtype": "Select",
+            "label": "Shape",
+            "options": "Standard\nOversize\nOther"
+        },
+        {
+            "fieldname": "designer_photographer",
+            "fieldtype": "Data",
+            "label": "Designer/Photographer"
+        },
+        {
+            "collapsible": 1,
+            "fieldname": "section_break_92",
+            "fieldtype": "Section Break",
+            "label": "Catalog Reference"
+        },
+        {
+            "fieldname": "pc_catalog_ref",
+            "fieldtype": "Data",
+            "label": "Catalog Ref"
+        },
+        {
+            "depends_on": "eval:doc.collectible_type=='Collectible Card'",
+            "fieldname": "collectible_cards_section",
+            "fieldtype": "Section Break",
+            "label": "COLLECTIBLE CARDS"
+        },
+        {
+            "fieldname": "card_brand",
+            "fieldtype": "Data",
+            "label": "Card Brand"
+        },
+        {
+            "fieldname": "set_name",
+            "fieldtype": "Data",
+            "label": "Set Name"
+        },
+        {
+            "fieldname": "set_code",
+            "fieldtype": "Data",
+            "label": "Set Code"
+        },
+        {
+            "fieldname": "column_break_98",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "card_number",
+            "fieldtype": "Data",
+            "label": "Card Number"
+        },
+        {
+            "fieldname": "character_player",
+            "fieldtype": "Data",
+            "label": "Character/Player"
+        },
+        {
+            "fieldname": "cc_year",
+            "fieldtype": "Int",
+            "label": "Year"
+        },
+        {
+            "fieldname": "section_break_102",
+            "fieldtype": "Section Break",
+            "label": "Card Details"
+        },
+        {
+            "fieldname": "parallel_variant",
+            "fieldtype": "Data",
+            "label": "Parallel Variant"
+        },
+        {
+            "fieldname": "print_run",
+            "fieldtype": "Data",
+            "label": "Print Run"
+        },
+        {
+            "fieldname": "serial_numbered",
+            "fieldtype": "Data",
+            "label": "Serial Numbered"
+        },
+        {
+            "fieldname": "column_break_106",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "autograph_relic",
+            "fieldtype": "Select",
+            "label": "Autograph/Relic",
+            "options": "None\nAuto\nRelic\nAuto+Relic"
+        },
+        {
+            "fieldname": "cc_dimensions_mm",
+            "fieldtype": "Data",
+            "label": "Dimensions (mm)"
+        },
+        {
+            "fieldname": "cc_shape",
+            "fieldtype": "Select",
+            "label": "Shape",
+            "options": "Standard\nJumbo\nOther"
+        },
+        {
+            "collapsible": 1,
+            "fieldname": "section_break_110",
+            "fieldtype": "Section Break",
+            "label": "Catalog Reference"
+        },
+        {
+            "fieldname": "cc_catalog_ref",
+            "fieldtype": "Data",
+            "label": "Catalog Ref"
+        }
+    ],
+    "index_web_pages_for_search": 1,
+    "links": [],
+    "modified": "2026-01-22 20:53:00.000000",
+    "modified_by": "Administrator",
+    "module": "International Grading Agency",
+    "name": "Item Reference Catalog",
+    "naming_rule": "By fieldname",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "create": 1,
+            "delete": 1,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "System Manager",
+            "share": 1,
+            "write": 1
+        }
+    ],
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "states": [],
+    "track_changes": 1
+}

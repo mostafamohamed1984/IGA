@@ -1,0 +1,262 @@
+[
+    {
+        "grade_full": "PO Details",
+        "score": 1,
+        "grade_numeric": 1
+    },
+    {
+        "grade_full": "PO1",
+        "score": 2,
+        "grade_numeric": 2
+    },
+    {
+        "grade_full": "FA Details",
+        "score": 3,
+        "grade_numeric": 3
+    },
+    {
+        "grade_full": "FR2",
+        "score": 4,
+        "grade_numeric": 4
+    },
+    {
+        "grade_full": "AG Details",
+        "score": 5,
+        "grade_numeric": 5
+    },
+    {
+        "grade_full": "AG3",
+        "score": 6,
+        "grade_numeric": 6
+    },
+    {
+        "grade_full": "G Details",
+        "score": 7,
+        "grade_numeric": 7
+    },
+    {
+        "grade_full": "G4",
+        "score": 8,
+        "grade_numeric": 8
+    },
+    {
+        "grade_full": "G6",
+        "score": 9,
+        "grade_numeric": 9
+    },
+    {
+        "grade_full": "VG Details",
+        "score": 10,
+        "grade_numeric": 10
+    },
+    {
+        "grade_full": "VG8",
+        "score": 11,
+        "grade_numeric": 11
+    },
+    {
+        "grade_full": "VG10",
+        "score": 12,
+        "grade_numeric": 12
+    },
+    {
+        "grade_full": "F Details",
+        "score": 13,
+        "grade_numeric": 13
+    },
+    {
+        "grade_full": "F12",
+        "score": 14,
+        "grade_numeric": 14
+    },
+    {
+        "grade_full": "F15",
+        "score": 15,
+        "grade_numeric": 15
+    },
+    {
+        "grade_full": "VF Details",
+        "score": 16,
+        "grade_numeric": 16
+    },
+    {
+        "grade_full": "VF20",
+        "score": 17,
+        "grade_numeric": 17
+    },
+    {
+        "grade_full": "VF25",
+        "score": 18,
+        "grade_numeric": 18
+    },
+    {
+        "grade_full": "VF30",
+        "score": 19,
+        "grade_numeric": 19
+    },
+    {
+        "grade_full": "VF35",
+        "score": 20,
+        "grade_numeric": 20
+    },
+    {
+        "grade_full": "XF Details",
+        "score": 21,
+        "grade_numeric": 21
+    },
+    {
+        "grade_full": "XF40",
+        "score": 22,
+        "grade_numeric": 22
+    },
+    {
+        "grade_full": "XF45",
+        "score": 23,
+        "grade_numeric": 23
+    },
+    {
+        "grade_full": "AU Details",
+        "score": 24,
+        "grade_numeric": 24
+    },
+    {
+        "grade_full": "AU50",
+        "score": 25,
+        "grade_numeric": 25
+    },
+    {
+        "grade_full": "AU53",
+        "score": 26,
+        "grade_numeric": 26
+    },
+    {
+        "grade_full": "AU55",
+        "score": 27,
+        "grade_numeric": 27
+    },
+    {
+        "grade_full": "AU58",
+        "score": 28,
+        "grade_numeric": 28
+    },
+    {
+        "grade_full": "UNC Details",
+        "score": 29,
+        "grade_numeric": 29
+    },
+    {
+        "grade_full": "PR Details",
+        "score": 30,
+        "grade_numeric": 30
+    },
+    {
+        "grade_full": "MS60",
+        "score": 31,
+        "grade_numeric": 60
+    },
+    {
+        "grade_full": "PF60",
+        "score": 32,
+        "grade_numeric": 60
+    },
+    {
+        "grade_full": "MS61",
+        "score": 33,
+        "grade_numeric": 61
+    },
+    {
+        "grade_full": "PF61",
+        "score": 34,
+        "grade_numeric": 61
+    },
+    {
+        "grade_full": "MS62",
+        "score": 35,
+        "grade_numeric": 62
+    },
+    {
+        "grade_full": "PF62",
+        "score": 36,
+        "grade_numeric": 62
+    },
+    {
+        "grade_full": "MS63",
+        "score": 37,
+        "grade_numeric": 63
+    },
+    {
+        "grade_full": "PF63",
+        "score": 38,
+        "grade_numeric": 63
+    },
+    {
+        "grade_full": "MS64",
+        "score": 39,
+        "grade_numeric": 64
+    },
+    {
+        "grade_full": "PF64",
+        "score": 40,
+        "grade_numeric": 64
+    },
+    {
+        "grade_full": "MS65",
+        "score": 41,
+        "grade_numeric": 65
+    },
+    {
+        "grade_full": "PF65",
+        "score": 42,
+        "grade_numeric": 65
+    },
+    {
+        "grade_full": "MS66",
+        "score": 43,
+        "grade_numeric": 66
+    },
+    {
+        "grade_full": "PF66",
+        "score": 44,
+        "grade_numeric": 66
+    },
+    {
+        "grade_full": "MS67",
+        "score": 45,
+        "grade_numeric": 67
+    },
+    {
+        "grade_full": "PF67",
+        "score": 46,
+        "grade_numeric": 67
+    },
+    {
+        "grade_full": "MS68",
+        "score": 47,
+        "grade_numeric": 68
+    },
+    {
+        "grade_full": "PF68",
+        "score": 48,
+        "grade_numeric": 68
+    },
+    {
+        "grade_full": "MS69",
+        "score": 49,
+        "grade_numeric": 69
+    },
+    {
+        "grade_full": "PF69",
+        "score": 50,
+        "grade_numeric": 69
+    },
+    {
+        "grade_full": "MS70",
+        "score": 51,
+        "grade_numeric": 70
+    },
+    {
+        "grade_full": "PF70",
+        "score": 52,
+        "grade_numeric": 70
+    }
+]

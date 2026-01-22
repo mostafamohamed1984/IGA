@@ -2,6 +2,11 @@
 // For license information, please see license.txt
 
 frappe.ui.form.on('Registry Points', {
+    onload: function (frm) {
+        // Set up autocomplete for grade_full field on form load
+        setup_grade_autocomplete(frm);
+    },
+
     refresh: function (frm) {
         // Set up autocomplete for grade_full field
         setup_grade_autocomplete(frm);
@@ -22,7 +27,7 @@ frappe.ui.form.on('Registry Points', {
     },
 
     calculate_points: function (frm) {
-        // Trigger server-side calculation
+        // Trigger server-side calculation by saving
         frm.save();
     }
 });
@@ -37,14 +42,13 @@ function setup_grade_autocomplete(frm) {
         },
         callback: function (r) {
             if (r.message && r.message.grade_scoring_configuration) {
-                // Extract grade names
+                // Extract grade names into array
                 let grades = r.message.grade_scoring_configuration.map(g => g.grade_full);
 
-                // Set up autocomplete
-                frm.fields_dict.grade_full.set_data(grades);
-
-                // Also set as awesomplete
-                frm.set_df_property('grade_full', 'options', grades.join('\n'));
+                // Use ERPNext's set_data method for autocomplete on Data fields
+                if (frm.fields_dict.grade_full) {
+                    frm.fields_dict.grade_full.set_data(grades);
+                }
             }
         }
     });

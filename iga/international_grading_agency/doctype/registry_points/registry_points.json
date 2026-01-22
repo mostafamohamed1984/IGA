@@ -29,7 +29,7 @@
         },
         {
             "fieldname": "grade_full",
-            "fieldtype": "Data",
+            "fieldtype": "Select",
             "in_list_view": 1,
             "label": "Grade Full",
             "reqd": 1

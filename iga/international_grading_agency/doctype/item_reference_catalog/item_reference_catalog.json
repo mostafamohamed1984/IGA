@@ -20,8 +20,10 @@
         "year_ah",
         "section_break_11",
         "front_image",
+        "front_image_preview",
         "column_break_13",
         "back_image",
+        "back_image_preview",
         "section_break_15",
         "status",
         "deprecated_reason",
@@ -152,7 +154,7 @@
         },
         {
             "fieldname": "country",
-            "fieldtype": "Data",
+            "fieldtype": "Select",
             "in_list_view": 1,
             "label": "Country",
             "reqd": 1
@@ -199,6 +201,12 @@
             "label": "Front/Obverse Image"
         },
         {
+            "depends_on": "eval:doc.front_image",
+            "fieldname": "front_image_preview",
+            "fieldtype": "HTML",
+            "label": "Front Image Preview"
+        },
+        {
             "fieldname": "column_break_13",
             "fieldtype": "Column Break"
         },
@@ -208,16 +216,24 @@
             "label": "Back/Reverse Image"
         },
         {
+            "depends_on": "eval:doc.back_image",
+            "fieldname": "back_image_preview",
+            "fieldtype": "HTML",
+            "label": "Back Image Preview"
+        },
+        {
             "fieldname": "section_break_15",
             "fieldtype": "Section Break",
             "label": "Status"
         },
         {
+            "default": "Draft",
             "fieldname": "status",
             "fieldtype": "Select",
             "in_list_view": 1,
             "label": "Status",
             "options": "Draft\nActive\nDeprecated",
+            "read_only": 1,
             "reqd": 1
         },
         {

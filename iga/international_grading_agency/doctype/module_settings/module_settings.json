@@ -16,7 +16,9 @@
   "population_weight",
   "value_weight",
   "grade_scoring_section",
-  "grade_scoring_configuration"
+  "grade_scoring_configuration",
+  "country_configuration_section",
+  "country_configuration"
  ],
  "fields": [
   {
@@ -82,6 +84,17 @@
    "fieldtype": "Table",
    "label": "Grade Scoring",
    "options": "Grade Scoring Configuration"
+  },
+  {
+   "fieldname": "country_configuration_section",
+   "fieldtype": "Section Break",
+   "label": "Country Configuration"
+  },
+  {
+   "fieldname": "country_configuration",
+   "fieldtype": "Table",
+   "label": "Countries",
+   "options": "Country Configuration"
   }
  ],
  "index_web_pages_for_search": 1,

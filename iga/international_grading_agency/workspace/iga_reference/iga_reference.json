@@ -1,6 +1,6 @@
 {
     "charts": [],
-    "content": "[{\"id\":\"_Qz2Tz0Qlg\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Items Reference Catalog</span>\",\"col\":12}},{\"id\":\"catalog_list\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Item Reference Catalog\",\"col\":3}},{\"id\":\"add_new_ref\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Add New Reference Item\",\"col\":3}},{\"id\":\"_header_reporting\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Reporting</span>\",\"col\":12}},{\"id\":\"pop_report\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Population Report\",\"col\":3}},{\"id\":\"registry_pts\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Registry Points\",\"col\":3}},{\"id\":\"archive_list\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Graded Items Archive\",\"col\":3}},{\"id\":\"_header_settings\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Settings</span>\",\"col\":12}},{\"id\":\"ref_code_gen\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Reference Code Generator\",\"col\":3}},{\"id\":\"mod_settings\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Module Settings\",\"col\":3}}]",
+    "content": "[{\"id\":\"_header_membership\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Membership</span>\",\"col\":12}},{\"id\":\"membership_list\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"IGA Membership Applications\",\"col\":3}},{\"id\":\"add_membership\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"New Membership Application\",\"col\":3}},{\"id\":\"_Qz2Tz0Qlg\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Items Reference Catalog</span>\",\"col\":12}},{\"id\":\"catalog_list\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Item Reference Catalog\",\"col\":3}},{\"id\":\"add_new_ref\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Add New Reference Item\",\"col\":3}},{\"id\":\"_header_reporting\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Reporting</span>\",\"col\":12}},{\"id\":\"pop_report\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Population Report\",\"col\":3}},{\"id\":\"registry_pts\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Registry Points\",\"col\":3}},{\"id\":\"archive_list\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Graded Items Archive\",\"col\":3}},{\"id\":\"_header_settings\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Settings</span>\",\"col\":12}},{\"id\":\"ref_code_gen\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Reference Code Generator\",\"col\":3}},{\"id\":\"mod_settings\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Module Settings\",\"col\":3}}]",
     "creation": "2026-01-22 20:57:00.000000",
     "custom_blocks": [],
     "docstatus": 0,
@@ -12,6 +12,26 @@
     "is_hidden": 0,
     "label": "IGA Reference",
     "links": [
+        {
+            "hidden": 0,
+            "is_query_report": 0,
+            "label": "IGA Membership Applications",
+            "link_count": 0,
+            "link_to": "IGA Membership Application",
+            "link_type": "DocType",
+            "onboard": 0,
+            "type": "Link"
+        },
+        {
+            "hidden": 0,
+            "is_query_report": 0,
+            "label": "New Membership Application",
+            "link_count": 0,
+            "link_to": "IGA Membership Application",
+            "link_type": "DocType",
+            "onboard": 0,
+            "type": "Link"
+        },
         {
             "hidden": 0,
             "is_query_report": 0,
@@ -94,6 +114,20 @@
     "roles": [],
     "sequence_id": 1.0,
     "shortcuts": [
+        {
+            "color": "Purple",
+            "doc_view": "List",
+            "label": "IGA Membership Applications",
+            "link_to": "IGA Membership Application",
+            "type": "DocType"
+        },
+        {
+            "color": "Green",
+            "doc_view": "New",
+            "label": "New Membership Application",
+            "link_to": "IGA Membership Application",
+            "type": "DocType"
+        },
         {
             "color": "Grey",
             "doc_view": "List",

@@ -122,9 +122,7 @@ def create_customer_from_membership(membership_name):
 		"customer_name": membership.full_name,
 		"customer_type": "Individual",
 		"customer_group": "Individual",
-		"territory": "Egypt",  # Default, can be changed
-		"mobile_no": membership.mobile_primary,
-		"email_id": membership.email
+		"territory": "All Territories"
 	})
 	customer.insert(ignore_permissions=True)
 	
@@ -134,8 +132,7 @@ def create_customer_from_membership(membership_name):
 		"first_name": membership.full_name,
 		"email_id": membership.email,
 		"mobile_no": membership.mobile_primary,
-		"phone": membership.mobile_secondary,
-		"gender": membership.gender if membership.gender else None,
+		"phone": membership.mobile_secondary if hasattr(membership, 'mobile_secondary') else None,
 		"links": [{
 			"link_doctype": "Customer",
 			"link_name": customer.name

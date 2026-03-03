@@ -1,10 +1,5 @@
 // Custom JavaScript for IGA Membership Application Web Form
 frappe.ready(function() {
-    // Handle "View Terms" button click
-    $(document).on('click', '[data-fieldname="view_terms_button"] button', function() {
-        window.open('/terms-and-conditions', '_blank');
-    });
-    
     // Validate top 3 priorities - exactly 3 selections required
     const priorityFields = [
         'priority_price', 'priority_speed', 'priority_accuracy',

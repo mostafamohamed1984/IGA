@@ -25,7 +25,7 @@
         "address_text",
         "section_break_16",
         "accept_terms",
-        "view_terms_button",
+        "terms_link_html",
         "survey_questions_section",
         "user_profile_type",
         "collectibles_interest_section",
@@ -199,9 +199,9 @@
             "reqd": 1
         },
         {
-            "fieldname": "view_terms_button",
-            "fieldtype": "Button",
-            "label": "\u0627\u0642\u0631\u0623 \u0627\u0644\u0634\u0631\u0648\u0637 \u0648\u0627\u0644\u0623\u062d\u0643\u0627\u0645"
+            "fieldname": "terms_link_html",
+            "fieldtype": "HTML",
+            "options": "<div style='margin-top: -5px; margin-bottom: 15px; direction: rtl; text-align: right;'><a href='/terms-and-conditions' target='_blank' style='color: #1f4e79; text-decoration: underline; font-size: 0.95em;'>\u0627\u0636\u0639\u0637 \u0647\u0646\u0627 \u0644\u0642\u0631\u0627\u0621\u0629 \u0627\u0644\u0634\u0631\u0648\u0637 \u0648\u0627\u0644\u0623\u062d\u0643\u0627\u0645</a></div>"
         },
         {
             "collapsible": 1,

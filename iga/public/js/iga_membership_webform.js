@@ -1,21 +1,34 @@
 // Custom JavaScript for IGA Membership Application Web Form
 frappe.ready(function() {
     // Add terms and conditions link below the accept_terms checkbox
-    const acceptTermsField = $('[data-fieldname="accept_terms"]');
-    
-    if (acceptTermsField.length) {
-        // Remove any existing description
-        acceptTermsField.find('.terms-description').remove();
+    function addTermsLink() {
+        const acceptTermsField = $('[data-fieldname="accept_terms"]');
         
-        // Add the description with link
-        const description = `
-            <div class="terms-description" style="margin-top: 8px; margin-right: 25px; font-size: 0.9em; color: #6c757d; direction: rtl; text-align: right;">
-                اقرأ <a href="/terms-and-conditions" target="_blank" style="color: #1f4e79; text-decoration: underline;">الشروط والأحكام</a> وأوافق عليها
-            </div>
-        `;
-        
-        acceptTermsField.find('.checkbox').after(description);
+        if (acceptTermsField.length && !acceptTermsField.find('.terms-description').length) {
+            // Add the description with link
+            const description = `
+                <div class="terms-description" style="margin-top: 8px; font-size: 0.9em; color: #6c757d; direction: rtl; text-align: right;">
+                    اقرأ <a href="/terms-and-conditions" target="_blank" style="color: #1f4e79; text-decoration: underline;">الشروط والأحكام</a> وأوافق عليها
+                </div>
+            `;
+            
+            // Try multiple insertion points
+            if (acceptTermsField.find('.checkbox').length) {
+                acceptTermsField.find('.checkbox').after(description);
+            } else if (acceptTermsField.find('input[type="checkbox"]').length) {
+                acceptTermsField.find('input[type="checkbox"]').parent().after(description);
+            } else {
+                acceptTermsField.append(description);
+            }
+        }
     }
+    
+    // Try immediately
+    addTermsLink();
+    
+    // Try again after a short delay to ensure DOM is ready
+    setTimeout(addTermsLink, 500);
+    setTimeout(addTermsLink, 1000);
     
     // Validate top 3 priorities - exactly 3 selections required
     const priorityFields = [

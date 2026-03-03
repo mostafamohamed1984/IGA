@@ -53,11 +53,35 @@ class IGAMembershipApplication(Document):
 		if not self.accept_terms:
 			frappe.throw("You must accept the Terms and Conditions to proceed")
 		
-		# Validate top_3_priorities: max 3 selections
-		if self.top_3_priorities:
-			selections = [s.strip() for s in self.top_3_priorities.split(',') if s.strip()]
-			if len(selections) > 3:
-				frappe.throw("You can select a maximum of 3 priorities")
+		# Validate collectibles_interest: at least 1 selection required
+		interest_fields = ['interest_coins', 'interest_medals_tokens', 'interest_banknotes', 
+		                   'interest_postcards', 'interest_other']
+		if not any(getattr(self, field, 0) for field in interest_fields):
+			frappe.throw("Please select at least one collectible interest")
+		
+		# Validate choose_iga_reasons: at least 1 selection required
+		reason_fields = ['reason_save_time', 'reason_lower_cost', 'reason_arabic_support',
+		                 'reason_local_delivery', 'reason_reduce_shipping_risk', 
+		                 'reason_fast_certification', 'reason_local_market_acceptance', 'reason_other']
+		if not any(getattr(self, field, 0) for field in reason_fields):
+			frappe.throw("Please select at least one reason for choosing IGA")
+		
+		# Validate iga_barriers: at least 1 selection required
+		barrier_fields = ['barrier_trust_credibility', 'barrier_market_recognition', 'barrier_accuracy',
+		                  'barrier_tamper_protection', 'barrier_price', 'barrier_turnaround_time',
+		                  'barrier_warranty_policy', 'barrier_other']
+		if not any(getattr(self, field, 0) for field in barrier_fields):
+			frappe.throw("Please select at least one potential barrier")
+		
+		# Validate top_3_priorities: exactly 3 selections required
+		priority_fields = ['priority_price', 'priority_speed', 'priority_accuracy', 
+		                   'priority_holder_quality', 'priority_professional_photos',
+		                   'priority_easy_delivery', 'priority_customer_service',
+		                   'priority_market_acceptance', 'priority_online_verification', 'priority_warranty']
+		priority_count = sum(1 for field in priority_fields if getattr(self, field, 0))
+		if priority_count != 3:
+			frappe.throw(f"Please select exactly 3 priorities (currently selected: {priority_count})")
+
 		
 		# Lock valid_from after first save (prevent changes)
 		if not self.is_new():

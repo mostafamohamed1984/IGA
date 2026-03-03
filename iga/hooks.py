@@ -36,8 +36,7 @@ app_license = "mit"
 # website_theme_scss = "iga/public/scss/website"
 
 # include js, css files in header of web form
-# webform_include_js = {"doctype": "public/js/doctype.js"}
-# webform_include_css = {"doctype": "public/css/doctype.css"}
+webform_include_css = {"IGA Membership Application": "public/css/webform_rtl.css"}
 
 # include js in page
 # page_js = {"page" : "public/js/file.js"}

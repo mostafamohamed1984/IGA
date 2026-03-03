@@ -1,0 +1,119 @@
+/* RTL Support for IGA Web Forms */
+
+/* Set RTL direction for entire web form */
+.web-form-container,
+.web-form-wrapper,
+.form-section,
+.form-layout {
+    direction: rtl;
+    text-align: right;
+}
+
+/* Form fields alignment */
+.web-form-container .form-group,
+.web-form-container .frappe-control {
+    direction: rtl;
+    text-align: right;
+}
+
+/* Labels alignment */
+.web-form-container label,
+.web-form-container .control-label {
+    text-align: right;
+    display: block;
+}
+
+/* Input fields RTL */
+.web-form-container input[type="text"],
+.web-form-container input[type="email"],
+.web-form-container input[type="tel"],
+.web-form-container input[type="date"],
+.web-form-container input[type="number"],
+.web-form-container textarea,
+.web-form-container select {
+    direction: rtl;
+    text-align: right;
+}
+
+/* Checkboxes and radio buttons alignment */
+.web-form-container .checkbox,
+.web-form-container .radio {
+    text-align: right;
+}
+
+.web-form-container .checkbox label,
+.web-form-container .radio label {
+    padding-right: 20px;
+    padding-left: 0;
+}
+
+.web-form-container input[type="checkbox"],
+.web-form-container input[type="radio"] {
+    float: right;
+    margin-right: 0;
+    margin-left: 10px;
+}
+
+/* Section breaks and column breaks */
+.web-form-container .section-head,
+.web-form-container .form-section-heading {
+    text-align: right;
+}
+
+/* Button alignment */
+.web-form-container .form-footer,
+.web-form-container .web-form-actions {
+    text-align: left;
+}
+
+.web-form-container .btn-primary,
+.web-form-container .btn-default {
+    float: left;
+    margin-left: 10px;
+    margin-right: 0;
+}
+
+/* Introduction/Long Text fields */
+.web-form-container .introduction,
+.web-form-container .form-message {
+    direction: rtl;
+    text-align: right;
+}
+
+/* Multi-select and dropdown */
+.web-form-container .awesomplete,
+.web-form-container .form-control {
+    direction: rtl;
+    text-align: right;
+}
+
+/* Error messages */
+.web-form-container .help-block,
+.web-form-container .text-danger {
+    text-align: right;
+}
+
+/* Grid/Table fields (if any) */
+.web-form-container .grid-row,
+.web-form-container table {
+    direction: rtl;
+}
+
+/* Placeholder text alignment */
+.web-form-container input::placeholder,
+.web-form-container textarea::placeholder {
+    text-align: right;
+}
+
+/* Required field asterisk positioning */
+.web-form-container .reqd {
+    margin-right: 0;
+    margin-left: 5px;
+}
+
+/* Clear floats */
+.web-form-container .clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}

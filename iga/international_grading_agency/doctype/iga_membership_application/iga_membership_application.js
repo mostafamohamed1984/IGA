@@ -23,24 +23,11 @@ frappe.ui.form.on('IGA Membership Application', {
 				});
 			});
 		}
+		
+		// Add validation for top 3 priorities checkboxes
+		validate_top_3_priorities(frm);
 	},
 	
-	top_3_priorities: function(frm) {
-		// Validate max 3 selections for top_3_priorities
-		if (frm.doc.top_3_priorities) {
-			let selections = frm.doc.top_3_priorities.split(',').filter(s => s.trim());
-			if (selections.length > 3) {
-				frappe.msgprint({
-					title: __('Validation Error'),
-					message: __('You can select a maximum of 3 priorities. Please remove {0} selection(s).', [selections.length - 3]),
-					indicator: 'red'
-				});
-				
-				// Keep only first 3 selections
-				frm.set_value('top_3_priorities', selections.slice(0, 3).join(', '));
-			}
-		}
-	},
 	
 	email: function(frm) {
 		// Validate email format
@@ -70,4 +57,39 @@ frappe.ui.form.on('IGA Membership Application', {
 			}
 		}
 	}
+});
+
+// Validation helper for top 3 priorities
+function validate_top_3_priorities(frm) {
+	const priority_fields = [
+		'priority_price', 'priority_speed', 'priority_accuracy',
+		'priority_holder_quality', 'priority_professional_photos',
+		'priority_easy_delivery', 'priority_customer_service',
+		'priority_market_acceptance', 'priority_online_verification', 'priority_warranty'
+	];
+	
+	let count = 0;
+	priority_fields.forEach(field => {
+		if (frm.doc[field]) count++;
+	});
+	
+	if (count > 3) {
+		frappe.msgprint({
+			title: __('Validation Error'),
+			message: __('You can select a maximum of 3 priorities. Please uncheck {0} option(s).', [count - 3]),
+			indicator: 'red'
+		});
+	}
+}
+
+// Add change handlers for all priority checkboxes
+[
+	'priority_price', 'priority_speed', 'priority_accuracy',
+	'priority_holder_quality', 'priority_professional_photos',
+	'priority_easy_delivery', 'priority_customer_service',
+	'priority_market_acceptance', 'priority_online_verification', 'priority_warranty'
+].forEach(field => {
+	frappe.ui.form.on('IGA Membership Application', field, function(frm) {
+		validate_top_3_priorities(frm);
+	});
 });

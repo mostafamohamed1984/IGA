@@ -412,7 +412,7 @@
             "description": "\u0627\u062e\u062a\u0631 \u0648\u0627\u062d\u062f \u0623\u0648 \u0623\u0643\u062b\u0631",
             "fieldname": "iga_barriers_section",
             "fieldtype": "Section Break",
-            "label": "\u0625\u064a\u0647 \u0أ\u0643\u0628\u0631 \u0633\u0628\u0628 \u0645\u0645\u0643\u0646 \u064a\u0645\u0646\u0639\u0643 \u062a\u0633\u062a\u062e\u062f\u0645 IGA\u061f"
+            "label": "\u0625\u064a\u0647 \u0623\u0643\u0628\u0631 \u0633\u0628\u0628 \u0645\u0645\u0643\u0646 \u064a\u0645\u0646\u0639\u0643 \u062a\u0633\u062a\u062e\u062f\u0645 IGA\u061f"
         },
         {
             "default": "0",

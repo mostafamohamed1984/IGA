@@ -1,16 +1,22 @@
 // Custom JavaScript for IGA Membership Application Web Form
 frappe.ready(function () {
+    console.log("IGA Webform JS Loaded");
+
     // Populate nationality options
     const populateNationality = () => {
+        console.log("Fetching enabled countries...");
         frappe.call({
             method: 'iga.international_grading_agency.doctype.iga_membership_application.iga_membership_application.get_enabled_countries',
             callback: function (r) {
+                console.log("Response received:", r);
                 if (r.message) {
                     let countries = r.message;
                     // Add an empty option at the beginning
                     countries.unshift("");
+                    console.log("Populating countries:", countries);
 
                     if (typeof frappe.web_form !== 'undefined') {
+                        console.log("Using frappe.web_form API");
                         // Web Form API
                         // Try setting options as an array first
                         frappe.web_form.set_df_property('nationality', 'options', countries);
@@ -27,17 +33,29 @@ frappe.ready(function () {
                         }
                     }
 
-                    // Fallback for direct DOM manipulation if API fails or web_form is not defined
-                    let $select = $('[data-fieldname="nationality"] select');
-                    if ($select.length) {
-                        $select.empty();
-                        countries.forEach(c => {
-                            $select.append($('<option>', {
-                                value: c,
-                                text: c
-                            }));
-                        });
-                    }
+                    // Direct DOM manipulation as a strong fallback
+                    // We target the field by data-fieldname and find the select within it
+                    setTimeout(() => {
+                        let $select = $('select[data-fieldname="nationality"]');
+                        if ($select.length === 0) {
+                            $select = $('[data-fieldname="nationality"] select');
+                        }
+
+                        if ($select.length) {
+                            console.log("Found select element via jQuery, forcing options");
+                            $select.empty();
+                            countries.forEach(c => {
+                                $select.append($('<option>', {
+                                    value: c,
+                                    text: c
+                                }));
+                            });
+                            // Trigger change to update UI if needed
+                            $select.trigger('change');
+                        } else {
+                            console.warn("Could not find select element for nationality");
+                        }
+                    }, 500); // Small delay to ensure DOM is ready
                 }
             }
         });

@@ -100,6 +100,15 @@ class IGAMembershipApplication(Document):
 			frappe.throw(f"{field_label} must be a valid phone number (10-15 digits)")
 
 
+@frappe.whitelist(allow_guest=True)
+def get_enabled_countries():
+	"""Get list of enabled countries from Module Settings"""
+	settings = frappe.get_doc("Module Settings", "Module Settings")
+	if settings.country_configuration:
+		return [c.country_name for c in settings.country_configuration if c.enabled]
+	return []
+
+
 @frappe.whitelist()
 def create_customer_from_membership(membership_name):
 	"""

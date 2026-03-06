@@ -64,17 +64,15 @@ frappe.ui.form.on('IGA Membership Application', {
 });
 
 function set_nationality_options(frm) {
-	frappe.db.get_doc('Module Settings', 'Module Settings').then(settings => {
-		if (settings && settings.country_configuration) {
-			let countries = settings.country_configuration
-				.filter(c => c.enabled)
-				.map(c => c.country_name);
-
-			// Add an empty option at the beginning
-			countries.unshift("");
-
-			frm.set_df_property('nationality', 'options', countries);
-			frm.refresh_field('nationality');
+	frappe.call({
+		method: 'iga.international_grading_agency.doctype.iga_membership_application.iga_membership_application.get_enabled_countries',
+		callback: function (r) {
+			if (r.message) {
+				let countries = r.message;
+				countries.unshift("");
+				frm.set_df_property('nationality', 'options', countries);
+				frm.refresh_field('nationality');
+			}
 		}
 	});
 }

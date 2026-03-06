@@ -2,16 +2,20 @@
 // For license information, please see license.txt
 
 frappe.ui.form.on('IGA Membership Application', {
-	refresh: function(frm) {
+	onload: function (frm) {
+		set_nationality_options(frm);
+	},
+	refresh: function (frm) {
+		set_nationality_options(frm);
 		// Add custom button to create customer
 		if (!frm.is_new() && frm.doc.email) {
-			frm.add_custom_button(__('Create/Update Customer'), function() {
+			frm.add_custom_button(__('Create/Update Customer'), function () {
 				frappe.call({
 					method: 'iga.international_grading_agency.doctype.iga_membership_application.iga_membership_application.create_customer_from_membership',
 					args: {
 						membership_name: frm.doc.name
 					},
-					callback: function(r) {
+					callback: function (r) {
 						if (r.message && r.message.success) {
 							frappe.msgprint({
 								title: __('Success'),
@@ -23,22 +27,13 @@ frappe.ui.form.on('IGA Membership Application', {
 				});
 			});
 		}
-		
+
 		// Add validation for top 3 priorities checkboxes
 		validate_top_3_priorities(frm);
-
-		// Filter nationality to only show enabled countries
-		frm.set_query('nationality', function() {
-			return {
-				filters: {
-					'enabled': 1
-				}
-			};
-		});
 	},
-	
-	
-	email: function(frm) {
+
+
+	email: function (frm) {
 		// Validate email format
 		if (frm.doc.email && !frappe.utils.validate_type(frm.doc.email, 'email')) {
 			frappe.msgprint({
@@ -49,13 +44,13 @@ frappe.ui.form.on('IGA Membership Application', {
 			frm.set_value('email', '');
 		}
 	},
-	
-	date_of_birth: function(frm) {
+
+	date_of_birth: function (frm) {
 		// Validate date of birth is not in future
 		if (frm.doc.date_of_birth) {
 			let dob = frappe.datetime.str_to_obj(frm.doc.date_of_birth);
 			let today = frappe.datetime.now_date(true);
-			
+
 			if (dob > today) {
 				frappe.msgprint({
 					title: __('Invalid Date'),
@@ -65,19 +60,24 @@ frappe.ui.form.on('IGA Membership Application', {
 				frm.set_value('date_of_birth', '');
 			}
 		}
-	},
-
-	nationality: function(frm) {
-		// Ensure the query is set even when field changes or triggers
-		frm.set_query('nationality', function() {
-			return {
-				filters: {
-					'enabled': 1
-				}
-			};
-		});
 	}
 });
+
+function set_nationality_options(frm) {
+	frappe.db.get_doc('Module Settings', 'Module Settings').then(settings => {
+		if (settings && settings.country_configuration) {
+			let countries = settings.country_configuration
+				.filter(c => c.enabled)
+				.map(c => c.country_name);
+
+			// Add an empty option at the beginning
+			countries.unshift("");
+
+			frm.set_df_property('nationality', 'options', countries);
+			frm.refresh_field('nationality');
+		}
+	});
+}
 
 // Validation helper for top 3 priorities
 function validate_top_3_priorities(frm) {
@@ -87,12 +87,12 @@ function validate_top_3_priorities(frm) {
 		'priority_easy_delivery', 'priority_customer_service',
 		'priority_market_acceptance', 'priority_online_verification', 'priority_warranty'
 	];
-	
+
 	let count = 0;
 	priority_fields.forEach(field => {
 		if (frm.doc[field]) count++;
 	});
-	
+
 	if (count > 3) {
 		frappe.msgprint({
 			title: __('Validation Error'),
@@ -109,7 +109,7 @@ function validate_top_3_priorities(frm) {
 	'priority_easy_delivery', 'priority_customer_service',
 	'priority_market_acceptance', 'priority_online_verification', 'priority_warranty'
 ].forEach(field => {
-	frappe.ui.form.on('IGA Membership Application', field, function(frm) {
+	frappe.ui.form.on('IGA Membership Application', field, function (frm) {
 		validate_top_3_priorities(frm);
 	});
 });

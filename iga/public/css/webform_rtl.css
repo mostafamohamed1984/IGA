@@ -37,21 +37,37 @@
 
 /* Checkboxes and radio buttons alignment */
 .web-form-container .checkbox,
-.web-form-container .radio {
-    text-align: right;
+.web-form-container .radio,
+.form-group .checkbox,
+.frappe-control .checkbox {
+    text-align: right !important;
+    direction: rtl !important;
 }
 
 .web-form-container .checkbox label,
-.web-form-container .radio label {
-    padding-right: 20px;
-    padding-left: 0;
+.web-form-container .radio label,
+.form-group .checkbox label {
+    padding-right: 25px !important;
+    padding-left: 0 !important;
+    display: inline-block;
+    width: 100%;
 }
 
 .web-form-container input[type="checkbox"],
-.web-form-container input[type="radio"] {
-    float: right;
-    margin-right: 0;
-    margin-left: 10px;
+.web-form-container input[type="radio"],
+.form-group input[type="checkbox"],
+.frappe-control input[type="checkbox"] {
+    float: right !important;
+    margin-right: 0 !important;
+    margin-left: 10px !important;
+    position: relative;
+}
+
+/* Ensure checkbox container is RTL */
+.web-form-container [data-fieldtype="Check"],
+.form-group[data-fieldtype="Check"] {
+    direction: rtl !important;
+    text-align: right !important;
 }
 
 /* Section breaks and column breaks */

@@ -26,6 +26,15 @@ frappe.ui.form.on('IGA Membership Application', {
 		
 		// Add validation for top 3 priorities checkboxes
 		validate_top_3_priorities(frm);
+
+		// Filter nationality to only show enabled countries
+		frm.set_query('nationality', function() {
+			return {
+				filters: {
+					'enabled': 1
+				}
+			};
+		});
 	},
 	
 	
@@ -56,6 +65,17 @@ frappe.ui.form.on('IGA Membership Application', {
 				frm.set_value('date_of_birth', '');
 			}
 		}
+	},
+
+	nationality: function(frm) {
+		// Ensure the query is set even when field changes or triggers
+		frm.set_query('nationality', function() {
+			return {
+				filters: {
+					'enabled': 1
+				}
+			};
+		});
 	}
 });
 

@@ -10,6 +10,8 @@
         "country_code",
         "enabled"
     ],
+    "title_field": "country_name",
+    "search_fields": "country_name,country_code",
     "fields": [
         {
             "fieldname": "country_name",

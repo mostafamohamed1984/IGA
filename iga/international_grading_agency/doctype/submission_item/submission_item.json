@@ -1,0 +1,273 @@
+{
+    "actions": [],
+    "allow_rename": 0,
+    "autoname": "field:certificate_number",
+    "creation": "2026-05-17 00:00:00.000000",
+    "doctype": "DocType",
+    "editable_grid": 0,
+    "engine": "InnoDB",
+    "field_order": [
+        "section_identity",
+        "certificate_number",
+        "parent_submission",
+        "column_break_id",
+        "station",
+        "section_reference",
+        "item_reference",
+        "column_break_ref",
+        "declared_grade",
+        "declared_value",
+        "section_result",
+        "final_grade",
+        "result_type",
+        "column_break_res",
+        "holder_type",
+        "label_template",
+        "section_sub_results",
+        "designations",
+        "section_mint_errors",
+        "mint_errors",
+        "section_problems",
+        "problems",
+        "section_label",
+        "label_country_denom",
+        "label_year_line",
+        "column_break_lbl",
+        "label_series_line",
+        "nfc_uid",
+        "section_images",
+        "images_obverse",
+        "column_break_img",
+        "images_reverse",
+        "section_audit",
+        "graded_on",
+        "graded_by"
+    ],
+    "fields": [
+        {
+            "fieldname": "section_identity",
+            "fieldtype": "Section Break",
+            "label": "IDENTITY"
+        },
+        {
+            "fieldname": "certificate_number",
+            "fieldtype": "Data",
+            "label": "Certificate Number",
+            "reqd": 1,
+            "read_only": 1,
+            "unique": 1,
+            "in_list_view": 1,
+            "search_index": 1,
+            "description": "Auto-generated: {submission_no}-{seq}"
+        },
+        {
+            "fieldname": "parent_submission",
+            "fieldtype": "Link",
+            "label": "Submission",
+            "options": "Submission",
+            "reqd": 1,
+            "in_list_view": 1,
+            "search_index": 1
+        },
+        {
+            "fieldname": "column_break_id",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "station",
+            "fieldtype": "Select",
+            "label": "Current Station",
+            "options": "\nReceived\nGrading\nSlabbing\nQC\nImaging\nShipping\nCompleted",
+            "in_list_view": 1
+        },
+        {
+            "fieldname": "section_reference",
+            "fieldtype": "Section Break",
+            "label": "ITEM REFERENCE"
+        },
+        {
+            "fieldname": "item_reference",
+            "fieldtype": "Link",
+            "label": "Item Reference",
+            "options": "Item Reference Catalog",
+            "search_index": 1
+        },
+        {
+            "fieldname": "column_break_ref",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "declared_grade",
+            "fieldtype": "Data",
+            "label": "Declared Grade"
+        },
+        {
+            "fieldname": "declared_value",
+            "fieldtype": "Currency",
+            "label": "Declared Value (EGP)"
+        },
+        {
+            "fieldname": "section_result",
+            "fieldtype": "Section Break",
+            "label": "GRADING RESULT"
+        },
+        {
+            "fieldname": "final_grade",
+            "fieldtype": "Link",
+            "label": "Final Grade",
+            "options": "Grade Scale Master",
+            "in_list_view": 1
+        },
+        {
+            "fieldname": "result_type",
+            "fieldtype": "Select",
+            "label": "Result Type",
+            "options": "\nEncapsulated\nDetails\nNot Encapsulated\nRejected",
+            "in_list_view": 1
+        },
+        {
+            "fieldname": "column_break_res",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "holder_type",
+            "fieldtype": "Link",
+            "label": "Holder Type",
+            "options": "Holder Types Master"
+        },
+        {
+            "fieldname": "label_template",
+            "fieldtype": "Link",
+            "label": "Label Template",
+            "options": "Label Template Master"
+        },
+        {
+            "fieldname": "section_sub_results",
+            "fieldtype": "Section Break",
+            "label": "DESIGNATIONS"
+        },
+        {
+            "fieldname": "designations",
+            "fieldtype": "Table",
+            "label": "Designations",
+            "options": "Submission Item Designation"
+        },
+        {
+            "fieldname": "section_mint_errors",
+            "fieldtype": "Section Break",
+            "label": "MINT ERRORS"
+        },
+        {
+            "fieldname": "mint_errors",
+            "fieldtype": "Table",
+            "label": "Mint Errors",
+            "options": "Submission Item Mint Error"
+        },
+        {
+            "fieldname": "section_problems",
+            "fieldtype": "Section Break",
+            "label": "PROBLEMS"
+        },
+        {
+            "fieldname": "problems",
+            "fieldtype": "Table",
+            "label": "Problems",
+            "options": "Submission Item Problem"
+        },
+        {
+            "fieldname": "section_label",
+            "fieldtype": "Section Break",
+            "label": "LABEL DATA"
+        },
+        {
+            "fieldname": "label_country_denom",
+            "fieldtype": "Data",
+            "label": "Country / Denomination"
+        },
+        {
+            "fieldname": "label_year_line",
+            "fieldtype": "Data",
+            "label": "Year / Mint Mark"
+        },
+        {
+            "fieldname": "column_break_lbl",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "label_series_line",
+            "fieldtype": "Data",
+            "label": "Series / Variety / Strike"
+        },
+        {
+            "fieldname": "nfc_uid",
+            "fieldtype": "Data",
+            "label": "NFC UID",
+            "search_index": 1
+        },
+        {
+            "fieldname": "section_images",
+            "fieldtype": "Section Break",
+            "label": "IMAGES"
+        },
+        {
+            "fieldname": "images_obverse",
+            "fieldtype": "Attach Image",
+            "label": "Obverse Image"
+        },
+        {
+            "fieldname": "column_break_img",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "images_reverse",
+            "fieldtype": "Attach Image",
+            "label": "Reverse Image"
+        },
+        {
+            "fieldname": "section_audit",
+            "fieldtype": "Section Break",
+            "label": "AUDIT",
+            "collapsible": 1
+        },
+        {
+            "fieldname": "graded_on",
+            "fieldtype": "Datetime",
+            "label": "Graded On",
+            "read_only": 1
+        },
+        {
+            "fieldname": "graded_by",
+            "fieldtype": "Link",
+            "label": "Graded By",
+            "options": "User",
+            "read_only": 1
+        }
+    ],
+    "index_web_pages_for_search": 0,
+    "links": [],
+    "modified": "2026-05-17 00:00:00.000000",
+    "modified_by": "Administrator",
+    "module": "International Grading Agency",
+    "name": "Submission Item",
+    "naming_rule": "By fieldname",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "create": 1,
+            "delete": 0,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "System Manager",
+            "share": 1,
+            "write": 1
+        }
+    ],
+    "sort_field": "certificate_number",
+    "sort_order": "ASC",
+    "states": [],
+    "title_field": "certificate_number",
+    "track_changes": 1
+}

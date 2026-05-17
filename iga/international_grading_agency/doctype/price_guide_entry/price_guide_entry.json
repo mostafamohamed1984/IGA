@@ -1,0 +1,63 @@
+{
+    "actions": [],
+    "creation": "2026-05-17 00:00:00.000000",
+    "doctype": "DocType",
+    "editable_grid": 1,
+    "engine": "InnoDB",
+    "field_order": [
+        "grade",
+        "designation",
+        "column_break_1",
+        "market_value",
+        "currency"
+    ],
+    "fields": [
+        {
+            "fieldname": "grade",
+            "fieldtype": "Link",
+            "label": "Grade",
+            "options": "Grade Scale Master",
+            "reqd": 1,
+            "in_list_view": 1
+        },
+        {
+            "fieldname": "designation",
+            "fieldtype": "Link",
+            "label": "Designation",
+            "options": "Designation Master",
+            "in_list_view": 1
+        },
+        {
+            "fieldname": "column_break_1",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "market_value",
+            "fieldtype": "Currency",
+            "label": "Market Value",
+            "reqd": 1,
+            "in_list_view": 1
+        },
+        {
+            "default": "EGP",
+            "fieldname": "currency",
+            "fieldtype": "Link",
+            "label": "Currency",
+            "options": "Currency",
+            "reqd": 1
+        }
+    ],
+    "index_web_pages_for_search": 0,
+    "istable": 1,
+    "links": [],
+    "modified": "2026-05-17 00:00:00.000000",
+    "modified_by": "Administrator",
+    "module": "International Grading Agency",
+    "name": "Price Guide Entry",
+    "owner": "Administrator",
+    "permissions": [],
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "states": [],
+    "track_changes": 0
+}

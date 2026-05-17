@@ -1,0 +1,40 @@
+{
+    "actions": [],
+    "creation": "2026-05-17 00:00:00.000000",
+    "doctype": "DocType",
+    "editable_grid": 1,
+    "engine": "InnoDB",
+    "field_order": ["designation", "designation_code"],
+    "fields": [
+        {
+            "fieldname": "designation",
+            "fieldtype": "Link",
+            "label": "Designation",
+            "options": "Designation Master",
+            "reqd": 1,
+            "in_list_view": 1,
+            "search_index": 1
+        },
+        {
+            "fieldname": "designation_code",
+            "fieldtype": "Data",
+            "label": "Code",
+            "fetch_from": "designation.designation_code",
+            "read_only": 1,
+            "in_list_view": 1
+        }
+    ],
+    "index_web_pages_for_search": 0,
+    "istable": 1,
+    "links": [],
+    "modified": "2026-05-17 00:00:00.000000",
+    "modified_by": "Administrator",
+    "module": "International Grading Agency",
+    "name": "Submission Item Designation",
+    "owner": "Administrator",
+    "permissions": [],
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "states": [],
+    "track_changes": 0
+}

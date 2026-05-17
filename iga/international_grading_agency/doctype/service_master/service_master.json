@@ -1,0 +1,185 @@
+{
+    "actions": [],
+    "allow_rename": 1,
+    "autoname": "field:service_code",
+    "creation": "2026-05-17 00:00:00.000000",
+    "doctype": "DocType",
+    "editable_grid": 1,
+    "engine": "InnoDB",
+    "field_order": [
+        "service_code",
+        "service_name",
+        "column_break_1",
+        "category",
+        "service_tier",
+        "status",
+        "section_break_turnaround",
+        "turnaround_days_min",
+        "turnaround_days_max",
+        "column_break_2",
+        "max_declared_value",
+        "section_break_pricing",
+        "base_fee",
+        "member_discount_pct",
+        "column_break_3",
+        "is_add_on",
+        "add_on_surcharge_pct",
+        "section_break_bulk",
+        "is_bulk_eligible",
+        "bulk_min_items",
+        "bulk_discount_pct"
+    ],
+    "fields": [
+        {
+            "fieldname": "service_code",
+            "fieldtype": "Data",
+            "label": "Service Code",
+            "reqd": 1,
+            "unique": 1,
+            "in_list_view": 1
+        },
+        {
+            "fieldname": "service_name",
+            "fieldtype": "Data",
+            "label": "Service Name",
+            "reqd": 1,
+            "in_list_view": 1
+        },
+        {
+            "fieldname": "column_break_1",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "category",
+            "fieldtype": "Select",
+            "label": "Category",
+            "options": "\nModern\nEarly Modern\nMedieval\nMedals & Tokens\nHigh Value\nUnlimited",
+            "in_list_view": 1
+        },
+        {
+            "fieldname": "service_tier",
+            "fieldtype": "Select",
+            "label": "Service Tier",
+            "options": "\nValue\nStandard\nExpress\nPriority",
+            "in_list_view": 1
+        },
+        {
+            "default": "Active",
+            "fieldname": "status",
+            "fieldtype": "Select",
+            "label": "Status",
+            "options": "Active\nRetired",
+            "reqd": 1
+        },
+        {
+            "fieldname": "section_break_turnaround",
+            "fieldtype": "Section Break",
+            "label": "Turnaround"
+        },
+        {
+            "fieldname": "turnaround_days_min",
+            "fieldtype": "Int",
+            "label": "Turnaround Days (Min)"
+        },
+        {
+            "fieldname": "turnaround_days_max",
+            "fieldtype": "Int",
+            "label": "Turnaround Days (Max)"
+        },
+        {
+            "fieldname": "column_break_2",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "max_declared_value",
+            "fieldtype": "Currency",
+            "label": "Max Declared Value (EGP)",
+            "description": "Set to 0 for Unlimited"
+        },
+        {
+            "fieldname": "section_break_pricing",
+            "fieldtype": "Section Break",
+            "label": "Pricing"
+        },
+        {
+            "fieldname": "base_fee",
+            "fieldtype": "Currency",
+            "label": "Base Fee (EGP, excl. VAT)",
+            "reqd": 1
+        },
+        {
+            "fieldname": "member_discount_pct",
+            "fieldtype": "Percent",
+            "label": "Member Discount %"
+        },
+        {
+            "fieldname": "column_break_3",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "is_add_on",
+            "fieldtype": "Check",
+            "label": "Is Add-On Service",
+            "description": "Re-Grade, Cross-Over, Re-Slab, etc."
+        },
+        {
+            "depends_on": "eval:doc.is_add_on",
+            "fieldname": "add_on_surcharge_pct",
+            "fieldtype": "Percent",
+            "label": "Add-On Surcharge %"
+        },
+        {
+            "fieldname": "section_break_bulk",
+            "fieldtype": "Section Break",
+            "label": "Bulk Grading"
+        },
+        {
+            "fieldname": "is_bulk_eligible",
+            "fieldtype": "Check",
+            "label": "Eligible for Bulk Discount"
+        },
+        {
+            "depends_on": "eval:doc.is_bulk_eligible",
+            "fieldname": "bulk_min_items",
+            "fieldtype": "Int",
+            "label": "Minimum Items for Bulk"
+        },
+        {
+            "depends_on": "eval:doc.is_bulk_eligible",
+            "fieldname": "bulk_discount_pct",
+            "fieldtype": "Percent",
+            "label": "Bulk Discount %",
+            "default": "10"
+        }
+    ],
+    "index_web_pages_for_search": 0,
+    "links": [],
+    "modified": "2026-05-17 00:00:00.000000",
+    "modified_by": "Administrator",
+    "module": "International Grading Agency",
+    "name": "Service Master",
+    "naming_rule": "By fieldname",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "create": 1,
+            "delete": 1,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "System Manager",
+            "share": 1,
+            "write": 1
+        },
+        {
+            "read": 1,
+            "role": "All"
+        }
+    ],
+    "sort_field": "service_code",
+    "sort_order": "ASC",
+    "states": [],
+    "track_changes": 1
+}

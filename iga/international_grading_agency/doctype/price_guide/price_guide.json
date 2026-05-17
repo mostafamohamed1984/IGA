@@ -1,0 +1,154 @@
+{
+    "actions": [],
+    "allow_rename": 1,
+    "autoname": "field:reference_item",
+    "creation": "2026-05-17 00:00:00.000000",
+    "doctype": "DocType",
+    "editable_grid": 0,
+    "engine": "InnoDB",
+    "field_order": [
+        "reference_item",
+        "category",
+        "country",
+        "column_break_1",
+        "year",
+        "mint",
+        "variety",
+        "section_break_values",
+        "grade_values",
+        "section_break_meta",
+        "last_updated",
+        "updated_by",
+        "column_break_meta",
+        "status",
+        "section_break_notes",
+        "editorial_notes"
+    ],
+    "fields": [
+        {
+            "fieldname": "reference_item",
+            "fieldtype": "Link",
+            "label": "Reference Item",
+            "options": "Item Reference Catalog",
+            "reqd": 1,
+            "unique": 1,
+            "in_list_view": 1
+        },
+        {
+            "fieldname": "category",
+            "fieldtype": "Select",
+            "label": "Category",
+            "options": "Modern\nEarly Modern\nMedieval\nMedals & Tokens",
+            "in_list_view": 1
+        },
+        {
+            "fieldname": "country",
+            "fieldtype": "Link",
+            "label": "Country",
+            "options": "Country Master",
+            "in_list_view": 1
+        },
+        {
+            "fieldname": "column_break_1",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "year",
+            "fieldtype": "Int",
+            "label": "Year"
+        },
+        {
+            "fieldname": "mint",
+            "fieldtype": "Data",
+            "label": "Mint"
+        },
+        {
+            "fieldname": "variety",
+            "fieldtype": "Data",
+            "label": "Variety"
+        },
+        {
+            "fieldname": "section_break_values",
+            "fieldtype": "Section Break",
+            "label": "Grade Values"
+        },
+        {
+            "fieldname": "grade_values",
+            "fieldtype": "Table",
+            "label": "Values by Grade",
+            "options": "Price Guide Entry",
+            "reqd": 1
+        },
+        {
+            "fieldname": "section_break_meta",
+            "fieldtype": "Section Break",
+            "label": "Metadata"
+        },
+        {
+            "fieldname": "last_updated",
+            "fieldtype": "Datetime",
+            "label": "Last Updated",
+            "read_only": 1
+        },
+        {
+            "fieldname": "updated_by",
+            "fieldtype": "Link",
+            "label": "Updated By",
+            "options": "User",
+            "read_only": 1
+        },
+        {
+            "fieldname": "column_break_meta",
+            "fieldtype": "Column Break"
+        },
+        {
+            "default": "Draft",
+            "fieldname": "status",
+            "fieldtype": "Select",
+            "label": "Status",
+            "options": "Draft\nActive\nArchived",
+            "reqd": 1,
+            "in_list_view": 1
+        },
+        {
+            "fieldname": "section_break_notes",
+            "fieldtype": "Section Break",
+            "label": "Editorial Notes"
+        },
+        {
+            "fieldname": "editorial_notes",
+            "fieldtype": "Text Editor",
+            "label": "Editorial Notes"
+        }
+    ],
+    "index_web_pages_for_search": 1,
+    "links": [],
+    "modified": "2026-05-17 00:00:00.000000",
+    "modified_by": "Administrator",
+    "module": "International Grading Agency",
+    "name": "Price Guide",
+    "naming_rule": "By fieldname",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "create": 1,
+            "delete": 1,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "System Manager",
+            "share": 1,
+            "write": 1
+        },
+        {
+            "read": 1,
+            "role": "All"
+        }
+    ],
+    "sort_field": "last_updated",
+    "sort_order": "DESC",
+    "states": [],
+    "track_changes": 1
+}

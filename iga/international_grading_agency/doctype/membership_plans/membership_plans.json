@@ -1,0 +1,150 @@
+{
+    "actions": [],
+    "allow_rename": 1,
+    "autoname": "field:plan_code",
+    "creation": "2026-05-17 00:00:00.000000",
+    "doctype": "DocType",
+    "editable_grid": 1,
+    "engine": "InnoDB",
+    "field_order": [
+        "plan_code",
+        "plan_name",
+        "column_break_1",
+        "annual_fee",
+        "monthly_fee",
+        "status",
+        "section_break_benefits",
+        "included_credits",
+        "reward_multiplier",
+        "column_break_2",
+        "max_redeem_pct",
+        "registry_access_level",
+        "is_dealer_plan",
+        "section_break_features",
+        "feature_bullets"
+    ],
+    "fields": [
+        {
+            "fieldname": "plan_code",
+            "fieldtype": "Data",
+            "label": "Plan Code",
+            "reqd": 1,
+            "unique": 1,
+            "in_list_view": 1,
+            "description": "SILVER, GOLD, DIAMOND, or DEALER"
+        },
+        {
+            "fieldname": "plan_name",
+            "fieldtype": "Data",
+            "label": "Plan Name",
+            "reqd": 1,
+            "in_list_view": 1
+        },
+        {
+            "fieldname": "column_break_1",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "annual_fee",
+            "fieldtype": "Currency",
+            "label": "Annual Fee (EGP)",
+            "reqd": 1
+        },
+        {
+            "fieldname": "monthly_fee",
+            "fieldtype": "Currency",
+            "label": "Monthly Fee (EGP)"
+        },
+        {
+            "default": "Active",
+            "fieldname": "status",
+            "fieldtype": "Select",
+            "label": "Status",
+            "options": "Active\nRetired",
+            "reqd": 1,
+            "in_list_view": 1
+        },
+        {
+            "fieldname": "section_break_benefits",
+            "fieldtype": "Section Break",
+            "label": "Benefits & Entitlements"
+        },
+        {
+            "default": "0",
+            "fieldname": "included_credits",
+            "fieldtype": "Int",
+            "label": "Included Credits per Period"
+        },
+        {
+            "default": "1.0",
+            "fieldname": "reward_multiplier",
+            "fieldtype": "Float",
+            "label": "Reward Multiplier (pts per EGP)",
+            "precision": "2"
+        },
+        {
+            "fieldname": "column_break_2",
+            "fieldtype": "Column Break"
+        },
+        {
+            "default": "25",
+            "fieldname": "max_redeem_pct",
+            "fieldtype": "Percent",
+            "label": "Max Redeem % per Invoice"
+        },
+        {
+            "default": "Basic",
+            "fieldname": "registry_access_level",
+            "fieldtype": "Select",
+            "label": "Registry Access Level",
+            "options": "Basic\nStandard\nPremium"
+        },
+        {
+            "fieldname": "is_dealer_plan",
+            "fieldtype": "Check",
+            "label": "Dealer Program Plan",
+            "description": "Enables Authorized Dealer submission flow"
+        },
+        {
+            "fieldname": "section_break_features",
+            "fieldtype": "Section Break",
+            "label": "Marketing Feature Bullets"
+        },
+        {
+            "fieldname": "feature_bullets",
+            "fieldtype": "Text",
+            "label": "Feature Bullets",
+            "description": "One feature per line — used on website Membership page"
+        }
+    ],
+    "index_web_pages_for_search": 0,
+    "links": [],
+    "modified": "2026-05-17 00:00:00.000000",
+    "modified_by": "Administrator",
+    "module": "International Grading Agency",
+    "name": "Membership Plans",
+    "naming_rule": "By fieldname",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "create": 1,
+            "delete": 1,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "System Manager",
+            "share": 1,
+            "write": 1
+        },
+        {
+            "read": 1,
+            "role": "All"
+        }
+    ],
+    "sort_field": "plan_code",
+    "sort_order": "ASC",
+    "states": [],
+    "track_changes": 1
+}

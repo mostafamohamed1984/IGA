@@ -1,0 +1,86 @@
+{
+    "actions": [],
+    "creation": "2026-05-17 00:00:00.000000",
+    "doctype": "DocType",
+    "editable_grid": 1,
+    "engine": "InnoDB",
+    "field_order": [
+        "earn_rate",
+        "point_value",
+        "column_break_1",
+        "point_expiry_months",
+        "downgrade_grace_days",
+        "column_break_2",
+        "min_redeem_points"
+    ],
+    "fields": [
+        {
+            "default": "0.01",
+            "fieldname": "earn_rate",
+            "fieldtype": "Float",
+            "label": "Earn Rate (points per EGP paid)",
+            "reqd": 1,
+            "precision": "4"
+        },
+        {
+            "default": "0.10",
+            "fieldname": "point_value",
+            "fieldtype": "Float",
+            "label": "Point Value (EGP per point)",
+            "reqd": 1,
+            "precision": "4"
+        },
+        {
+            "fieldname": "column_break_1",
+            "fieldtype": "Column Break"
+        },
+        {
+            "default": "12",
+            "fieldname": "point_expiry_months",
+            "fieldtype": "Int",
+            "label": "Points Expiry (months)",
+            "reqd": 1
+        },
+        {
+            "default": "30",
+            "fieldname": "downgrade_grace_days",
+            "fieldtype": "Int",
+            "label": "Downgrade Grace Period (days)",
+            "reqd": 1
+        },
+        {
+            "fieldname": "column_break_2",
+            "fieldtype": "Column Break"
+        },
+        {
+            "default": "100",
+            "fieldname": "min_redeem_points",
+            "fieldtype": "Int",
+            "label": "Minimum Points to Redeem",
+            "reqd": 1
+        }
+    ],
+    "index_web_pages_for_search": 0,
+    "issingle": 1,
+    "links": [],
+    "modified": "2026-05-17 00:00:00.000000",
+    "modified_by": "Administrator",
+    "module": "International Grading Agency",
+    "name": "Membership Settings",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "create": 1,
+            "delete": 0,
+            "email": 1,
+            "read": 1,
+            "role": "System Manager",
+            "share": 1,
+            "write": 1
+        }
+    ],
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "states": [],
+    "track_changes": 1
+}

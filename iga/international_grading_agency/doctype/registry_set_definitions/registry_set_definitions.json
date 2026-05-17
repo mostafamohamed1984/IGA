@@ -1,0 +1,152 @@
+{
+    "actions": [],
+    "allow_rename": 1,
+    "autoname": "field:set_code",
+    "creation": "2026-05-17 00:00:00.000000",
+    "doctype": "DocType",
+    "editable_grid": 0,
+    "engine": "InnoDB",
+    "field_order": [
+        "set_code",
+        "set_name",
+        "column_break_1",
+        "category",
+        "is_proof_set",
+        "status",
+        "section_break_meta",
+        "slot_count",
+        "max_score",
+        "column_break_meta",
+        "description",
+        "section_break_slots",
+        "slots",
+        "section_break_scoring",
+        "scoring_rules"
+    ],
+    "fields": [
+        {
+            "fieldname": "set_code",
+            "fieldtype": "Data",
+            "label": "Set Code",
+            "reqd": 1,
+            "unique": 1,
+            "in_list_view": 1
+        },
+        {
+            "fieldname": "set_name",
+            "fieldtype": "Data",
+            "label": "Set Name",
+            "reqd": 1,
+            "in_list_view": 1
+        },
+        {
+            "fieldname": "column_break_1",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "category",
+            "fieldtype": "Link",
+            "label": "Registry Category",
+            "options": "Registry Categories",
+            "reqd": 1,
+            "in_list_view": 1
+        },
+        {
+            "fieldname": "is_proof_set",
+            "fieldtype": "Check",
+            "label": "Proof Set"
+        },
+        {
+            "default": "Draft",
+            "fieldname": "status",
+            "fieldtype": "Select",
+            "label": "Status",
+            "options": "Active\nDraft\nRetired",
+            "reqd": 1,
+            "in_list_view": 1
+        },
+        {
+            "fieldname": "section_break_meta",
+            "fieldtype": "Section Break",
+            "label": "Set Properties"
+        },
+        {
+            "fieldname": "slot_count",
+            "fieldtype": "Int",
+            "label": "Slot Count",
+            "read_only": 1,
+            "description": "Auto-computed from Slots table"
+        },
+        {
+            "fieldname": "max_score",
+            "fieldtype": "Float",
+            "label": "Maximum Possible Score",
+            "read_only": 1,
+            "precision": "2"
+        },
+        {
+            "fieldname": "column_break_meta",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "description",
+            "fieldtype": "Text",
+            "label": "Description"
+        },
+        {
+            "fieldname": "section_break_slots",
+            "fieldtype": "Section Break",
+            "label": "SLOTS"
+        },
+        {
+            "fieldname": "slots",
+            "fieldtype": "Table",
+            "label": "Slots",
+            "options": "Registry Set Slots",
+            "reqd": 1
+        },
+        {
+            "fieldname": "section_break_scoring",
+            "fieldtype": "Section Break",
+            "label": "Scoring Rules (JSON)",
+            "collapsible": 1
+        },
+        {
+            "fieldname": "scoring_rules",
+            "fieldtype": "Code",
+            "label": "Scoring Rules",
+            "options": "JSON",
+            "description": "JSON defining how slot grades are aggregated into a set score"
+        }
+    ],
+    "index_web_pages_for_search": 0,
+    "links": [],
+    "modified": "2026-05-17 00:00:00.000000",
+    "modified_by": "Administrator",
+    "module": "International Grading Agency",
+    "name": "Registry Set Definitions",
+    "naming_rule": "By fieldname",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "create": 1,
+            "delete": 1,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "System Manager",
+            "share": 1,
+            "write": 1
+        },
+        {
+            "read": 1,
+            "role": "All"
+        }
+    ],
+    "sort_field": "set_code",
+    "sort_order": "ASC",
+    "states": [],
+    "track_changes": 1
+}

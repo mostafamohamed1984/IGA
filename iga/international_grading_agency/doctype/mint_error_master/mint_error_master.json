@@ -1,0 +1,105 @@
+{
+    "actions": [],
+    "allow_rename": 1,
+    "autoname": "field:error_code",
+    "creation": "2026-05-17 00:00:00.000000",
+    "doctype": "DocType",
+    "editable_grid": 1,
+    "engine": "InnoDB",
+    "field_order": [
+        "error_code",
+        "error_name",
+        "column_break_1",
+        "severity_typical",
+        "status",
+        "section_break_desc",
+        "description",
+        "column_break_img",
+        "image"
+    ],
+    "fields": [
+        {
+            "fieldname": "error_code",
+            "fieldtype": "Data",
+            "label": "Error Code",
+            "reqd": 1,
+            "unique": 1,
+            "in_list_view": 1
+        },
+        {
+            "fieldname": "error_name",
+            "fieldtype": "Data",
+            "label": "Error Name",
+            "reqd": 1,
+            "in_list_view": 1
+        },
+        {
+            "fieldname": "column_break_1",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "severity_typical",
+            "fieldtype": "Select",
+            "label": "Typical Severity",
+            "options": "Minor\nModerate\nMajor",
+            "in_list_view": 1
+        },
+        {
+            "default": "Active",
+            "fieldname": "status",
+            "fieldtype": "Select",
+            "label": "Status",
+            "options": "Active\nRetired",
+            "reqd": 1
+        },
+        {
+            "fieldname": "section_break_desc",
+            "fieldtype": "Section Break",
+            "label": "Details"
+        },
+        {
+            "fieldname": "description",
+            "fieldtype": "Text",
+            "label": "Description"
+        },
+        {
+            "fieldname": "column_break_img",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "image",
+            "fieldtype": "Attach Image",
+            "label": "Reference Image"
+        }
+    ],
+    "index_web_pages_for_search": 0,
+    "links": [],
+    "modified": "2026-05-17 00:00:00.000000",
+    "modified_by": "Administrator",
+    "module": "International Grading Agency",
+    "name": "Mint Error Master",
+    "naming_rule": "By fieldname",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "create": 1,
+            "delete": 1,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "System Manager",
+            "share": 1,
+            "write": 1
+        },
+        {
+            "read": 1,
+            "role": "All"
+        }
+    ],
+    "sort_field": "error_code",
+    "sort_order": "ASC",
+    "states": [],
+    "track_changes": 1
+}

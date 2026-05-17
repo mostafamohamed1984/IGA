@@ -1,0 +1,101 @@
+{
+    "actions": [],
+    "allow_rename": 1,
+    "autoname": "field:problem_code",
+    "creation": "2026-05-17 00:00:00.000000",
+    "doctype": "DocType",
+    "editable_grid": 1,
+    "engine": "InnoDB",
+    "field_order": [
+        "problem_code",
+        "problem_name",
+        "column_break_1",
+        "severity",
+        "results_in_no_grade",
+        "status",
+        "section_break_desc",
+        "description"
+    ],
+    "fields": [
+        {
+            "fieldname": "problem_code",
+            "fieldtype": "Data",
+            "label": "Problem Code",
+            "reqd": 1,
+            "unique": 1,
+            "in_list_view": 1
+        },
+        {
+            "fieldname": "problem_name",
+            "fieldtype": "Data",
+            "label": "Problem Name",
+            "reqd": 1,
+            "in_list_view": 1
+        },
+        {
+            "fieldname": "column_break_1",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "severity",
+            "fieldtype": "Select",
+            "label": "Severity",
+            "options": "Minor\nModerate\nMajor\nDisqualifying",
+            "in_list_view": 1
+        },
+        {
+            "fieldname": "results_in_no_grade",
+            "fieldtype": "Check",
+            "label": "Results in No Numeric Grade",
+            "description": "When checked, Result Type will be 'Details' (qualifying problem on label, no numeric grade)"
+        },
+        {
+            "default": "Active",
+            "fieldname": "status",
+            "fieldtype": "Select",
+            "label": "Status",
+            "options": "Active\nRetired",
+            "reqd": 1
+        },
+        {
+            "fieldname": "section_break_desc",
+            "fieldtype": "Section Break",
+            "label": "Description"
+        },
+        {
+            "fieldname": "description",
+            "fieldtype": "Text",
+            "label": "Description"
+        }
+    ],
+    "index_web_pages_for_search": 0,
+    "links": [],
+    "modified": "2026-05-17 00:00:00.000000",
+    "modified_by": "Administrator",
+    "module": "International Grading Agency",
+    "name": "Problem Definitions",
+    "naming_rule": "By fieldname",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "create": 1,
+            "delete": 1,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "System Manager",
+            "share": 1,
+            "write": 1
+        },
+        {
+            "read": 1,
+            "role": "All"
+        }
+    ],
+    "sort_field": "problem_code",
+    "sort_order": "ASC",
+    "states": [],
+    "track_changes": 1
+}

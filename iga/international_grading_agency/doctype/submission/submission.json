@@ -1,0 +1,440 @@
+{
+    "actions": [],
+    "allow_rename": 0,
+    "autoname": "field:submission_no",
+    "creation": "2026-05-17 00:00:00.000000",
+    "doctype": "DocType",
+    "editable_grid": 0,
+    "engine": "InnoDB",
+    "field_order": [
+        "section_identity",
+        "submission_no",
+        "customer",
+        "column_break_id",
+        "subscription",
+        "creation_source",
+        "section_service",
+        "service_tier",
+        "category",
+        "column_break_svc",
+        "is_bulk",
+        "uses_credit",
+        "section_items",
+        "item_count",
+        "declared_value_total",
+        "section_workflow",
+        "status",
+        "internal_review_status",
+        "column_break_wf",
+        "tracking_id",
+        "result_type_summary",
+        "section_dates",
+        "received_on",
+        "completed_on",
+        "column_break_dates",
+        "submission_approved_on",
+        "submission_approved_by",
+        "section_shipping",
+        "incoming_carrier",
+        "incoming_tracking",
+        "column_break_ship",
+        "return_carrier",
+        "return_tracking",
+        "shipped_on",
+        "section_billing",
+        "subtotal",
+        "discount_pct",
+        "column_break_bill",
+        "vat_amount",
+        "grand_total",
+        "section_invoices",
+        "proforma_invoice",
+        "sales_invoice",
+        "column_break_inv",
+        "credits_used",
+        "rewards_awarded",
+        "down_payment_amount",
+        "section_dealer",
+        "submission_source",
+        "dealer",
+        "column_break_dlr",
+        "submitted_on_behalf_of",
+        "dealer_reference_no",
+        "received_by",
+        "section_audit",
+        "internal_notes"
+    ],
+    "fields": [
+        {
+            "fieldname": "section_identity",
+            "fieldtype": "Section Break",
+            "label": "IDENTITY"
+        },
+        {
+            "fieldname": "submission_no",
+            "fieldtype": "Data",
+            "label": "Submission No.",
+            "reqd": 1,
+            "read_only": 1,
+            "unique": 1,
+            "in_list_view": 1,
+            "search_index": 1
+        },
+        {
+            "fieldname": "customer",
+            "fieldtype": "Link",
+            "label": "Customer",
+            "options": "Customer",
+            "reqd": 1,
+            "in_list_view": 1,
+            "search_index": 1
+        },
+        {
+            "fieldname": "column_break_id",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "subscription",
+            "fieldtype": "Link",
+            "label": "Membership Subscription",
+            "options": "Membership Subscriptions",
+            "reqd": 1,
+            "read_only": 1
+        },
+        {
+            "fieldname": "creation_source",
+            "fieldtype": "Select",
+            "label": "Creation Source",
+            "options": "Website\nMobile\nAdmin\nAPI\nMigration",
+            "default": "Admin",
+            "reqd": 1,
+            "read_only": 1
+        },
+        {
+            "fieldname": "section_service",
+            "fieldtype": "Section Break",
+            "label": "SERVICE"
+        },
+        {
+            "fieldname": "service_tier",
+            "fieldtype": "Link",
+            "label": "Service Tier",
+            "options": "Service Master",
+            "reqd": 1,
+            "in_list_view": 1
+        },
+        {
+            "fieldname": "category",
+            "fieldtype": "Select",
+            "label": "Category",
+            "options": "\nModern\nEarly Modern\nMedieval\nMedals & Tokens\nHigh Value\nUnlimited",
+            "reqd": 1,
+            "in_list_view": 1
+        },
+        {
+            "fieldname": "column_break_svc",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "is_bulk",
+            "fieldtype": "Check",
+            "label": "Bulk Submission"
+        },
+        {
+            "fieldname": "uses_credit",
+            "fieldtype": "Check",
+            "label": "Pay with Subscription Credit"
+        },
+        {
+            "fieldname": "section_items",
+            "fieldtype": "Section Break",
+            "label": "ITEMS"
+        },
+        {
+            "fieldname": "item_count",
+            "fieldtype": "Int",
+            "label": "Item Count",
+            "read_only": 1
+        },
+        {
+            "fieldname": "declared_value_total",
+            "fieldtype": "Currency",
+            "label": "Declared Value Total (EGP)",
+            "read_only": 1
+        },
+        {
+            "fieldname": "section_workflow",
+            "fieldtype": "Section Break",
+            "label": "WORKFLOW"
+        },
+        {
+            "default": "Created",
+            "fieldname": "status",
+            "fieldtype": "Select",
+            "label": "Status (Customer-Visible)",
+            "options": "Created\nReceived\nGrading\nSlabbing\nQC\nImaging\nShipped\nReady for Pickup\nCompleted\nOn Hold\nCancelled",
+            "reqd": 1,
+            "in_list_view": 1
+        },
+        {
+            "default": "Pending Review",
+            "fieldname": "internal_review_status",
+            "fieldtype": "Select",
+            "label": "Internal Review Status",
+            "options": "Pending Review\nApproved\nReturned\nCancelled",
+            "reqd": 1
+        },
+        {
+            "fieldname": "column_break_wf",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "tracking_id",
+            "fieldtype": "Data",
+            "label": "Tracking ID",
+            "read_only": 1,
+            "unique": 1,
+            "search_index": 1
+        },
+        {
+            "fieldname": "result_type_summary",
+            "fieldtype": "Select",
+            "label": "Result Type (Submission-Level)",
+            "options": "\nEncapsulated\nNot Encapsulated\nDetails\nRejected\nMixed"
+        },
+        {
+            "fieldname": "section_dates",
+            "fieldtype": "Section Break",
+            "label": "DATES"
+        },
+        {
+            "fieldname": "received_on",
+            "fieldtype": "Date",
+            "label": "Received On",
+            "read_only": 1
+        },
+        {
+            "fieldname": "completed_on",
+            "fieldtype": "Date",
+            "label": "Completed On",
+            "read_only": 1
+        },
+        {
+            "fieldname": "column_break_dates",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "submission_approved_on",
+            "fieldtype": "Datetime",
+            "label": "Approved On",
+            "read_only": 1
+        },
+        {
+            "fieldname": "submission_approved_by",
+            "fieldtype": "Link",
+            "label": "Approved By",
+            "options": "User",
+            "read_only": 1
+        },
+        {
+            "fieldname": "section_shipping",
+            "fieldtype": "Section Break",
+            "label": "SHIPPING"
+        },
+        {
+            "fieldname": "incoming_carrier",
+            "fieldtype": "Data",
+            "label": "Incoming Carrier"
+        },
+        {
+            "fieldname": "incoming_tracking",
+            "fieldtype": "Data",
+            "label": "Incoming Tracking No."
+        },
+        {
+            "fieldname": "column_break_ship",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "return_carrier",
+            "fieldtype": "Data",
+            "label": "Return Carrier"
+        },
+        {
+            "fieldname": "return_tracking",
+            "fieldtype": "Data",
+            "label": "Return Tracking No.",
+            "read_only": 1
+        },
+        {
+            "fieldname": "shipped_on",
+            "fieldtype": "Date",
+            "label": "Shipped On",
+            "read_only": 1
+        },
+        {
+            "fieldname": "section_billing",
+            "fieldtype": "Section Break",
+            "label": "BILLING"
+        },
+        {
+            "fieldname": "subtotal",
+            "fieldtype": "Currency",
+            "label": "Subtotal (EGP)",
+            "read_only": 1
+        },
+        {
+            "fieldname": "discount_pct",
+            "fieldtype": "Percent",
+            "label": "Discount %",
+            "read_only": 1
+        },
+        {
+            "fieldname": "column_break_bill",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "vat_amount",
+            "fieldtype": "Currency",
+            "label": "VAT Amount (EGP)",
+            "read_only": 1
+        },
+        {
+            "fieldname": "grand_total",
+            "fieldtype": "Currency",
+            "label": "Grand Total (EGP)",
+            "read_only": 1
+        },
+        {
+            "fieldname": "section_invoices",
+            "fieldtype": "Section Break",
+            "label": "INVOICES"
+        },
+        {
+            "fieldname": "proforma_invoice",
+            "fieldtype": "Link",
+            "label": "Proforma Invoice",
+            "options": "Sales Invoice",
+            "read_only": 1
+        },
+        {
+            "fieldname": "sales_invoice",
+            "fieldtype": "Link",
+            "label": "Sales Invoice",
+            "options": "Sales Invoice",
+            "read_only": 1
+        },
+        {
+            "fieldname": "column_break_inv",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "credits_used",
+            "fieldtype": "Int",
+            "label": "Credits Used",
+            "read_only": 1
+        },
+        {
+            "fieldname": "rewards_awarded",
+            "fieldtype": "Int",
+            "label": "Rewards Awarded",
+            "read_only": 1
+        },
+        {
+            "fieldname": "down_payment_amount",
+            "fieldtype": "Currency",
+            "label": "Down Payment (EGP)",
+            "read_only": 1
+        },
+        {
+            "fieldname": "section_dealer",
+            "fieldtype": "Section Break",
+            "label": "AUTHORIZED DEALER FLOW"
+        },
+        {
+            "default": "Customer",
+            "fieldname": "submission_source",
+            "fieldtype": "Select",
+            "label": "Submission Source",
+            "options": "Customer\nDealer\nWalk-in\nPartner\nMigration",
+            "reqd": 1
+        },
+        {
+            "depends_on": "eval:doc.submission_source=='Dealer'",
+            "fieldname": "dealer",
+            "fieldtype": "Link",
+            "label": "Dealer",
+            "options": "Customer"
+        },
+        {
+            "fieldname": "column_break_dlr",
+            "fieldtype": "Column Break"
+        },
+        {
+            "depends_on": "eval:doc.submission_source=='Dealer'",
+            "fieldname": "submitted_on_behalf_of",
+            "fieldtype": "Link",
+            "label": "Submitted on Behalf Of",
+            "options": "Customer"
+        },
+        {
+            "depends_on": "eval:doc.submission_source=='Dealer'",
+            "fieldname": "dealer_reference_no",
+            "fieldtype": "Data",
+            "label": "Dealer Reference No.",
+            "search_index": 1
+        },
+        {
+            "fieldname": "received_by",
+            "fieldtype": "Link",
+            "label": "Received By",
+            "options": "User",
+            "read_only": 1
+        },
+        {
+            "fieldname": "section_audit",
+            "fieldtype": "Section Break",
+            "label": "AUDIT",
+            "collapsible": 1
+        },
+        {
+            "fieldname": "internal_notes",
+            "fieldtype": "Text",
+            "label": "Internal Notes",
+            "description": "Not exposed to customer or public APIs"
+        }
+    ],
+    "index_web_pages_for_search": 0,
+    "links": [
+        {
+            "group": "Items",
+            "link_doctype": "Submission Item",
+            "link_fieldname": "parent_submission"
+        }
+    ],
+    "modified": "2026-05-17 00:00:00.000000",
+    "modified_by": "Administrator",
+    "module": "International Grading Agency",
+    "name": "Submission",
+    "naming_rule": "By fieldname",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "create": 1,
+            "delete": 0,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "System Manager",
+            "share": 1,
+            "write": 1
+        }
+    ],
+    "sort_field": "creation",
+    "sort_order": "DESC",
+    "states": [],
+    "title_field": "submission_no",
+    "track_changes": 1
+}

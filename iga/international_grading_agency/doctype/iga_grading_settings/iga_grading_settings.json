@@ -1,0 +1,115 @@
+{
+    "actions": [],
+    "creation": "2026-05-17 00:00:00.000000",
+    "doctype": "DocType",
+    "editable_grid": 1,
+    "engine": "InnoDB",
+    "field_order": [
+        "section_components",
+        "scoring_components",
+        "section_grade_map",
+        "grade_map",
+        "column_break_gm",
+        "penalty_rules",
+        "section_system",
+        "vat_rate",
+        "certificate_prefix",
+        "column_break_sys",
+        "tracking_id_prefix",
+        "bulk_min_items_default"
+    ],
+    "fields": [
+        {
+            "fieldname": "section_components",
+            "fieldtype": "Section Break",
+            "label": "Grading Scoring Components"
+        },
+        {
+            "fieldname": "scoring_components",
+            "fieldtype": "Table",
+            "label": "Scoring Components",
+            "options": "Grading Scoring Component",
+            "description": "Six approved scoring components with weights for Uncirculated and Circulated coins"
+        },
+        {
+            "fieldname": "section_grade_map",
+            "fieldtype": "Section Break",
+            "label": "Grade Map & Penalty Rules"
+        },
+        {
+            "fieldname": "grade_map",
+            "fieldtype": "Code",
+            "label": "Grade Map (JSON)",
+            "options": "JSON",
+            "description": "Maps score ranges to numeric grade (1–70)"
+        },
+        {
+            "fieldname": "column_break_gm",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "penalty_rules",
+            "fieldtype": "Code",
+            "label": "Penalty Rules (JSON)",
+            "options": "JSON",
+            "description": "Deductions applied for problems or mint errors"
+        },
+        {
+            "fieldname": "section_system",
+            "fieldtype": "Section Break",
+            "label": "System Settings"
+        },
+        {
+            "default": "14",
+            "fieldname": "vat_rate",
+            "fieldtype": "Percent",
+            "label": "VAT Rate %",
+            "reqd": 1
+        },
+        {
+            "default": "IGA",
+            "fieldname": "certificate_prefix",
+            "fieldtype": "Data",
+            "label": "Certificate Number Prefix"
+        },
+        {
+            "fieldname": "column_break_sys",
+            "fieldtype": "Column Break"
+        },
+        {
+            "default": "TRK",
+            "fieldname": "tracking_id_prefix",
+            "fieldtype": "Data",
+            "label": "Tracking ID Prefix"
+        },
+        {
+            "default": "10",
+            "fieldname": "bulk_min_items_default",
+            "fieldtype": "Int",
+            "label": "Default Bulk Minimum Items"
+        }
+    ],
+    "index_web_pages_for_search": 0,
+    "issingle": 1,
+    "links": [],
+    "modified": "2026-05-17 00:00:00.000000",
+    "modified_by": "Administrator",
+    "module": "International Grading Agency",
+    "name": "IGA Grading Settings",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "create": 1,
+            "delete": 0,
+            "email": 1,
+            "read": 1,
+            "role": "System Manager",
+            "share": 1,
+            "write": 1
+        }
+    ],
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "states": [],
+    "track_changes": 1
+}

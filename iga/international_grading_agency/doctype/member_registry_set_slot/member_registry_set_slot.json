@@ -1,0 +1,77 @@
+{
+    "actions": [],
+    "creation": "2026-05-17 00:00:00.000000",
+    "doctype": "DocType",
+    "editable_grid": 1,
+    "engine": "InnoDB",
+    "field_order": [
+        "slot_no",
+        "slot_definition",
+        "item_reference",
+        "column_break_1",
+        "certificate_number",
+        "submission_item",
+        "is_filled"
+    ],
+    "fields": [
+        {
+            "fieldname": "slot_no",
+            "fieldtype": "Int",
+            "label": "Slot No.",
+            "reqd": 1,
+            "in_list_view": 1,
+            "read_only": 1
+        },
+        {
+            "fieldname": "slot_definition",
+            "fieldtype": "Data",
+            "label": "Slot Definition Ref.",
+            "read_only": 1
+        },
+        {
+            "fieldname": "item_reference",
+            "fieldtype": "Link",
+            "label": "Required Item",
+            "options": "Item Reference Catalog",
+            "read_only": 1,
+            "in_list_view": 1
+        },
+        {
+            "fieldname": "column_break_1",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "certificate_number",
+            "fieldtype": "Data",
+            "label": "Certificate No.",
+            "in_list_view": 1,
+            "search_index": 1
+        },
+        {
+            "fieldname": "submission_item",
+            "fieldtype": "Link",
+            "label": "Submission Item",
+            "options": "Submission Item"
+        },
+        {
+            "fieldname": "is_filled",
+            "fieldtype": "Check",
+            "label": "Filled",
+            "read_only": 1,
+            "in_list_view": 1
+        }
+    ],
+    "index_web_pages_for_search": 0,
+    "istable": 1,
+    "links": [],
+    "modified": "2026-05-17 00:00:00.000000",
+    "modified_by": "Administrator",
+    "module": "International Grading Agency",
+    "name": "Member Registry Set Slot",
+    "owner": "Administrator",
+    "permissions": [],
+    "sort_field": "slot_no",
+    "sort_order": "ASC",
+    "states": [],
+    "track_changes": 0
+}

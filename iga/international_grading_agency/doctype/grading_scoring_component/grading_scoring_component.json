@@ -1,0 +1,56 @@
+{
+    "actions": [],
+    "creation": "2026-05-17 00:00:00.000000",
+    "doctype": "DocType",
+    "editable_grid": 1,
+    "engine": "InnoDB",
+    "field_order": [
+        "component_name",
+        "weight_unc",
+        "weight_circulated",
+        "description"
+    ],
+    "fields": [
+        {
+            "fieldname": "component_name",
+            "fieldtype": "Data",
+            "label": "Component Name",
+            "reqd": 1,
+            "in_list_view": 1
+        },
+        {
+            "fieldname": "weight_unc",
+            "fieldtype": "Float",
+            "label": "Weight (Uncirculated)",
+            "reqd": 1,
+            "in_list_view": 1,
+            "precision": "4"
+        },
+        {
+            "fieldname": "weight_circulated",
+            "fieldtype": "Float",
+            "label": "Weight (Circulated)",
+            "reqd": 1,
+            "in_list_view": 1,
+            "precision": "4"
+        },
+        {
+            "fieldname": "description",
+            "fieldtype": "Small Text",
+            "label": "Description"
+        }
+    ],
+    "index_web_pages_for_search": 0,
+    "istable": 1,
+    "links": [],
+    "modified": "2026-05-17 00:00:00.000000",
+    "modified_by": "Administrator",
+    "module": "International Grading Agency",
+    "name": "Grading Scoring Component",
+    "owner": "Administrator",
+    "permissions": [],
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "states": [],
+    "track_changes": 0
+}

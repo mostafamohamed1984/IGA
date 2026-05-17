@@ -1,0 +1,151 @@
+{
+    "actions": [],
+    "allow_rename": 0,
+    "autoname": "IGA-REG-.YYYY.-.#####",
+    "creation": "2026-05-17 00:00:00.000000",
+    "doctype": "DocType",
+    "editable_grid": 0,
+    "engine": "InnoDB",
+    "field_order": [
+        "member_set_no",
+        "member",
+        "column_break_1",
+        "set_definition",
+        "set_name",
+        "status",
+        "section_break_scores",
+        "score",
+        "rank",
+        "column_break_sc",
+        "completion_pct",
+        "last_scored_on",
+        "is_public",
+        "section_break_slots",
+        "slots"
+    ],
+    "fields": [
+        {
+            "fieldname": "member_set_no",
+            "fieldtype": "Data",
+            "label": "Member Set No.",
+            "read_only": 1,
+            "unique": 1,
+            "in_list_view": 1
+        },
+        {
+            "fieldname": "member",
+            "fieldtype": "Link",
+            "label": "Member",
+            "options": "Customer",
+            "reqd": 1,
+            "in_list_view": 1,
+            "search_index": 1
+        },
+        {
+            "fieldname": "column_break_1",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "set_definition",
+            "fieldtype": "Link",
+            "label": "Set Definition",
+            "options": "Registry Set Definitions",
+            "reqd": 1,
+            "in_list_view": 1
+        },
+        {
+            "fieldname": "set_name",
+            "fieldtype": "Data",
+            "label": "Set Name (Member)",
+            "description": "Member-supplied display name for this set"
+        },
+        {
+            "default": "Draft",
+            "fieldname": "status",
+            "fieldtype": "Select",
+            "label": "Status",
+            "options": "Draft\nActive\nRetired",
+            "reqd": 1,
+            "in_list_view": 1
+        },
+        {
+            "fieldname": "section_break_scores",
+            "fieldtype": "Section Break",
+            "label": "SCORE & RANK"
+        },
+        {
+            "default": "0",
+            "fieldname": "score",
+            "fieldtype": "Float",
+            "label": "Current Score",
+            "read_only": 1,
+            "precision": "2"
+        },
+        {
+            "fieldname": "rank",
+            "fieldtype": "Int",
+            "label": "Registry Rank",
+            "read_only": 1
+        },
+        {
+            "fieldname": "column_break_sc",
+            "fieldtype": "Column Break"
+        },
+        {
+            "default": "0",
+            "fieldname": "completion_pct",
+            "fieldtype": "Percent",
+            "label": "Completion %",
+            "read_only": 1
+        },
+        {
+            "fieldname": "last_scored_on",
+            "fieldtype": "Datetime",
+            "label": "Last Scored On",
+            "read_only": 1
+        },
+        {
+            "default": "0",
+            "fieldname": "is_public",
+            "fieldtype": "Check",
+            "label": "Publicly Visible on Leaderboard"
+        },
+        {
+            "fieldname": "section_break_slots",
+            "fieldtype": "Section Break",
+            "label": "SLOTS"
+        },
+        {
+            "fieldname": "slots",
+            "fieldtype": "Table",
+            "label": "Slots",
+            "options": "Member Registry Set Slot"
+        }
+    ],
+    "index_web_pages_for_search": 0,
+    "links": [],
+    "modified": "2026-05-17 00:00:00.000000",
+    "modified_by": "Administrator",
+    "module": "International Grading Agency",
+    "name": "Member Registry Sets",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "create": 1,
+            "delete": 0,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "System Manager",
+            "share": 1,
+            "write": 1
+        }
+    ],
+    "sort_field": "score",
+    "sort_order": "DESC",
+    "states": [],
+    "title_field": "member_set_no",
+    "track_changes": 1
+}

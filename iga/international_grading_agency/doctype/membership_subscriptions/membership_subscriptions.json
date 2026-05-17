@@ -1,0 +1,167 @@
+{
+    "actions": [],
+    "allow_rename": 0,
+    "autoname": "IGA-SUB-.YYYY.-.#####",
+    "creation": "2026-05-17 00:00:00.000000",
+    "doctype": "DocType",
+    "editable_grid": 1,
+    "engine": "InnoDB",
+    "field_order": [
+        "subscription_no",
+        "customer",
+        "column_break_1",
+        "plan",
+        "billing_period",
+        "status",
+        "section_break_dates",
+        "start_date",
+        "end_date",
+        "column_break_dates",
+        "auto_renew",
+        "cancelled_on",
+        "section_break_credits",
+        "credits_remaining",
+        "column_break_credits",
+        "membership_invoice",
+        "section_break_cancel",
+        "cancellation_reason"
+    ],
+    "fields": [
+        {
+            "fieldname": "subscription_no",
+            "fieldtype": "Data",
+            "label": "Subscription No.",
+            "read_only": 1,
+            "unique": 1,
+            "in_list_view": 1
+        },
+        {
+            "fieldname": "customer",
+            "fieldtype": "Link",
+            "label": "Customer",
+            "options": "Customer",
+            "reqd": 1,
+            "in_list_view": 1,
+            "search_index": 1
+        },
+        {
+            "fieldname": "column_break_1",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "plan",
+            "fieldtype": "Link",
+            "label": "Membership Plan",
+            "options": "Membership Plans",
+            "reqd": 1,
+            "in_list_view": 1
+        },
+        {
+            "fieldname": "billing_period",
+            "fieldtype": "Select",
+            "label": "Billing Period",
+            "options": "Monthly\nAnnual",
+            "default": "Annual",
+            "reqd": 1
+        },
+        {
+            "default": "Pending",
+            "fieldname": "status",
+            "fieldtype": "Select",
+            "label": "Status",
+            "options": "Pending\nActive\nExpired\nCancelled",
+            "reqd": 1,
+            "in_list_view": 1
+        },
+        {
+            "fieldname": "section_break_dates",
+            "fieldtype": "Section Break",
+            "label": "Dates"
+        },
+        {
+            "fieldname": "start_date",
+            "fieldtype": "Date",
+            "label": "Start Date",
+            "reqd": 1
+        },
+        {
+            "fieldname": "end_date",
+            "fieldtype": "Date",
+            "label": "End Date",
+            "reqd": 1
+        },
+        {
+            "fieldname": "column_break_dates",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "auto_renew",
+            "fieldtype": "Check",
+            "label": "Auto-Renew",
+            "default": "1"
+        },
+        {
+            "fieldname": "cancelled_on",
+            "fieldtype": "Date",
+            "label": "Cancelled On",
+            "read_only": 1
+        },
+        {
+            "fieldname": "section_break_credits",
+            "fieldtype": "Section Break",
+            "label": "Credits & Billing"
+        },
+        {
+            "default": "0",
+            "fieldname": "credits_remaining",
+            "fieldtype": "Int",
+            "label": "Credits Remaining"
+        },
+        {
+            "fieldname": "column_break_credits",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "membership_invoice",
+            "fieldtype": "Link",
+            "label": "Membership Invoice",
+            "options": "Sales Invoice",
+            "read_only": 1
+        },
+        {
+            "fieldname": "section_break_cancel",
+            "fieldtype": "Section Break",
+            "label": "Cancellation"
+        },
+        {
+            "fieldname": "cancellation_reason",
+            "fieldtype": "Small Text",
+            "label": "Cancellation Reason"
+        }
+    ],
+    "index_web_pages_for_search": 0,
+    "links": [],
+    "modified": "2026-05-17 00:00:00.000000",
+    "modified_by": "Administrator",
+    "module": "International Grading Agency",
+    "name": "Membership Subscriptions",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "create": 1,
+            "delete": 0,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "System Manager",
+            "share": 1,
+            "write": 1
+        }
+    ],
+    "sort_field": "creation",
+    "sort_order": "DESC",
+    "states": [],
+    "track_changes": 1
+}

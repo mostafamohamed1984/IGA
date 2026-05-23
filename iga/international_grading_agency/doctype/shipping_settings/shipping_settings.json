@@ -105,7 +105,7 @@
             "fieldname": "restricted_countries",
             "fieldtype": "Table",
             "label": "Restricted Countries",
-            "options": "Country Master"
+            "options": "Restricted Country"
         },
         {
             "fieldname": "high_value_country_review_cb",
@@ -115,7 +115,7 @@
             "fieldname": "high_value_country_review",
             "fieldtype": "Table",
             "label": "High-Value Country Review",
-            "options": "Country Master"
+            "options": "Restricted Country"
         }
     ],
     "index_web_pages_for_search": 0,

@@ -98,7 +98,7 @@
             "fieldname": "reader_stations",
             "fieldtype": "Table",
             "label": "Allowed Reader Stations",
-            "options": "Production Station"
+            "options": "Workflow Station"
         },
         {
             "fieldname": "verify_url_base_cb",

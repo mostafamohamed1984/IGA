@@ -43,8 +43,8 @@
         {
             "fieldname": "stations",
             "fieldtype": "Table",
-            "label": "Production Stations",
-            "options": "Production Station",
+            "label": "Workflow Stations",
+            "options": "Workflow Station",
             "reqd": 1
         },
         {

@@ -30,6 +30,7 @@
         "result_type_summary",
         "section_dates",
         "received_on",
+        "grading_complete_on",
         "completed_on",
         "column_break_dates",
         "submission_approved_on",
@@ -43,8 +44,16 @@
         "shipped_on",
         "section_billing",
         "subtotal",
+        "base_subtotal",
+        "addons_subtotal",
+        "subtotal_before_discount",
+        "bulk_discount",
         "discount_pct",
+        "promo_code",
+        "currency",
         "column_break_bill",
+        "payment_method",
+        "payment_method_note",
         "vat_amount",
         "grand_total",
         "section_invoices",
@@ -157,32 +166,18 @@
             "read_only": 1
         },
         {
-            "fieldname": "declared_value_total",
-            "fieldtype": "Currency",
-            "label": "Declared Value Total (EGP)",
-            "read_only": 1
-        },
-        {
-            "fieldname": "section_workflow",
-            "fieldtype": "Section Break",
-            "label": "WORKFLOW"
-        },
-        {
-            "default": "Created",
-            "fieldname": "status",
-            "fieldtype": "Select",
-            "label": "Status (Customer-Visible)",
-            "options": "Created\nReceived\nGrading\nSlabbing\nQC\nImaging\nShipped\nReady for Pickup\nCompleted\nOn Hold\nCancelled",
-            "reqd": 1,
-            "in_list_view": 1
-        },
-        {
-            "default": "Pending Review",
             "fieldname": "internal_review_status",
             "fieldtype": "Select",
             "label": "Internal Review Status",
             "options": "Pending Review\nApproved\nReturned\nCancelled",
             "reqd": 1
+        },
+        {
+            "fieldname": "items_breakdown",
+            "fieldtype": "JSON",
+            "label": "Items Breakdown (per-stage counts)",
+            "read_only": 1,
+            "description": "JSON map keyed by stage name: {\"Grading\": 3, \"Slabbing\": 2}"
         },
         {
             "fieldname": "column_break_wf",
@@ -211,6 +206,12 @@
             "fieldname": "received_on",
             "fieldtype": "Date",
             "label": "Received On",
+            "read_only": 1
+        },
+        {
+            "fieldname": "grading_complete_on",
+            "fieldtype": "Date",
+            "label": "Grading Complete On",
             "read_only": 1
         },
         {
@@ -284,10 +285,66 @@
             "read_only": 1
         },
         {
+            "fieldname": "base_subtotal",
+            "fieldtype": "Currency",
+            "label": "Base Subtotal (EGP)",
+            "read_only": 1,
+            "description": "Tier price × billable item count"
+        },
+        {
+            "fieldname": "addons_subtotal",
+            "fieldtype": "Currency",
+            "label": "Add-ons Subtotal (EGP)",
+            "read_only": 1,
+            "description": "Sum of add-ons across items"
+        },
+        {
+            "fieldname": "subtotal_before_discount",
+            "fieldtype": "Currency",
+            "label": "Subtotal Before Discount (EGP)",
+            "read_only": 1,
+            "description": "Base + addons"
+        },
+        {
+            "fieldname": "bulk_discount",
+            "fieldtype": "Currency",
+            "label": "Bulk Discount (EGP)",
+            "read_only": 1,
+            "description": "10% when is_bulk && count >= 5"
+        },
+        {
             "fieldname": "discount_pct",
             "fieldtype": "Percent",
             "label": "Discount %",
             "read_only": 1
+        },
+        {
+            "default": "EGP",
+            "fieldname": "currency",
+            "fieldtype": "Data",
+            "label": "Currency",
+            "read_only": 1
+        },
+        {
+            "fieldname": "promo_code",
+            "fieldtype": "Link",
+            "label": "Promo Code",
+            "options": "IGA Promo Code",
+            "description": "Applied promo code — re-validated server-side on save"
+        },
+        {
+            "default": "CASH",
+            "fieldname": "payment_method",
+            "fieldtype": "Select",
+            "label": "Payment Method",
+            "options": "CASH\nBANK_TRANSFER\nINSTAPAY\nOTHER",
+            "in_list_view": 1
+        },
+        {
+            "depends_on": "eval:doc.payment_method=='OTHER'",
+            "fieldname": "payment_method_note",
+            "fieldtype": "Small Text",
+            "label": "Payment Method Note"
         },
         {
             "fieldname": "column_break_bill",

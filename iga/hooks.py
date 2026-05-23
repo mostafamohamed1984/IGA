@@ -200,6 +200,12 @@ webform_include_css = {
 
 # ignore_links_on_delete = ["Communication", "ToDo"]
 
+# Website Route Rules
+# -------------------
+website_route_rules = [
+    {"from_route": "/api/v1/<path:remaining>", "to_route": "api_v1_handler"},
+]
+
 # Request Events
 # ----------------
 # before_request = ["iga.utils.before_request"]
@@ -240,6 +246,116 @@ webform_include_css = {
 # auth_hooks = [
 # 	"iga.auth.validate"
 # ]
+
+# Custom Fields for native ERPNext DocTypes
+custom_fields = {
+	"Customer": [
+		{
+			"fieldname": "iga_username",
+			"fieldtype": "Data",
+			"label": "Username (IGA)",
+			"unique": 1,
+			"description": "URL-safe username for registry profile URLs"
+		},
+		{
+			"fieldname": "iga_display_name",
+			"fieldtype": "Data",
+			"label": "Display Name (EN)"
+		},
+		{
+			"fieldname": "iga_display_name_ar",
+			"fieldtype": "Data",
+			"label": "Display Name (AR)"
+		},
+		{
+			"fieldname": "iga_is_dealer",
+			"fieldtype": "Check",
+			"label": "Is Dealer",
+			"description": "Independent from membership plan — some manual dealers"
+		},
+		{
+			"fieldname": "iga_avatar_url",
+			"fieldtype": "Data",
+			"label": "Avatar URL"
+		},
+		{
+			"fieldname": "iga_rewards_balance",
+			"fieldtype": "Float",
+			"label": "Rewards Balance",
+			"default": 0,
+			"description": "Denormalized for fast reads"
+		},
+		{
+			"fieldname": "iga_plan_code",
+			"fieldtype": "Select",
+			"label": "Plan Code",
+			"options": "\nSILVER\nGOLD\nDIAMOND\nDEALER",
+			"description": "Denormalized from active Subscription"
+		},
+		{
+			"fieldname": "iga_plan_status",
+			"fieldtype": "Select",
+			"label": "Plan Status",
+			"options": "\nActive\nInactive\nPending\nExpired\nGrace\nCancelled",
+			"description": "Denormalized from active Subscription"
+		}
+	],
+	"Issue": [
+		{
+			"fieldname": "iga_ticket_type",
+			"fieldtype": "Select",
+			"label": "Ticket Type (IGA)",
+			"options": "\nGeneral\nOffer\nReport Certificate\nGuarantee Claim"
+		},
+		{
+			"fieldname": "iga_guest_name",
+			"fieldtype": "Data",
+			"label": "Guest Name",
+			"description": "For unauthenticated contact-form submissions"
+		},
+		{
+			"fieldname": "iga_guest_email",
+			"fieldtype": "Data",
+			"label": "Guest Email",
+			"options": "Email"
+		},
+		{
+			"fieldname": "iga_guest_phone",
+			"fieldtype": "Data",
+			"label": "Guest Phone"
+		},
+		{
+			"fieldname": "iga_related_certificate",
+			"fieldtype": "Data",
+			"label": "Related Certificate"
+		},
+		{
+			"fieldname": "iga_related_submission",
+			"fieldtype": "Link",
+			"label": "Related Submission",
+			"options": "Submission"
+		}
+	],
+	"Sales Invoice": [
+		{
+			"fieldname": "iga_submission",
+			"fieldtype": "Link",
+			"label": "IGA Submission",
+			"options": "Submission"
+		},
+		{
+			"fieldname": "iga_tracking_id",
+			"fieldtype": "Data",
+			"label": "Tracking ID"
+		},
+		{
+			"fieldname": "iga_invoice_type",
+			"fieldtype": "Select",
+			"label": "IGA Invoice Type",
+			"options": "\nProforma Invoice\nSales Invoice\nMembership Sales Invoice"
+		}
+	]
+}
 
 # Automatically update python controller files with type annotations for this app.
 # export_python_type_annotations = True

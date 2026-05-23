@@ -104,6 +104,9 @@
         "designer_photographer",
         "section_break_92",
         "pc_catalog_ref",
+        "section_pricing",
+        "pricing",
+        "column_break_pricing",
         "collectible_cards_section",
         "card_brand",
         "set_name",
@@ -121,7 +124,10 @@
         "cc_dimensions_mm",
         "cc_shape",
         "section_break_110",
-        "cc_catalog_ref"
+        "cc_catalog_ref",
+        "section_signals",
+        "trending_score",
+        "registry_active_set_count"
     ],
     "fields": [
         {
@@ -642,6 +648,21 @@
             "label": "Catalog Ref"
         },
         {
+            "fieldname": "section_pricing",
+            "fieldtype": "Section Break",
+            "label": "PRICING (Price Guide)"
+        },
+        {
+            "fieldname": "pricing",
+            "fieldtype": "Table",
+            "label": "Pricing by Grade",
+            "options": "Item Reference Pricing"
+        },
+        {
+            "fieldname": "column_break_pricing",
+            "fieldtype": "Column Break"
+        },
+        {
             "depends_on": "eval:doc.collectible_type=='Collectible Card'",
             "fieldname": "collectible_cards_section",
             "fieldtype": "Section Break",
@@ -732,6 +753,26 @@
             "fieldname": "cc_catalog_ref",
             "fieldtype": "Data",
             "label": "Catalog Ref"
+        },
+        {
+            "collapsible": 1,
+            "fieldname": "section_signals",
+            "fieldtype": "Section Break",
+            "label": "API Signals"
+        },
+        {
+            "default": "0",
+            "fieldname": "trending_score",
+            "fieldtype": "Int",
+            "label": "Trending Score",
+            "description": "Computed trending score for price-guide API signals"
+        },
+        {
+            "default": "0",
+            "fieldname": "registry_active_set_count",
+            "fieldtype": "Int",
+            "label": "Active Registry Set Count",
+            "description": "Number of active registry sets featuring this item"
         }
     ],
     "index_web_pages_for_search": 1,

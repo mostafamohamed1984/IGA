@@ -12,11 +12,15 @@
         "parent_submission",
         "column_break_id",
         "station",
+        "current_stage",
         "section_reference",
         "item_reference",
+        "service_option",
         "column_break_ref",
         "declared_grade",
         "declared_value",
+        "add_ons",
+        "notes",
         "section_result",
         "final_grade",
         "result_type",
@@ -81,6 +85,15 @@
             "in_list_view": 1
         },
         {
+            "fieldname": "current_stage",
+            "fieldtype": "Select",
+            "label": "Current Stage (Customer-Visible)",
+            "options": "\nCreated\nReceived\nGrading\nSlabbing\nQC\nImaging\nShipped\nReady for Pickup\nCompleted\nOn Hold",
+            "read_only": 1,
+            "in_list_view": 1,
+            "description": "Computed rollup from item_status mapped to the 10-stage customer timeline"
+        },
+        {
             "fieldname": "section_reference",
             "fieldtype": "Section Break",
             "label": "ITEM REFERENCE"
@@ -93,18 +106,37 @@
             "search_index": 1
         },
         {
+            "fieldname": "service_option",
+            "fieldtype": "Select",
+            "label": "Service Option",
+            "options": "\nGRADING\nRE-GRADE\nCROSS-OVER\nRE-SLAB\nBULK\nRESTORATION",
+            "in_list_view": 1
+        },
+        {
             "fieldname": "column_break_ref",
             "fieldtype": "Column Break"
         },
         {
             "fieldname": "declared_grade",
             "fieldtype": "Data",
-            "label": "Declared Grade"
+            "label": "Declared Grade",
+            "description": "Customer's self-assessed grade (e.g. MS65)"
         },
         {
             "fieldname": "declared_value",
             "fieldtype": "Currency",
             "label": "Declared Value (EGP)"
+        },
+        {
+            "fieldname": "add_ons",
+            "fieldtype": "MultiSelect",
+            "label": "Add-On Services",
+            "options": "\nspecialLabels\nfirstReleases\npedigree\nvarieties\nmintErrors\noverSizeSlab\nproLabAnalysis\ndetailedImaging\nmultiInsertSlab"
+        },
+        {
+            "fieldname": "notes",
+            "fieldtype": "Small Text",
+            "label": "Notes"
         },
         {
             "fieldname": "section_result",

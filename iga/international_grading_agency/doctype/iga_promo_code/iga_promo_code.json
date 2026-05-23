@@ -1,0 +1,128 @@
+{
+    "actions": [],
+    "allow_rename": 1,
+    "autoname": "field:code",
+    "creation": "2026-05-23 00:00:00.000000",
+    "doctype": "DocType",
+    "editable_grid": 1,
+    "engine": "InnoDB",
+    "field_order": [
+        "code",
+        "type",
+        "value",
+        "active",
+        "column_break_1",
+        "expires_at",
+        "usage_limit",
+        "usage_count",
+        "usage_per_customer",
+        "section_desc",
+        "description",
+        "description_ar"
+    ],
+    "fields": [
+        {
+            "fieldname": "code",
+            "fieldtype": "Data",
+            "label": "Code",
+            "reqd": 1,
+            "unique": 1,
+            "in_list_view": 1
+        },
+        {
+            "default": "percent",
+            "fieldname": "type",
+            "fieldtype": "Select",
+            "label": "Type",
+            "options": "percent\nfixed",
+            "reqd": 1,
+            "in_list_view": 1
+        },
+        {
+            "fieldname": "value",
+            "fieldtype": "Float",
+            "label": "Value",
+            "reqd": 1,
+            "in_list_view": 1
+        },
+        {
+            "default": "1",
+            "fieldname": "active",
+            "fieldtype": "Check",
+            "label": "Active",
+            "in_list_view": 1
+        },
+        {
+            "fieldname": "column_break_1",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "expires_at",
+            "fieldtype": "Date",
+            "label": "Expires At",
+            "in_list_view": 1
+        },
+        {
+            "fieldname": "usage_limit",
+            "fieldtype": "Int",
+            "label": "Usage Limit"
+        },
+        {
+            "default": "0",
+            "fieldname": "usage_count",
+            "fieldtype": "Int",
+            "label": "Usage Count",
+            "read_only": 1
+        },
+        {
+            "fieldname": "usage_per_customer",
+            "fieldtype": "Int",
+            "label": "Usage Per Customer"
+        },
+        {
+            "fieldname": "section_desc",
+            "fieldtype": "Section Break",
+            "label": "Description"
+        },
+        {
+            "fieldname": "description",
+            "fieldtype": "Small Text",
+            "label": "Description (EN)"
+        },
+        {
+            "fieldname": "description_ar",
+            "fieldtype": "Small Text",
+            "label": "Description (AR)"
+        }
+    ],
+    "index_web_pages_for_search": 0,
+    "links": [],
+    "modified": "2026-05-23 00:00:00.000000",
+    "modified_by": "Administrator",
+    "module": "International Grading Agency",
+    "name": "IGA Promo Code",
+    "naming_rule": "By fieldname",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "create": 1,
+            "delete": 1,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "System Manager",
+            "share": 1,
+            "write": 1
+        },
+        {
+            "read": 1,
+            "role": "All"
+        }
+    ],
+    "sort_field": "code",
+    "sort_order": "ASC",
+    "states": [],
+    "track_changes": 1
+}

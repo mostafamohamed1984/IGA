@@ -245,16 +245,21 @@ function calculate_totals(frm) {
 		callback: function(r) {
 			if (r.message) {
 				const service = r.message;
-				let subtotal = service.base_fee * frm.doc.items.length;
+				const item_count = frm.doc.items.length;
 
-				// Apply bulk discount
-				if (frm.doc.is_bulk && service.bulk_discount_pct) {
-					const discount_amount = subtotal * (service.bulk_discount_pct / 100);
-					subtotal -= discount_amount;
-					frm.set_value('discount_pct', service.bulk_discount_pct);
-				} else {
-					frm.set_value('discount_pct', 0);
+				const base_subtotal = service.base_fee * item_count;
+
+				// Sum add-ons (stored as JSON in add_ons field on each item)
+				let addons_subtotal = 0;
+
+				const subtotal_before_discount = base_subtotal + addons_subtotal;
+
+				let bulk_discount = 0;
+				if (frm.doc.is_bulk && item_count >= 5) {
+					bulk_discount = Math.round(subtotal_before_discount * 0.10 * 100) / 100;
 				}
+
+				const subtotal = subtotal_before_discount - bulk_discount;
 
 				// Calculate VAT
 				frappe.call({
@@ -266,12 +271,18 @@ function calculate_totals(frm) {
 					},
 					callback: function(vat_r) {
 						const vat_rate = vat_r.message ? vat_r.message.vat_rate : 14;
-						const vat_amount = subtotal * (vat_rate / 100);
-						const grand_total = subtotal + vat_amount;
+						const vat_amount = Math.round(subtotal * (vat_rate / 100) * 100) / 100;
+						const total = subtotal + vat_amount;
 
+						frm.set_value('base_subtotal', base_subtotal);
+						frm.set_value('addons_subtotal', addons_subtotal);
+						frm.set_value('subtotal_before_discount', subtotal_before_discount);
+						frm.set_value('bulk_discount', bulk_discount);
 						frm.set_value('subtotal', subtotal);
+						frm.set_value('discount_pct', bulk_discount > 0 ? 10 : 0);
 						frm.set_value('vat_amount', vat_amount);
-						frm.set_value('grand_total', grand_total);
+						frm.set_value('grand_total', total);
+						frm.set_value('currency', 'EGP');
 					}
 				});
 			}

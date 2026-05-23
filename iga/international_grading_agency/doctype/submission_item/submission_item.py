@@ -11,13 +11,16 @@ class SubmissionItem(Document):
 
     def _generate_certificate_number(self):
         if not self.certificate_number:
-            prefix = frappe.db.get_single_value("IGA Grading Settings", "certificate_prefix") or "IGA"
+            # Get the submission_no from parent Submission
+            submission_no = frappe.db.get_value("Submission", self.parent_submission, "submission_no")
+            if not submission_no:
+                frappe.throw(_("Parent Submission has no submission_no"))
             # Count existing items for this submission to get seq
             seq = frappe.db.count(
                 "Submission Item",
                 {"parent_submission": self.parent_submission}
             ) + 1
-            self.certificate_number = f"{prefix}-{self.parent_submission}-{seq:03d}"
+            self.certificate_number = f"{submission_no}-{seq:02d}"
 
     def validate(self):
         self._validate_result_consistency()

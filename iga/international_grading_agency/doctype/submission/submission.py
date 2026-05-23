@@ -5,6 +5,15 @@ from frappe.model.document import Document
 from frappe.utils import now_datetime, today
 from frappe.utils import getdate
 
+ADDON_PRICE_MAP = {
+    "addon_special_label": 25,
+    "addon_first_releases": 15,
+    "addon_pedigree": 30,
+    "addon_pro_lab": None,
+    "addon_imaging": 20,
+    "addon_multi_insert": 40,
+}
+
 
 class Submission(Document):
 
@@ -75,33 +84,55 @@ class Submission(Document):
             "declared_value_total": total_val
         }, update_modified=False)
 
+    def _get_bulk_min_items(self):
+        service = frappe.get_cached_doc("Service Master", self.service_tier)
+        min_items = service.bulk_min_items
+        if not min_items:
+            min_items = frappe.db.get_single_value("IGA Grading Settings", "bulk_min_items_default") or 5
+        return int(min_items)
+
+    def _compute_addons_subtotal(self):
+        total = 0
+        items = frappe.get_all("Submission Item",
+            filters={"parent_submission": self.name},
+            fields=list(ADDON_PRICE_MAP.keys())
+        )
+        for item in items:
+            for field, price in ADDON_PRICE_MAP.items():
+                if item.get(field) and price is not None:
+                    total += price
+        return total
+
+    def _apply_promo_discount(self, amount):
+        if not self.promo_code:
+            return 0
+        promo = frappe.get_cached_doc("IGA Promo Code", self.promo_code)
+        if promo.type == "percent":
+            return round(amount * (promo.value / 100), 2)
+        elif promo.type == "fixed":
+            return min(promo.value, amount)
+        return 0
+
     def _compute_billing_totals(self):
         if not self.service_tier or not self.item_count:
             return
-        service = frappe.get_doc("Service Master", self.service_tier)
+        service = frappe.get_cached_doc("Service Master", self.service_tier)
         base = service.base_fee or 0
 
         base_subtotal = base * self.item_count
-
-        # Sum add-ons from child items
-        items = frappe.get_all("Submission Item",
-            filters={"parent_submission": self.name},
-            fields=["add_ons"]
-        )
-        addons_subtotal = 0
-        # TODO: compute add-ons pricing from Service Master add-on rates
-        # For now, set to 0 until AddOn pricing is modeled
-
+        addons_subtotal = self._compute_addons_subtotal()
         subtotal_before_discount = base_subtotal + addons_subtotal
 
+        bulk_min = self._get_bulk_min_items()
         bulk_discount_amount = 0
-        if self.is_bulk and self.item_count >= 5:
+        if self.is_bulk and self.item_count >= bulk_min:
             bulk_discount_amount = round(subtotal_before_discount * 0.10, 2)
 
-        member_discount_pct = service.member_discount_pct or 0
-        total_discount_pct = min(member_discount_pct, 100) if not self.is_bulk else min(member_discount_pct, 100)
+        subtotal_after_bulk = subtotal_before_discount - bulk_discount_amount
 
-        subtotal = subtotal_before_discount - bulk_discount_amount
+        promo_discount = self._apply_promo_discount(subtotal_after_bulk)
+        subtotal = subtotal_after_bulk - promo_discount
+
         vat_rate = frappe.db.get_single_value("IGA Grading Settings", "vat_rate") or 14
         vat = round(subtotal * (vat_rate / 100), 2)
         grand = subtotal + vat
@@ -112,7 +143,7 @@ class Submission(Document):
             "addons_subtotal": addons_subtotal,
             "subtotal_before_discount": subtotal_before_discount,
             "bulk_discount": bulk_discount_amount,
-            "discount_pct": total_discount_pct,
+            "discount_pct": 0,
             "vat_amount": vat,
             "grand_total": grand,
             "currency": "EGP"
@@ -288,12 +319,12 @@ class Submission(Document):
 
 
 @frappe.whitelist()
-def compute_quote(service_tier, category, is_bulk=0, items=None):
+def compute_quote(service_tier, category, is_bulk=0, items=None, promo_code=None):
     """Compute pricing quote with full breakdown. Called by POST /submissions/quote."""
     items = items or []
     item_count = len(items)
 
-    service = frappe.get_doc("Service Master", service_tier)
+    service = frappe.get_cached_doc("Service Master", service_tier)
     base = service.base_fee or 0
 
     base_subtotal = base * item_count
@@ -301,15 +332,37 @@ def compute_quote(service_tier, category, is_bulk=0, items=None):
     addons_subtotal = 0
     for itm in items:
         add_ons = itm.get("add_ons") or []
-        # TODO: compute add-on pricing from Service Master when add-on model is ready
+        for key in add_ons:
+            price = ADDON_PRICE_MAP.get(key)
+            if price is not None:
+                addons_subtotal += price
+        for field, price in ADDON_PRICE_MAP.items():
+            if itm.get(field) and price is not None:
+                addons_subtotal += price
 
     subtotal_before_discount = base_subtotal + addons_subtotal
 
+    bulk_min = int(service.bulk_min_items) if service.bulk_min_items else int(
+        frappe.db.get_single_value("IGA Grading Settings", "bulk_min_items_default") or 5
+    )
     bulk_discount_amount = 0
-    if is_bulk and item_count >= 5:
+    if is_bulk and item_count >= bulk_min:
         bulk_discount_amount = round(subtotal_before_discount * 0.10, 2)
 
-    subtotal = subtotal_before_discount - bulk_discount_amount
+    subtotal_after_bulk = subtotal_before_discount - bulk_discount_amount
+
+    promo_discount = 0
+    if promo_code:
+        try:
+            promo = frappe.get_cached_doc("IGA Promo Code", promo_code)
+            if promo.type == "percent":
+                promo_discount = round(subtotal_after_bulk * (promo.value / 100), 2)
+            elif promo.type == "fixed":
+                promo_discount = min(promo.value, subtotal_after_bulk)
+        except Exception:
+            promo_discount = 0
+
+    subtotal = subtotal_after_bulk - promo_discount
 
     vat_rate = frappe.db.get_single_value("IGA Grading Settings", "vat_rate") or 14
     vat = round(subtotal * (vat_rate / 100), 2)
@@ -320,6 +373,7 @@ def compute_quote(service_tier, category, is_bulk=0, items=None):
         "addons_subtotal": round(addons_subtotal, 2),
         "subtotal_before_discount": round(subtotal_before_discount, 2),
         "bulk_discount": bulk_discount_amount,
+        "promo_discount": promo_discount,
         "subtotal": round(subtotal, 2),
         "vat": vat,
         "total": total,

@@ -42,6 +42,7 @@
         "return_carrier",
         "return_tracking",
         "shipped_on",
+        "insurance_tier",
         "section_billing",
         "subtotal",
         "base_subtotal",
@@ -166,6 +167,22 @@
             "read_only": 1
         },
         {
+            "fieldname": "declared_value_total",
+            "fieldtype": "Currency",
+            "label": "Declared Value Total (EGP)",
+            "read_only": 1,
+            "description": "SUM of child declared_value"
+        },
+        {
+            "fieldname": "status",
+            "fieldtype": "Select",
+            "label": "Status (Customer-Visible)",
+            "options": "\nCreated\nReceived\nGrading\nSlabbing\nQC\nImaging\nShipped\nReady for Pickup\nCompleted\nOn Hold",
+            "reqd": 1,
+            "default": "Created",
+            "in_list_view": 1
+        },
+        {
             "fieldname": "internal_review_status",
             "fieldtype": "Select",
             "label": "Internal Review Status",
@@ -272,6 +289,12 @@
             "fieldtype": "Date",
             "label": "Shipped On",
             "read_only": 1
+        },
+        {
+            "fieldname": "insurance_tier",
+            "fieldtype": "Link",
+            "label": "Insurance Tier",
+            "options": "Shipping Insurance Tier"
         },
         {
             "fieldname": "section_billing",

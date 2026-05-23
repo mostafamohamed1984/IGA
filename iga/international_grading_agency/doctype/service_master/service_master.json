@@ -20,6 +20,7 @@
         "max_declared_value",
         "section_break_pricing",
         "base_fee",
+        "currency",
         "member_discount_pct",
         "column_break_3",
         "is_add_on",
@@ -113,6 +114,14 @@
             "fieldname": "base_fee",
             "fieldtype": "Currency",
             "label": "Base Fee (EGP, excl. VAT)",
+            "reqd": 1
+        },
+        {
+            "default": "EGP",
+            "fieldname": "currency",
+            "fieldtype": "Link",
+            "label": "Currency",
+            "options": "Currency",
             "reqd": 1
         },
         {

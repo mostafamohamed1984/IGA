@@ -167,6 +167,18 @@ def redeem_rewards():
     if points > balance:
         frappe.throw(_("Insufficient reward points"))
 
+    if invoice_no:
+        invoice = frappe.get_cached_doc("Sales Invoice", invoice_no)
+        invoice_total = invoice.grand_total or 0
+        plan_code = frappe.db.get_value("Customer", customer, "iga_plan_code") or "SILVER"
+        plan = frappe.get_cached_doc("Membership Plans", {"plan_code": plan_code})
+        max_pct = plan.max_redeem_pct or 25
+        max_points = round(invoice_total * (max_pct / 100), 2)
+        if points > max_points:
+            frappe.throw(_(
+                "Cannot redeem more than {0}% ({1} EGP) of invoice {2} total."
+            ).format(max_pct, max_points, invoice_no))
+
     new_balance = balance - points
     frappe.db.set_value("Customer", customer, "iga_rewards_balance", new_balance)
 

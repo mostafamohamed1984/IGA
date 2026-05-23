@@ -36,14 +36,18 @@
         "rarity_index_summary",
         "coins_tokens_medals_section",
         "issue_type",
+        "is_commemorative",
         "era_period",
         "quality_type",
+        "is_proof",
+        "type_code",
         "column_break_28",
         "description_ar",
         "description_en",
         "section_break_31",
         "denomination_value",
         "denomination_unit",
+        "denomination_short",
         "column_break_34",
         "metal",
         "purity",
@@ -67,6 +71,7 @@
         "obv_notes",
         "rev_notes",
         "known_variations_note",
+        "variety",
         "banknote_section",
         "bn_issue_type",
         "bn_denomination_value",
@@ -295,6 +300,12 @@
             "options": "Circulation\nCommemorative\nCirculation-Commemorative\nPattern\nSpecimen Issue\nTrial"
         },
         {
+            "default": 0,
+            "fieldname": "is_commemorative",
+            "fieldtype": "Check",
+            "label": "Commemorative Issue"
+        },
+        {
             "fieldname": "era_period",
             "fieldtype": "Data",
             "label": "Era / Period"
@@ -304,6 +315,18 @@
             "fieldtype": "Select",
             "label": "Quality Type",
             "options": "MS\nPF\nPL\nMATT"
+        },
+        {
+            "default": 0,
+            "fieldname": "is_proof",
+            "fieldtype": "Check",
+            "label": "Proof Issue"
+        },
+        {
+            "fieldname": "type_code",
+            "fieldtype": "Select",
+            "label": "Type Code",
+            "options": "\nPND\nPT\nMIL\nPAT\nTRIAL\nBULLION\nCOMMEM"
         },
         {
             "fieldname": "column_break_28",
@@ -333,6 +356,12 @@
             "fieldname": "denomination_unit",
             "fieldtype": "Data",
             "label": "Denomination Unit"
+        },
+        {
+            "fieldname": "denomination_short",
+            "fieldtype": "Data",
+            "label": "Denomination Short",
+            "description": "Short code for labels, e.g. '5P' for 5 Piastres"
         },
         {
             "fieldname": "column_break_34",
@@ -454,6 +483,12 @@
             "fieldname": "known_variations_note",
             "fieldtype": "Small Text",
             "label": "Known Variations Note"
+        },
+        {
+            "fieldname": "variety",
+            "fieldtype": "Data",
+            "label": "Variety",
+            "description": "e.g. 'Wide Date', 'Large Letters'"
         },
         {
             "depends_on": "eval:doc.collectible_type=='Banknote'",

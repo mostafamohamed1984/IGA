@@ -3,11 +3,29 @@ from frappe import _
 from frappe.model.document import Document
 from frappe.utils import now_datetime
 
+ITEM_STATUS_TO_CUSTOMER_STAGE = {
+    "Pending": "Created",
+    "Received": "Received",
+    "Graded": "Grading",
+    "QC Passed": "QC",
+    "Labeled": "Slabbing",
+    "Shipped": "Shipped",
+    "Completed": "Completed",
+    "Rejected": "On Hold",
+}
+
 
 class SubmissionItem(Document):
 
     def before_insert(self):
         self._generate_certificate_number()
+        self._set_default_stage()
+
+    def _set_default_stage(self):
+        if not self.item_status:
+            self.item_status = "Pending"
+        if not self.current_stage:
+            self.current_stage = ITEM_STATUS_TO_CUSTOMER_STAGE.get(self.item_status, "Created")
 
     def _generate_certificate_number(self):
         if not self.certificate_number:
@@ -21,10 +39,16 @@ class SubmissionItem(Document):
             self.certificate_number = f"{submission_no}-{seq:02d}"
 
     def validate(self):
+        self._map_item_status_to_stage()
         self._validate_result_consistency()
         self._auto_detect_result_type()
         self._validate_blocked_item()
         self._validate_qc_conditions()
+
+    def _map_item_status_to_stage(self):
+        if self.item_status:
+            self.current_stage = ITEM_STATUS_TO_CUSTOMER_STAGE.get(self.item_status, "Created")
+            self.customer_status = self.current_stage
 
     def _validate_result_consistency(self):
         disqualifying = any(

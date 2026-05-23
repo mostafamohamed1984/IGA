@@ -280,7 +280,7 @@ custom_fields = {
 		},
 		{
 			"fieldname": "iga_rewards_balance",
-			"fieldtype": "Float",
+			"fieldtype": "Currency",
 			"label": "Rewards Balance",
 			"default": 0,
 			"description": "Denormalized for fast reads"
@@ -296,7 +296,7 @@ custom_fields = {
 			"fieldname": "iga_plan_status",
 			"fieldtype": "Select",
 			"label": "Plan Status",
-			"options": "\nActive\nInactive\nPending\nExpired\nGrace\nCancelled",
+			"options": "\nActive\nPending\nExpired\nGrace\nCancelled",
 			"description": "Denormalized from active Subscription"
 		}
 	],

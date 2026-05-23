@@ -11,10 +11,25 @@ def verify_certificate(cert_no):
 def verify_nfc():
     """POST /api/v1/verify/nfc"""
     body = frappe.local.form_dict
-    payload = body.get("payload")
-    if not payload:
+    encoded = body.get("payload")
+    if not encoded:
         frappe.throw(_("Payload is required"), frappe.DoesNotExistError)
-    result = _get_verify_result(payload)
+
+    from iga.international_grading_agency.doctype.nfc_settings.nfc_settings import NFCSettings
+
+    cert_no, valid = NFCSettings.verify_nfc_payload(encoded)
+    if not valid:
+        frappe.local.response["http_status_code"] = 401
+        return {
+            "code": "INVALID_NFC_SIGNATURE",
+            "message": "NFC signature could not be verified",
+            "nfc_signature_valid": False,
+        }
+
+    result = _get_verify_result(cert_no)
+    if isinstance(result, dict) and "code" in result:
+        return result
+
     result["nfc_signature_valid"] = True
     return result
 

@@ -1,6 +1,6 @@
 {
     "charts": [],
-    "content": "[{\"id\":\"_header_membership\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Membership</span>\",\"col\":12}},{\"id\":\"membership_list\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"IGA Membership Applications\",\"col\":3}},{\"id\":\"add_membership\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"New Membership Application\",\"col\":3}},{\"id\":\"_Qz2Tz0Qlg\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Items Reference Catalog</span>\",\"col\":12}},{\"id\":\"catalog_list\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Item Reference Catalog\",\"col\":3}},{\"id\":\"add_new_ref\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Add New Reference Item\",\"col\":3}},{\"id\":\"_header_reporting\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Reporting</span>\",\"col\":12}},{\"id\":\"pop_report\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Population Report\",\"col\":3}},{\"id\":\"registry_pts\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Registry Points\",\"col\":3}},{\"id\":\"archive_list\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Graded Items Archive\",\"col\":3}},{\"id\":\"_header_settings\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Settings</span>\",\"col\":12}},{\"id\":\"ref_code_gen\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Reference Code Generator\",\"col\":3}},{\"id\":\"mod_settings\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Module Settings\",\"col\":3}}]",
+    "content": "[{\"id\": \"_header_grading_ops\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\">Grading Operations</span>\", \"col\": 12}}, {\"id\": \"_sh_submissions\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Submissions\", \"col\": 3}}, {\"id\": \"_sh_submission_items\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Submission Items\", \"col\": 3}}, {\"id\": \"_header_membership\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\">Membership Management</span>\", \"col\": 12}}, {\"id\": \"_sh_membership_apps\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Membership Applications\", \"col\": 3}}, {\"id\": \"_sh_new_membership_app\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"New Membership Application\", \"col\": 3}}, {\"id\": \"_sh_membership_plans\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Membership Plans\", \"col\": 3}}, {\"id\": \"_sh_membership_subs\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Membership Subscriptions\", \"col\": 3}}, {\"id\": \"_header_catalog_pg\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\">Catalog & Price Guide</span>\", \"col\": 12}}, {\"id\": \"_sh_item_ref_cat\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Item Reference Catalog\", \"col\": 3}}, {\"id\": \"_sh_add_item_ref\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Add New Reference Item\", \"col\": 3}}, {\"id\": \"_sh_price_guide\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Price Guide\", \"col\": 3}}, {\"id\": \"_header_grading_masters\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\">Grading Master Data</span>\", \"col\": 12}}, {\"id\": \"_sh_grade_scales\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Grade Scales\", \"col\": 3}}, {\"id\": \"_sh_mint_errors\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Mint Errors\", \"col\": 3}}, {\"id\": \"_sh_problem_defs\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Problem Definitions\", \"col\": 3}}, {\"id\": \"_sh_label_templates\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Label Templates\", \"col\": 3}}, {\"id\": \"_header_registry_rewards\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\">Registry & Rewards</span>\", \"col\": 12}}, {\"id\": \"_sh_registry_sets\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Registry Sets\", \"col\": 3}}, {\"id\": \"_sh_registry_cats\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Registry Categories\", \"col\": 3}}, {\"id\": \"_sh_rewards_ledger\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Rewards Ledger\", \"col\": 3}}, {\"id\": \"_header_reports_archive\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\">Reports & Archiving</span>\", \"col\": 12}}, {\"id\": \"_sh_pop_report\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Population Report\", \"col\": 3}}, {\"id\": \"_sh_graded_archive\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Graded Items Archive\", \"col\": 3}}, {\"id\": \"_header_settings\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\">System Settings</span>\", \"col\": 12}}, {\"id\": \"_sh_iga_grading_settings\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"IGA Grading Settings\", \"col\": 3}}, {\"id\": \"_sh_mod_settings\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Module Settings\", \"col\": 3}}, {\"id\": \"_sh_ref_code_gen\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Reference Code Generator\", \"col\": 3}}]",
     "creation": "2026-01-22 20:57:00.000000",
     "custom_blocks": [],
     "docstatus": 0,
@@ -15,7 +15,27 @@
         {
             "hidden": 0,
             "is_query_report": 0,
-            "label": "IGA Membership Applications",
+            "label": "Submission",
+            "link_count": 0,
+            "link_to": "Submission",
+            "link_type": "DocType",
+            "onboard": 0,
+            "type": "Link"
+        },
+        {
+            "hidden": 0,
+            "is_query_report": 0,
+            "label": "Submission Item",
+            "link_count": 0,
+            "link_to": "Submission Item",
+            "link_type": "DocType",
+            "onboard": 0,
+            "type": "Link"
+        },
+        {
+            "hidden": 0,
+            "is_query_report": 0,
+            "label": "IGA Membership Application",
             "link_count": 0,
             "link_to": "IGA Membership Application",
             "link_type": "DocType",
@@ -25,9 +45,29 @@
         {
             "hidden": 0,
             "is_query_report": 0,
-            "label": "New Membership Application",
+            "label": "Membership Plans",
             "link_count": 0,
-            "link_to": "IGA Membership Application",
+            "link_to": "Membership Plans",
+            "link_type": "DocType",
+            "onboard": 0,
+            "type": "Link"
+        },
+        {
+            "hidden": 0,
+            "is_query_report": 0,
+            "label": "Membership Subscriptions",
+            "link_count": 0,
+            "link_to": "Membership Subscriptions",
+            "link_type": "DocType",
+            "onboard": 0,
+            "type": "Link"
+        },
+        {
+            "hidden": 0,
+            "is_query_report": 0,
+            "label": "Membership Settings",
+            "link_count": 0,
+            "link_to": "Membership Settings",
             "link_type": "DocType",
             "onboard": 0,
             "type": "Link"
@@ -45,9 +85,129 @@
         {
             "hidden": 0,
             "is_query_report": 0,
-            "label": "Add New Reference Item",
+            "label": "Price Guide",
             "link_count": 0,
-            "link_to": "Item Reference Catalog",
+            "link_to": "Price Guide",
+            "link_type": "DocType",
+            "onboard": 0,
+            "type": "Link"
+        },
+        {
+            "hidden": 0,
+            "is_query_report": 0,
+            "label": "Grade Scale Master",
+            "link_count": 0,
+            "link_to": "Grade Scale Master",
+            "link_type": "DocType",
+            "onboard": 0,
+            "type": "Link"
+        },
+        {
+            "hidden": 0,
+            "is_query_report": 0,
+            "label": "Mint Error Master",
+            "link_count": 0,
+            "link_to": "Mint Error Master",
+            "link_type": "DocType",
+            "onboard": 0,
+            "type": "Link"
+        },
+        {
+            "hidden": 0,
+            "is_query_report": 0,
+            "label": "Problem Definitions",
+            "link_count": 0,
+            "link_to": "Problem Definitions",
+            "link_type": "DocType",
+            "onboard": 0,
+            "type": "Link"
+        },
+        {
+            "hidden": 0,
+            "is_query_report": 0,
+            "label": "Label Template Master",
+            "link_count": 0,
+            "link_to": "Label Template Master",
+            "link_type": "DocType",
+            "onboard": 0,
+            "type": "Link"
+        },
+        {
+            "hidden": 0,
+            "is_query_report": 0,
+            "label": "Designation Master",
+            "link_count": 0,
+            "link_to": "Designation Master",
+            "link_type": "DocType",
+            "onboard": 0,
+            "type": "Link"
+        },
+        {
+            "hidden": 0,
+            "is_query_report": 0,
+            "label": "Holder Types Master",
+            "link_count": 0,
+            "link_to": "Holder Types Master",
+            "link_type": "DocType",
+            "onboard": 0,
+            "type": "Link"
+        },
+        {
+            "hidden": 0,
+            "is_query_report": 0,
+            "label": "Service Master",
+            "link_count": 0,
+            "link_to": "Service Master",
+            "link_type": "DocType",
+            "onboard": 0,
+            "type": "Link"
+        },
+        {
+            "hidden": 0,
+            "is_query_report": 0,
+            "label": "Member Registry Sets",
+            "link_count": 0,
+            "link_to": "Member Registry Sets",
+            "link_type": "DocType",
+            "onboard": 0,
+            "type": "Link"
+        },
+        {
+            "hidden": 0,
+            "is_query_report": 0,
+            "label": "Registry Categories",
+            "link_count": 0,
+            "link_to": "Registry Categories",
+            "link_type": "DocType",
+            "onboard": 0,
+            "type": "Link"
+        },
+        {
+            "hidden": 0,
+            "is_query_report": 0,
+            "label": "Registry Set Definitions",
+            "link_count": 0,
+            "link_to": "Registry Set Definitions",
+            "link_type": "DocType",
+            "onboard": 0,
+            "type": "Link"
+        },
+        {
+            "hidden": 0,
+            "is_query_report": 0,
+            "label": "Rewards Ledger",
+            "link_count": 0,
+            "link_to": "Rewards Ledger",
+            "link_type": "DocType",
+            "onboard": 0,
+            "type": "Link"
+        },
+        {
+            "hidden": 0,
+            "is_query_report": 0,
+            "label": "Registry Points",
+            "link_count": 0,
+            "link_to": "Registry Points",
             "link_type": "DocType",
             "onboard": 0,
             "type": "Link"
@@ -65,9 +225,9 @@
         {
             "hidden": 0,
             "is_query_report": 0,
-            "label": "Registry Points",
+            "label": "Graded Items Archive",
             "link_count": 0,
-            "link_to": "Registry Points",
+            "link_to": "Graded Items Archive",
             "link_type": "DocType",
             "onboard": 0,
             "type": "Link"
@@ -75,9 +235,19 @@
         {
             "hidden": 0,
             "is_query_report": 0,
-            "label": "Graded Items Archive",
+            "label": "IGA Grading Settings",
             "link_count": 0,
-            "link_to": "Graded Items Archive",
+            "link_to": "IGA Grading Settings",
+            "link_type": "DocType",
+            "onboard": 0,
+            "type": "Link"
+        },
+        {
+            "hidden": 0,
+            "is_query_report": 0,
+            "label": "Module Settings",
+            "link_count": 0,
+            "link_to": "Module Settings",
             "link_type": "DocType",
             "onboard": 0,
             "type": "Link"
@@ -95,15 +265,15 @@
         {
             "hidden": 0,
             "is_query_report": 0,
-            "label": "Module Settings",
+            "label": "Country Master",
             "link_count": 0,
-            "link_to": "Module Settings",
+            "link_to": "Country Master",
             "link_type": "DocType",
             "onboard": 0,
             "type": "Link"
         }
     ],
-    "modified": "2026-01-22 20:57:00.000000",
+    "modified": "2026-05-23 00:00:00.000000",
     "modified_by": "Administrator",
     "module": "International Grading Agency",
     "name": "IGA Reference",
@@ -116,31 +286,115 @@
     "shortcuts": [
         {
             "color": "Purple",
-            "doc_view": "List",
-            "label": "IGA Membership Applications",
+            "label": "Submissions",
+            "link_to": "Submission",
+            "type": "DocType",
+            "doc_view": "List"
+        },
+        {
+            "color": "Blue",
+            "label": "Submission Items",
+            "link_to": "Submission Item",
+            "type": "DocType",
+            "doc_view": "List"
+        },
+        {
+            "color": "Purple",
+            "label": "Membership Applications",
             "link_to": "IGA Membership Application",
-            "type": "DocType"
+            "type": "DocType",
+            "doc_view": "List"
         },
         {
             "color": "Green",
-            "doc_view": "New",
             "label": "New Membership Application",
             "link_to": "IGA Membership Application",
-            "type": "DocType"
+            "type": "DocType",
+            "doc_view": "New"
+        },
+        {
+            "color": "Blue",
+            "label": "Membership Plans",
+            "link_to": "Membership Plans",
+            "type": "DocType",
+            "doc_view": "List"
+        },
+        {
+            "color": "Orange",
+            "label": "Membership Subscriptions",
+            "link_to": "Membership Subscriptions",
+            "type": "DocType",
+            "doc_view": "List"
         },
         {
             "color": "Grey",
-            "doc_view": "List",
             "label": "Item Reference Catalog",
             "link_to": "Item Reference Catalog",
-            "type": "DocType"
+            "type": "DocType",
+            "doc_view": "List"
         },
         {
             "color": "Green",
-            "doc_view": "New",
             "label": "Add New Reference Item",
             "link_to": "Item Reference Catalog",
-            "type": "DocType"
+            "type": "DocType",
+            "doc_view": "New"
+        },
+        {
+            "color": "Red",
+            "label": "Price Guide",
+            "link_to": "Price Guide",
+            "type": "DocType",
+            "doc_view": "List"
+        },
+        {
+            "color": "Grey",
+            "label": "Grade Scales",
+            "link_to": "Grade Scale Master",
+            "type": "DocType",
+            "doc_view": "List"
+        },
+        {
+            "color": "Grey",
+            "label": "Mint Errors",
+            "link_to": "Mint Error Master",
+            "type": "DocType",
+            "doc_view": "List"
+        },
+        {
+            "color": "Grey",
+            "label": "Problem Definitions",
+            "link_to": "Problem Definitions",
+            "type": "DocType",
+            "doc_view": "List"
+        },
+        {
+            "color": "Grey",
+            "label": "Label Templates",
+            "link_to": "Label Template Master",
+            "type": "DocType",
+            "doc_view": "List"
+        },
+        {
+            "color": "Blue",
+            "label": "Registry Sets",
+            "link_to": "Member Registry Sets",
+            "type": "DocType",
+            "doc_view": "List"
+        },
+        {
+            "color": "Yellow",
+            "label": "Registry Categories",
+            "link_to": "Registry Categories",
+            "type": "DocType",
+            "doc_view": "List"
+        },
+        {
+            "color": "Green",
+            "label": "Rewards Ledger",
+            "link_to": "Rewards Ledger",
+            "type": "DocType",
+            "doc_view": "List"
         },
         {
             "color": "Blue",
@@ -149,32 +403,32 @@
             "type": "Report"
         },
         {
-            "color": "Orange",
-            "doc_view": "List",
-            "label": "Registry Points",
-            "link_to": "Registry Points",
-            "type": "DocType"
-        },
-        {
             "color": "Grey",
-            "doc_view": "List",
             "label": "Graded Items Archive",
             "link_to": "Graded Items Archive",
-            "type": "DocType"
-        },
-        {
-            "color": "Grey",
-            "doc_view": "List",
-            "label": "Reference Code Generator",
-            "link_to": "Reference Code Generator",
-            "type": "DocType"
+            "type": "DocType",
+            "doc_view": "List"
         },
         {
             "color": "Red",
-            "doc_view": "List",
+            "label": "IGA Grading Settings",
+            "link_to": "IGA Grading Settings",
+            "type": "DocType",
+            "doc_view": "List"
+        },
+        {
+            "color": "Red",
             "label": "Module Settings",
             "link_to": "Module Settings",
-            "type": "DocType"
+            "type": "DocType",
+            "doc_view": "List"
+        },
+        {
+            "color": "Grey",
+            "label": "Reference Code Generator",
+            "link_to": "Reference Code Generator",
+            "type": "DocType",
+            "doc_view": "List"
         }
     ],
     "title": "IGA Reference"

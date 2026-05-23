@@ -14,7 +14,17 @@
         "region",
         "column_break_2",
         "has_mint",
-        "status"
+        "status",
+        "section_break_identifiers",
+        "iso_code_3",
+        "column_break_identifiers",
+        "label_name",
+        "section_break_localization",
+        "name_arabic",
+        "section_break_mint_data",
+        "mints",
+        "column_break_mint_data",
+        "is_iga_focus"
     ],
     "fields": [
         {
@@ -63,6 +73,55 @@
             "label": "Status",
             "options": "Active\nInactive",
             "reqd": 1
+        },
+        {
+            "fieldname": "section_break_identifiers",
+            "fieldtype": "Section Break",
+            "label": "IDENTIFIERS"
+        },
+        {
+            "fieldname": "iso_code_3",
+            "fieldtype": "Data",
+            "label": "ISO Code (Alpha-3)"
+        },
+        {
+            "fieldname": "column_break_identifiers",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "label_name",
+            "fieldtype": "Data",
+            "label": "Label Name (compact)"
+        },
+        {
+            "fieldname": "section_break_localization",
+            "fieldtype": "Section Break",
+            "label": "LOCALIZATION"
+        },
+        {
+            "fieldname": "name_arabic",
+            "fieldtype": "Data",
+            "label": "Name (Arabic)"
+        },
+        {
+            "fieldname": "section_break_mint_data",
+            "fieldtype": "Section Break",
+            "label": "MINT DATA"
+        },
+        {
+            "fieldname": "mints",
+            "fieldtype": "Small Text",
+            "label": "Mints (comma-separated)"
+        },
+        {
+            "fieldname": "column_break_mint_data",
+            "fieldtype": "Column Break"
+        },
+        {
+            "default": 0,
+            "fieldname": "is_iga_focus",
+            "fieldtype": "Check",
+            "label": "IGA Focus Country"
         }
     ],
     "index_web_pages_for_search": 0,

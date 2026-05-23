@@ -1,6 +1,6 @@
 {
     "charts": [],
-    "content": "[{\"id\": \"_header_grading_ops\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\">Grading Operations</span>\", \"col\": 12}}, {\"id\": \"_sh_submissions\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Submissions\", \"col\": 3}}, {\"id\": \"_sh_submission_items\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Submission Items\", \"col\": 3}}, {\"id\": \"_header_membership\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\">Membership Management</span>\", \"col\": 12}}, {\"id\": \"_sh_membership_apps\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Membership Applications\", \"col\": 3}}, {\"id\": \"_sh_new_membership_app\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"New Membership Application\", \"col\": 3}}, {\"id\": \"_sh_membership_plans\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Membership Plans\", \"col\": 3}}, {\"id\": \"_sh_membership_subs\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Membership Subscriptions\", \"col\": 3}}, {\"id\": \"_header_catalog_pg\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\">Catalog & Price Guide</span>\", \"col\": 12}}, {\"id\": \"_sh_item_ref_cat\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Item Reference Catalog\", \"col\": 3}}, {\"id\": \"_sh_add_item_ref\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Add New Reference Item\", \"col\": 3}}, {\"id\": \"_sh_price_guide\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Price Guide\", \"col\": 3}}, {\"id\": \"_header_grading_masters\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\">Grading Master Data</span>\", \"col\": 12}}, {\"id\": \"_sh_grade_scales\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Grade Scales\", \"col\": 3}}, {\"id\": \"_sh_mint_errors\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Mint Errors\", \"col\": 3}}, {\"id\": \"_sh_problem_defs\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Problem Definitions\", \"col\": 3}}, {\"id\": \"_sh_label_templates\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Label Templates\", \"col\": 3}}, {\"id\": \"_header_registry_rewards\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\">Registry & Rewards</span>\", \"col\": 12}}, {\"id\": \"_sh_registry_sets\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Registry Sets\", \"col\": 3}}, {\"id\": \"_sh_registry_cats\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Registry Categories\", \"col\": 3}}, {\"id\": \"_sh_rewards_ledger\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Rewards Ledger\", \"col\": 3}}, {\"id\": \"_header_reports_archive\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\">Reports & Archiving</span>\", \"col\": 12}}, {\"id\": \"_sh_pop_report\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Population Report\", \"col\": 3}}, {\"id\": \"_sh_graded_archive\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Graded Items Archive\", \"col\": 3}}, {\"id\": \"_header_settings\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\">System Settings</span>\", \"col\": 12}}, {\"id\": \"_sh_iga_grading_settings\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"IGA Grading Settings\", \"col\": 3}}, {\"id\": \"_sh_mod_settings\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Module Settings\", \"col\": 3}}, {\"id\": \"_sh_ref_code_gen\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Reference Code Generator\", \"col\": 3}}]",
+    "content": "[{\"id\": \"_header_grading_ops\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\">Grading Operations</span>\", \"col\": 12}}, {\"id\": \"_sh_submissions\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Submissions\", \"col\": 3}}, {\"id\": \"_sh_submission_items\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Submission Items\", \"col\": 3}}, {\"id\": \"_header_membership\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\">Membership Management</span>\", \"col\": 12}}, {\"id\": \"_sh_membership_apps\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Membership Applications\", \"col\": 3}}, {\"id\": \"_sh_new_membership_app\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"New Membership Application\", \"col\": 3}}, {\"id\": \"_sh_membership_plans\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Membership Plans\", \"col\": 3}}, {\"id\": \"_sh_membership_subs\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Membership Subscriptions\", \"col\": 3}}, {\"id\": \"_header_catalog_pg\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\">Catalog & Price Guide</span>\", \"col\": 12}}, {\"id\": \"_sh_item_ref_cat\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Item Reference Catalog\", \"col\": 3}}, {\"id\": \"_sh_add_item_ref\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Add New Reference Item\", \"col\": 3}}, {\"id\": \"_sh_price_guide\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Price Guide\", \"col\": 3}}, {\"id\": \"_header_grading_masters\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\">Grading Master Data</span>\", \"col\": 12}}, {\"id\": \"_sh_grade_scales\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Grade Scales\", \"col\": 3}}, {\"id\": \"_sh_mint_errors\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Mint Errors\", \"col\": 3}}, {\"id\": \"_sh_problem_defs\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Problem Definitions\", \"col\": 3}}, {\"id\": \"_sh_label_templates\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Label Templates\", \"col\": 3}}, {\"id\": \"_header_registry_rewards\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\">Registry & Rewards</span>\", \"col\": 12}}, {\"id\": \"_sh_registry_sets\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Registry Sets\", \"col\": 3}}, {\"id\": \"_sh_registry_cats\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Registry Categories\", \"col\": 3}}, {\"id\": \"_sh_rewards_ledger\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Rewards Ledger\", \"col\": 3}}, {\"id\": \"_header_reports_archive\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\">Reports & Archiving</span>\", \"col\": 12}}, {\"id\": \"_sh_pop_report\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Population Report\", \"col\": 3}}, {\"id\": \"_sh_graded_archive\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Graded Items Archive\", \"col\": 3}}, {\"id\": \"_header_settings\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\">System Settings</span>\", \"col\": 12}}, {\"id\": \"_sh_iga_grading_settings\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"IGA Grading Settings\", \"col\": 3}}, {\"id\": \"_sh_mod_settings\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Module Settings\", \"col\": 3}}, {\"id\": \"_sh_ref_code_gen\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Reference Code Generator\", \"col\": 3}}, {\"id\": \"_sh_news_articles\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"News Articles\", \"col\": 3}}, {\"id\": \"_sh_promo_codes\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Promo Codes\", \"col\": 3}}, {\"id\": \"_sh_postage_matrix\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Postage Matrix\", \"col\": 3}}, {\"id\": \"_sh_nfc_settings\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"NFC Settings\", \"col\": 3}}, {\"id\": \"_sh_label_print_settings\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Label Print Settings\", \"col\": 3}}, {\"id\": \"_sh_shipping_settings\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Shipping Settings\", \"col\": 3}}, {\"id\": \"_sh_workflow_settings\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Workflow Settings\", \"col\": 3}}, {\"id\": \"_sh_production_stations\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Production Stations\", \"col\": 3}}, {\"id\": \"_sh_carrier_master\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Carrier Master\", \"col\": 3}}, {\"id\": \"_sh_ref_code_settings\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Reference Code Settings\", \"col\": 3}}]",
     "creation": "2026-01-22 20:57:00.000000",
     "custom_blocks": [],
     "docstatus": 0,
@@ -271,6 +271,106 @@
             "link_type": "DocType",
             "onboard": 0,
             "type": "Link"
+        },
+        {
+            "hidden": 0,
+            "is_query_report": 0,
+            "label": "IGA News Article",
+            "link_count": 0,
+            "link_to": "IGA News Article",
+            "link_type": "DocType",
+            "onboard": 0,
+            "type": "Link"
+        },
+        {
+            "hidden": 0,
+            "is_query_report": 0,
+            "label": "IGA Promo Code",
+            "link_count": 0,
+            "link_to": "IGA Promo Code",
+            "link_type": "DocType",
+            "onboard": 0,
+            "type": "Link"
+        },
+        {
+            "hidden": 0,
+            "is_query_report": 0,
+            "label": "Postage Matrix",
+            "link_count": 0,
+            "link_to": "Postage Matrix",
+            "link_type": "DocType",
+            "onboard": 0,
+            "type": "Link"
+        },
+        {
+            "hidden": 0,
+            "is_query_report": 0,
+            "label": "NFC Settings",
+            "link_count": 0,
+            "link_to": "NFC Settings",
+            "link_type": "DocType",
+            "onboard": 0,
+            "type": "Link"
+        },
+        {
+            "hidden": 0,
+            "is_query_report": 0,
+            "label": "Label Print Settings",
+            "link_count": 0,
+            "link_to": "Label Print Settings",
+            "link_type": "DocType",
+            "onboard": 0,
+            "type": "Link"
+        },
+        {
+            "hidden": 0,
+            "is_query_report": 0,
+            "label": "Shipping Settings",
+            "link_count": 0,
+            "link_to": "Shipping Settings",
+            "link_type": "DocType",
+            "onboard": 0,
+            "type": "Link"
+        },
+        {
+            "hidden": 0,
+            "is_query_report": 0,
+            "label": "Submission Workflow Settings",
+            "link_count": 0,
+            "link_to": "Submission Workflow Settings",
+            "link_type": "DocType",
+            "onboard": 0,
+            "type": "Link"
+        },
+        {
+            "hidden": 0,
+            "is_query_report": 0,
+            "label": "Production Station",
+            "link_count": 0,
+            "link_to": "Production Station",
+            "link_type": "DocType",
+            "onboard": 0,
+            "type": "Link"
+        },
+        {
+            "hidden": 0,
+            "is_query_report": 0,
+            "label": "Carrier Master",
+            "link_count": 0,
+            "link_to": "Carrier Master",
+            "link_type": "DocType",
+            "onboard": 0,
+            "type": "Link"
+        },
+        {
+            "hidden": 0,
+            "is_query_report": 0,
+            "label": "Reference Code Settings",
+            "link_count": 0,
+            "link_to": "Reference Code Settings",
+            "link_type": "DocType",
+            "onboard": 0,
+            "type": "Link"
         }
     ],
     "modified": "2026-05-23 00:00:00.000000",
@@ -427,6 +527,76 @@
             "color": "Grey",
             "label": "Reference Code Generator",
             "link_to": "Reference Code Generator",
+            "type": "DocType",
+            "doc_view": "List"
+        },
+        {
+            "color": "Blue",
+            "label": "News Articles",
+            "link_to": "IGA News Article",
+            "type": "DocType",
+            "doc_view": "List"
+        },
+        {
+            "color": "Orange",
+            "label": "Promo Codes",
+            "link_to": "IGA Promo Code",
+            "type": "DocType",
+            "doc_view": "List"
+        },
+        {
+            "color": "Grey",
+            "label": "Postage Matrix",
+            "link_to": "Postage Matrix",
+            "type": "DocType",
+            "doc_view": "List"
+        },
+        {
+            "color": "Blue",
+            "label": "NFC Settings",
+            "link_to": "NFC Settings",
+            "type": "DocType",
+            "doc_view": "List"
+        },
+        {
+            "color": "Grey",
+            "label": "Label Print Settings",
+            "link_to": "Label Print Settings",
+            "type": "DocType",
+            "doc_view": "List"
+        },
+        {
+            "color": "Orange",
+            "label": "Shipping Settings",
+            "link_to": "Shipping Settings",
+            "type": "DocType",
+            "doc_view": "List"
+        },
+        {
+            "color": "Green",
+            "label": "Workflow Settings",
+            "link_to": "Submission Workflow Settings",
+            "type": "DocType",
+            "doc_view": "List"
+        },
+        {
+            "color": "Blue",
+            "label": "Production Stations",
+            "link_to": "Production Station",
+            "type": "DocType",
+            "doc_view": "List"
+        },
+        {
+            "color": "Orange",
+            "label": "Carrier Master",
+            "link_to": "Carrier Master",
+            "type": "DocType",
+            "doc_view": "List"
+        },
+        {
+            "color": "Grey",
+            "label": "Reference Code Settings",
+            "link_to": "Reference Code Settings",
             "type": "DocType",
             "doc_view": "List"
         }

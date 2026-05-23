@@ -24,7 +24,21 @@
         "column_break_credits",
         "membership_invoice",
         "section_break_cancel",
-        "cancellation_reason"
+        "cancellation_reason",
+        "section_break_mirrored",
+        "member_no",
+        "section_break_credits_snapshot",
+        "credits_total",
+        "column_break_credits_snapshot",
+        "credits_used",
+        "section_break_financial",
+        "last_invoice",
+        "column_break_financial",
+        "total_paid",
+        "section_break_audit_membership",
+        "created_by_user",
+        "column_break_audit_membership",
+        "creation_source"
     ],
     "fields": [
         {
@@ -137,6 +151,84 @@
             "fieldname": "cancellation_reason",
             "fieldtype": "Small Text",
             "label": "Cancellation Reason"
+        },
+        {
+            "fieldname": "section_break_mirrored",
+            "fieldtype": "Section Break",
+            "label": "MIRRORED"
+        },
+        {
+            "fieldname": "member_no",
+            "fieldtype": "Data",
+            "label": "Member No.",
+            "read_only": 1,
+            "reqd": 1
+        },
+        {
+            "fieldname": "section_break_credits_snapshot",
+            "fieldtype": "Section Break",
+            "label": "CREDITS"
+        },
+        {
+            "fieldname": "credits_total",
+            "fieldtype": "Int",
+            "label": "Credits Total (snapshot)",
+            "read_only": 1,
+            "reqd": 1
+        },
+        {
+            "fieldname": "column_break_credits_snapshot",
+            "fieldtype": "Column Break"
+        },
+        {
+            "default": "0",
+            "fieldname": "credits_used",
+            "fieldtype": "Int",
+            "label": "Credits Used",
+            "read_only": 1,
+            "reqd": 1
+        },
+        {
+            "fieldname": "section_break_financial",
+            "fieldtype": "Section Break",
+            "label": "FINANCIAL"
+        },
+        {
+            "fieldname": "last_invoice",
+            "fieldtype": "Link",
+            "label": "Last Invoice",
+            "options": "Sales Invoice"
+        },
+        {
+            "fieldname": "column_break_financial",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "total_paid",
+            "fieldtype": "Currency",
+            "label": "Total Paid"
+        },
+        {
+            "fieldname": "section_break_audit_membership",
+            "fieldtype": "Section Break",
+            "label": "AUDIT"
+        },
+        {
+            "fieldname": "created_by_user",
+            "fieldtype": "Link",
+            "label": "Created By User",
+            "options": "User"
+        },
+        {
+            "fieldname": "column_break_audit_membership",
+            "fieldtype": "Column Break"
+        },
+        {
+            "default": "Website",
+            "fieldname": "creation_source",
+            "fieldtype": "Select",
+            "label": "Creation Source",
+            "options": "Website\nAdmin\nAPI\nMigration"
         }
     ],
     "index_web_pages_for_search": 0,

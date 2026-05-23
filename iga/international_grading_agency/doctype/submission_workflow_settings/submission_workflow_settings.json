@@ -1,0 +1,142 @@
+{
+    "actions": [],
+    "creation": "2026-05-17 00:00:00.000000",
+    "doctype": "DocType",
+    "editable_grid": 1,
+    "engine": "InnoDB",
+    "field_order": [
+        "stages",
+        "automation_rules",
+        "stations_sb",
+        "stations",
+        "default_grader_role",
+        "final_reviewer_role_cb",
+        "final_reviewer_role",
+        "transitions_sb",
+        "transitions",
+        "allow_backwards_in_qc_cb",
+        "allow_backwards_in_qc",
+        "sla_sb",
+        "sla_hours_per_stage",
+        "escalation_rules_cb",
+        "escalation_rules",
+        "tat_calc_basis"
+    ],
+    "fields": [
+        {
+            "fieldname": "stages",
+            "fieldtype": "Table",
+            "label": "Stages",
+            "options": "Submission Workflow Stage"
+        },
+        {
+            "fieldname": "automation_rules",
+            "fieldtype": "Table",
+            "label": "Automation Rules",
+            "options": "Workflow Automation Rule"
+        },
+        {
+            "fieldname": "stations_sb",
+            "fieldtype": "Section Break",
+            "label": "STATIONS"
+        },
+        {
+            "fieldname": "stations",
+            "fieldtype": "Table",
+            "label": "Production Stations",
+            "options": "Production Station",
+            "reqd": 1
+        },
+        {
+            "fieldname": "default_grader_role",
+            "fieldtype": "Link",
+            "label": "Default Grader Role",
+            "options": "Role",
+            "reqd": 1
+        },
+        {
+            "fieldname": "final_reviewer_role_cb",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "final_reviewer_role",
+            "fieldtype": "Link",
+            "label": "Final Reviewer Role",
+            "options": "Role",
+            "reqd": 1
+        },
+        {
+            "fieldname": "transitions_sb",
+            "fieldtype": "Section Break",
+            "label": "TRANSITIONS"
+        },
+        {
+            "fieldname": "transitions",
+            "fieldtype": "Table",
+            "label": "Allowed Transitions",
+            "options": "Workflow Transition",
+            "reqd": 1
+        },
+        {
+            "fieldname": "allow_backwards_in_qc_cb",
+            "fieldtype": "Column Break"
+        },
+        {
+            "default": 1,
+            "fieldname": "allow_backwards_in_qc",
+            "fieldtype": "Check",
+            "label": "Allow Backwards in QC"
+        },
+        {
+            "fieldname": "sla_sb",
+            "fieldtype": "Section Break",
+            "label": "SLA"
+        },
+        {
+            "fieldname": "sla_hours_per_stage",
+            "fieldtype": "Table",
+            "label": "SLA Hours per Stage",
+            "options": "SLA Row"
+        },
+        {
+            "fieldname": "escalation_rules_cb",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "escalation_rules",
+            "fieldtype": "Table",
+            "label": "Escalation Rules",
+            "options": "Escalation Row"
+        },
+        {
+            "default": "Calendar Days",
+            "fieldname": "tat_calc_basis",
+            "fieldtype": "Select",
+            "label": "TAT Calculation",
+            "options": "Calendar Days\nBusiness Days"
+        }
+    ],
+    "index_web_pages_for_search": 0,
+    "issingle": 1,
+    "links": [],
+    "modified": "2026-05-17 00:00:00.000000",
+    "modified_by": "Administrator",
+    "module": "International Grading Agency",
+    "name": "Submission Workflow Settings",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "create": 1,
+            "delete": 0,
+            "email": 1,
+            "read": 1,
+            "role": "System Manager",
+            "share": 1,
+            "write": 1
+        }
+    ],
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "states": [],
+    "track_changes": 1
+}

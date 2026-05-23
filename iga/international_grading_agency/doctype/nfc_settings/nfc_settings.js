@@ -15,6 +15,16 @@ frappe.ui.form.on('NFC Settings', {
 			frm.dashboard.add_indicator(__('API: {0}', [frm.doc.api_endpoint]), 'blue');
 		}
 		
+		// Signing profile indicator
+		if (frm.doc.active_signing_profile) {
+			frm.dashboard.add_indicator(__('Signing Profile: {0}', [frm.doc.active_signing_profile]), 'orange');
+		}
+		
+		// Verify URL indicator
+		if (frm.doc.verify_url_base) {
+			frm.dashboard.add_indicator(__('Verify URL configured'), 'purple');
+		}
+		
 		// Test connection button
 		if (frm.doc.nfc_enabled && frm.doc.api_endpoint) {
 			frm.add_custom_button(__('Test NFC Connection'), function() {

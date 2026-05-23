@@ -1,0 +1,61 @@
+{
+    "actions": [],
+    "creation": "2026-05-17 00:00:00.000000",
+    "doctype": "DocType",
+    "editable_grid": 1,
+    "engine": "InnoDB",
+    "field_order": [
+        "zone_name",
+        "zone_code",
+        "base_rate",
+        "per_kg_rate",
+        "estimated_days"
+    ],
+    "fields": [
+        {
+            "fieldname": "zone_name",
+            "fieldtype": "Data",
+            "in_list_view": 1,
+            "label": "Zone Name",
+            "reqd": 1
+        },
+        {
+            "fieldname": "zone_code",
+            "fieldtype": "Data",
+            "in_list_view": 1,
+            "label": "Zone Code",
+            "reqd": 1
+        },
+        {
+            "fieldname": "base_rate",
+            "fieldtype": "Currency",
+            "in_list_view": 1,
+            "label": "Base Rate"
+        },
+        {
+            "fieldname": "per_kg_rate",
+            "fieldtype": "Currency",
+            "in_list_view": 1,
+            "label": "Per Kg Rate"
+        },
+        {
+            "fieldname": "estimated_days",
+            "fieldtype": "Int",
+            "in_list_view": 1,
+            "label": "Estimated Days"
+        }
+    ],
+    "index_web_pages_for_search": 0,
+    "istable": 1,
+    "links": [],
+    "modified": "2026-05-17 00:00:00.000000",
+    "modified_by": "Administrator",
+    "module": "International Grading Agency",
+    "name": "Shipping Zone",
+    "owner": "Administrator",
+    "permissions": [],
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "states": [],
+    "track_changes": 0
+}

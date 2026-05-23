@@ -8,6 +8,20 @@ class SubmissionWorkflowSettings(Document):
     def validate(self):
         self._validate_stages()
         self._validate_automation_rules()
+        self._validate_stations()
+        self._validate_transitions()
+
+    def _validate_stations(self):
+        if not self.stations:
+            frappe.throw(_("At least one Production Station is required"))
+        if not self.default_grader_role:
+            frappe.throw(_("Default Grader Role is required"))
+        if not self.final_reviewer_role:
+            frappe.throw(_("Final Reviewer Role is required"))
+
+    def _validate_transitions(self):
+        if not self.transitions:
+            frappe.throw(_("At least one Workflow Transition is required"))
     
     def _validate_stages(self):
         """Validate workflow stages."""

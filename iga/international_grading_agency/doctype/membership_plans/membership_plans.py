@@ -15,3 +15,5 @@ class MembershipPlans(Document):
             frappe.throw("Annual Fee cannot be negative.")
         if self.monthly_fee and self.monthly_fee < 0:
             frappe.throw("Monthly Fee cannot be negative.")
+        if self.tier_order < 0:
+            frappe.throw("Tier Order cannot be negative.")

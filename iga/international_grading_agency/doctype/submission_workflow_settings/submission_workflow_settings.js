@@ -13,6 +13,21 @@ frappe.ui.form.on('Submission Workflow Settings', {
 			frm.dashboard.add_indicator(__('Automation Rules: {0}', [frm.doc.automation_rules.length]), 'orange');
 		}
 		
+		// Production stations count
+		if (frm.doc.stations && frm.doc.stations.length > 0) {
+			frm.dashboard.add_indicator(__('Stations: {0}', [frm.doc.stations.length]), 'blue');
+		}
+		
+		// Transitions count
+		if (frm.doc.transitions && frm.doc.transitions.length > 0) {
+			frm.dashboard.add_indicator(__('Transitions: {0}', [frm.doc.transitions.length]), 'purple');
+		}
+		
+		// Grader role
+		if (frm.doc.default_grader_role) {
+			frm.dashboard.add_indicator(__('Grader Role: {0}', [frm.doc.default_grader_role]), 'orange');
+		}
+		
 		// Workflow diagram button
 		frm.add_custom_button(__('View Workflow Diagram'), function() {
 			show_workflow_diagram(frm);

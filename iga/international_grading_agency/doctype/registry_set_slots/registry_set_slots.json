@@ -10,7 +10,16 @@
         "is_required",
         "column_break_1",
         "weight",
-        "optional_designations"
+        "optional_designations",
+        "section_break_reference",
+        "year",
+        "column_break_2",
+        "mint",
+        "variety",
+        "section_break_constraints",
+        "min_grade",
+        "column_break_3",
+        "designation_bonus_pct"
     ],
     "fields": [
         {
@@ -51,6 +60,51 @@
             "fieldtype": "Data",
             "label": "Optional Designations",
             "description": "Comma-separated designation codes that qualify for this slot"
+        },
+        {
+            "fieldname": "section_break_reference",
+            "fieldtype": "Section Break",
+            "label": "REFERENCE"
+        },
+        {
+            "fieldname": "year",
+            "fieldtype": "Int",
+            "label": "Year"
+        },
+        {
+            "fieldname": "column_break_2",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "mint",
+            "fieldtype": "Data",
+            "label": "Mint"
+        },
+        {
+            "fieldname": "variety",
+            "fieldtype": "Data",
+            "label": "Variety"
+        },
+        {
+            "fieldname": "section_break_constraints",
+            "fieldtype": "Section Break",
+            "label": "CONSTRAINTS"
+        },
+        {
+            "fieldname": "min_grade",
+            "fieldtype": "Link",
+            "label": "Min Grade Required",
+            "options": "Grade Scale Master"
+        },
+        {
+            "fieldname": "column_break_3",
+            "fieldtype": "Column Break"
+        },
+        {
+            "default": "10",
+            "fieldname": "designation_bonus_pct",
+            "fieldtype": "Percent",
+            "label": "Designation Bonus %"
         }
     ],
     "index_web_pages_for_search": 0,

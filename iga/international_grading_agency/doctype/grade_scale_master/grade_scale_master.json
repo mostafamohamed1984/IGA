@@ -15,7 +15,14 @@
         "is_circulated",
         "status",
         "section_break_desc",
-        "description"
+        "description",
+        "section_break_display",
+        "short_label",
+        "column_break_display",
+        "is_details",
+        "section_break_sorting",
+        "sort_order",
+        "scale_max"
     ],
     "fields": [
         {
@@ -72,6 +79,45 @@
             "fieldname": "description",
             "fieldtype": "Text",
             "label": "Description"
+        },
+        {
+            "fieldname": "section_break_display",
+            "fieldtype": "Section Break",
+            "label": "DISPLAY"
+        },
+        {
+            "fieldname": "short_label",
+            "fieldtype": "Data",
+            "label": "Short Label (slab)",
+            "reqd": 1
+        },
+        {
+            "fieldname": "column_break_display",
+            "fieldtype": "Column Break"
+        },
+        {
+            "default": 0,
+            "fieldname": "is_details",
+            "fieldtype": "Check",
+            "label": "Is Details Grade"
+        },
+        {
+            "fieldname": "section_break_sorting",
+            "fieldtype": "Section Break",
+            "label": "SORTING"
+        },
+        {
+            "default": 0,
+            "fieldname": "sort_order",
+            "fieldtype": "Int",
+            "label": "Sort Order",
+            "reqd": 1
+        },
+        {
+            "fieldname": "scale_max",
+            "fieldtype": "Int",
+            "label": "Scale Max (auto)",
+            "read_only": 1
         }
     ],
     "index_web_pages_for_search": 0,

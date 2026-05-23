@@ -1,0 +1,142 @@
+{
+    "actions": [],
+    "creation": "2026-05-17 00:00:00.000000",
+    "doctype": "DocType",
+    "editable_grid": 1,
+    "engine": "InnoDB",
+    "field_order": [
+        "default_printer",
+        "printer_api_endpoint",
+        "label_width",
+        "label_height",
+        "print_dpi",
+        "printers_sb",
+        "printers",
+        "default_printer_per_station_cb",
+        "default_printer_per_station",
+        "stock_sb",
+        "stock_profiles",
+        "default_template_per_category_cb",
+        "default_template_per_category",
+        "queue_sb",
+        "queue_strategy",
+        "reprint_requires_role_cb",
+        "reprint_requires_role"
+    ],
+    "fields": [
+        {
+            "fieldname": "default_printer",
+            "fieldtype": "Data",
+            "label": "Default Printer"
+        },
+        {
+            "fieldname": "printer_api_endpoint",
+            "fieldtype": "Data",
+            "label": "Printer API Endpoint"
+        },
+        {
+            "fieldname": "label_width",
+            "fieldtype": "Float",
+            "label": "Label Width (mm)"
+        },
+        {
+            "fieldname": "label_height",
+            "fieldtype": "Float",
+            "label": "Label Height (mm)"
+        },
+        {
+            "fieldname": "print_dpi",
+            "fieldtype": "Int",
+            "label": "Print DPI"
+        },
+        {
+            "fieldname": "printers_sb",
+            "fieldtype": "Section Break",
+            "label": "PRINTERS"
+        },
+        {
+            "fieldname": "printers",
+            "fieldtype": "Table",
+            "label": "Printers",
+            "options": "Printer Profile",
+            "reqd": 1
+        },
+        {
+            "fieldname": "default_printer_per_station_cb",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "default_printer_per_station",
+            "fieldtype": "Table",
+            "label": "Default Printer per Station",
+            "options": "Default Printer Per Station"
+        },
+        {
+            "fieldname": "stock_sb",
+            "fieldtype": "Section Break",
+            "label": "STOCK"
+        },
+        {
+            "fieldname": "stock_profiles",
+            "fieldtype": "Table",
+            "label": "Label Stock Profiles",
+            "options": "Stock Profile",
+            "reqd": 1
+        },
+        {
+            "fieldname": "default_template_per_category_cb",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "default_template_per_category",
+            "fieldtype": "Table",
+            "label": "Default Template per Category",
+            "options": "Default Template Per Category",
+            "reqd": 1
+        },
+        {
+            "fieldname": "queue_sb",
+            "fieldtype": "Section Break",
+            "label": "QUEUE"
+        },
+        {
+            "fieldname": "queue_strategy",
+            "fieldtype": "Select",
+            "label": "Queue Strategy",
+            "options": "FIFO\nPriority\nService Tier"
+        },
+        {
+            "fieldname": "reprint_requires_role_cb",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "reprint_requires_role",
+            "fieldtype": "Link",
+            "label": "Reprint Requires Role",
+            "options": "Role"
+        }
+    ],
+    "index_web_pages_for_search": 0,
+    "issingle": 1,
+    "links": [],
+    "modified": "2026-05-17 00:00:00.000000",
+    "modified_by": "Administrator",
+    "module": "International Grading Agency",
+    "name": "Label Print Settings",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "create": 1,
+            "delete": 0,
+            "email": 1,
+            "read": 1,
+            "role": "System Manager",
+            "share": 1,
+            "write": 1
+        }
+    ],
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "states": [],
+    "track_changes": 1
+}

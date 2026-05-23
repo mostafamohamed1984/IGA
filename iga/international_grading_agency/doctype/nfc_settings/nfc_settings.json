@@ -1,0 +1,138 @@
+{
+    "actions": [],
+    "creation": "2026-05-17 00:00:00.000000",
+    "doctype": "DocType",
+    "editable_grid": 1,
+    "engine": "InnoDB",
+    "field_order": [
+        "nfc_enabled",
+        "api_endpoint",
+        "api_key",
+        "payload_sb",
+        "payload_template",
+        "include_signature_cb",
+        "include_signature",
+        "signing_sb",
+        "active_signing_profile",
+        "rotation_period_days",
+        "previous_profiles_cb",
+        "previous_profiles",
+        "readers_sb",
+        "reader_stations",
+        "verify_url_base_cb",
+        "verify_url_base"
+    ],
+    "fields": [
+        {
+            "default": 0,
+            "fieldname": "nfc_enabled",
+            "fieldtype": "Check",
+            "label": "NFC Enabled"
+        },
+        {
+            "fieldname": "api_endpoint",
+            "fieldtype": "Data",
+            "label": "API Endpoint"
+        },
+        {
+            "fieldname": "api_key",
+            "fieldtype": "Password",
+            "label": "API Key"
+        },
+        {
+            "fieldname": "payload_sb",
+            "fieldtype": "Section Break",
+            "label": "PAYLOAD"
+        },
+        {
+            "fieldname": "payload_template",
+            "fieldtype": "Code",
+            "label": "Payload Template",
+            "options": "JSON",
+            "reqd": 1
+        },
+        {
+            "fieldname": "include_signature_cb",
+            "fieldtype": "Column Break"
+        },
+        {
+            "default": 1,
+            "fieldname": "include_signature",
+            "fieldtype": "Check",
+            "label": "Include Signature"
+        },
+        {
+            "fieldname": "signing_sb",
+            "fieldtype": "Section Break",
+            "label": "SIGNING"
+        },
+        {
+            "fieldname": "active_signing_profile",
+            "fieldtype": "Link",
+            "label": "Active Signing Profile",
+            "options": "NFC Signing Profile",
+            "reqd": 1
+        },
+        {
+            "default": 365,
+            "fieldname": "rotation_period_days",
+            "fieldtype": "Int",
+            "label": "Rotation Period (days)"
+        },
+        {
+            "fieldname": "previous_profiles_cb",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "previous_profiles",
+            "fieldtype": "Table",
+            "label": "Trusted Previous Profiles",
+            "options": "NFC Signing Profile"
+        },
+        {
+            "fieldname": "readers_sb",
+            "fieldtype": "Section Break",
+            "label": "READERS"
+        },
+        {
+            "fieldname": "reader_stations",
+            "fieldtype": "Table",
+            "label": "Allowed Reader Stations",
+            "options": "Production Station"
+        },
+        {
+            "fieldname": "verify_url_base_cb",
+            "fieldtype": "Column Break"
+        },
+        {
+            "default": "https://igaverify.com/cert/",
+            "fieldname": "verify_url_base",
+            "fieldtype": "Data",
+            "label": "Verify URL Base",
+            "reqd": 1
+        }
+    ],
+    "index_web_pages_for_search": 0,
+    "issingle": 1,
+    "links": [],
+    "modified": "2026-05-17 00:00:00.000000",
+    "modified_by": "Administrator",
+    "module": "International Grading Agency",
+    "name": "NFC Settings",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "create": 1,
+            "delete": 0,
+            "email": 1,
+            "read": 1,
+            "role": "System Manager",
+            "share": 1,
+            "write": 1
+        }
+    ],
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "states": [],
+    "track_changes": 1
+}

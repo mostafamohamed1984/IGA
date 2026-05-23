@@ -19,7 +19,17 @@
         "source_doctype",
         "source_document",
         "section_break_notes",
-        "notes"
+        "notes",
+        "section_break_subscription",
+        "subscription",
+        "section_break_adjustment",
+        "reason",
+        "section_break_expiry",
+        "expires_on",
+        "column_break_3",
+        "expired_offset_no",
+        "section_break_audit_rl",
+        "created_by_user"
     ],
     "fields": [
         {
@@ -103,6 +113,60 @@
             "fieldname": "notes",
             "fieldtype": "Small Text",
             "label": "Notes"
+        },
+        {
+            "fieldname": "section_break_subscription",
+            "fieldtype": "Section Break",
+            "label": "SUBSCRIPTION"
+        },
+        {
+            "fieldname": "subscription",
+            "fieldtype": "Link",
+            "label": "Subscription",
+            "options": "Membership Subscription",
+            "read_only": 1,
+            "reqd": 1
+        },
+        {
+            "fieldname": "section_break_adjustment",
+            "fieldtype": "Section Break",
+            "label": "ADJUSTMENT"
+        },
+        {
+            "fieldname": "reason",
+            "fieldtype": "Small Text",
+            "label": "Reason (for Adjust entries)"
+        },
+        {
+            "fieldname": "section_break_expiry",
+            "fieldtype": "Section Break",
+            "label": "EXPIRY"
+        },
+        {
+            "fieldname": "expires_on",
+            "fieldtype": "Date",
+            "label": "Expires On"
+        },
+        {
+            "fieldname": "column_break_3",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "expired_offset_no",
+            "fieldtype": "Link",
+            "label": "Expired Offset No.",
+            "options": "Rewards Ledger"
+        },
+        {
+            "fieldname": "section_break_audit_rl",
+            "fieldtype": "Section Break",
+            "label": "AUDIT"
+        },
+        {
+            "fieldname": "created_by_user",
+            "fieldtype": "Link",
+            "label": "Created By User",
+            "options": "User"
         }
     ],
     "index_web_pages_for_search": 0,

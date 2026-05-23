@@ -21,7 +21,14 @@
         "section_break_slots",
         "slots",
         "section_break_scoring",
-        "scoring_rules"
+        "scoring_rules",
+        "section_break_versioning",
+        "version",
+        "section_break_features",
+        "is_signature_set",
+        "completion_threshold",
+        "column_break_2",
+        "is_public"
     ],
     "fields": [
         {
@@ -117,6 +124,44 @@
             "label": "Scoring Rules",
             "options": "JSON",
             "description": "JSON defining how slot grades are aggregated into a set score"
+        },
+        {
+            "fieldname": "section_break_versioning",
+            "fieldtype": "Section Break",
+            "label": "VERSIONING"
+        },
+        {
+            "fieldname": "version",
+            "fieldtype": "Data",
+            "label": "Version (auto)",
+            "read_only": 1
+        },
+        {
+            "fieldname": "section_break_features",
+            "fieldtype": "Section Break",
+            "label": "FEATURES"
+        },
+        {
+            "default": "0",
+            "fieldname": "is_signature_set",
+            "fieldtype": "Check",
+            "label": "Is Signature Set"
+        },
+        {
+            "default": "100",
+            "fieldname": "completion_threshold",
+            "fieldtype": "Percent",
+            "label": "Completion Threshold %"
+        },
+        {
+            "fieldname": "column_break_2",
+            "fieldtype": "Column Break"
+        },
+        {
+            "default": "1",
+            "fieldname": "is_public",
+            "fieldtype": "Check",
+            "label": "Is Public"
         }
     ],
     "index_web_pages_for_search": 0,

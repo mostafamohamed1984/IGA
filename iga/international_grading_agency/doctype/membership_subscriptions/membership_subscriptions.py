@@ -14,6 +14,8 @@ class MembershipSubscriptions(Document):
         if self.start_date and self.end_date:
             if getdate(self.start_date) > getdate(self.end_date):
                 frappe.throw(_("Start Date cannot be after End Date."))
+        if not self.member_no:
+            self.member_no = self.customer
         self._enforce_one_active_per_customer()
 
     def _enforce_one_active_per_customer(self):

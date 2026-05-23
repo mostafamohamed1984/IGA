@@ -10,6 +10,12 @@ class RewardsLedger(Document):
         self.ledger_no = frappe.model.naming.make_autoname("IGA-RWD-.YYYY.-.#####")
         self.name = self.ledger_no
 
+    def validate(self):
+        if self.entry_type == "Adjust" and not self.reason:
+            frappe.throw(_("Reason is required for Adjust entries."))
+        if self.expires_on and self.expired_offset_no:
+            frappe.throw(_("Cannot set both Expires On and Expired Offset No."))
+
     def before_insert(self):
         self.transaction_date = now_datetime()
         self._compute_balance_after()

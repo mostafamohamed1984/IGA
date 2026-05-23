@@ -15,6 +15,12 @@ class NFCSettings(Document):
                 frappe.throw(_("API Endpoint is required when NFC is enabled"))
             if not self.api_key:
                 frappe.throw(_("API Key is required when NFC is enabled"))
+        if not self.payload_template:
+            frappe.throw(_("Payload Template is required"))
+        if not self.active_signing_profile:
+            frappe.throw(_("Active Signing Profile is required"))
+        if not self.verify_url_base:
+            frappe.throw(_("Verify URL Base is required"))
     
     @frappe.whitelist()
     def test_nfc_connection(self):

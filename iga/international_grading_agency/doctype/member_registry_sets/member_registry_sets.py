@@ -13,6 +13,10 @@ class MemberRegistrySets(Document):
     def validate(self):
         self._validate_set_definition()
         self._validate_slots()
+        self._compute_filled_count()
+        self.last_updated = now_datetime()
+        if not self.definition_version and self.set_definition:
+            self.definition_version = frappe.db.get_value("Registry Set Definitions", self.set_definition, "version")
     
     def _validate_set_definition(self):
         """Ensure set definition exists and is active."""
@@ -23,6 +27,10 @@ class MemberRegistrySets(Document):
         if set_def.status != "Active":
             frappe.throw(_("Registry Set Definition {0} is not active.").format(self.set_definition))
     
+    def _compute_filled_count(self):
+        if self.slots:
+            self.filled_count = sum(1 for s in self.slots if s.graded_item)
+
     def _validate_slots(self):
         """Validate that filled slots match owned certificates."""
         if not self.slots:

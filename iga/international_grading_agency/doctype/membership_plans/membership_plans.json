@@ -21,7 +21,21 @@
         "registry_access_level",
         "is_dealer_plan",
         "section_break_features",
-        "feature_bullets"
+        "feature_bullets",
+        "section_break_activation",
+        "is_active",
+        "section_break_ordering",
+        "tier_order",
+        "section_break_pricing",
+        "currency",
+        "vat_pct",
+        "section_break_eligibility",
+        "eligible_services",
+        "section_break_marketing",
+        "discount_pct",
+        "column_break_mktg",
+        "tagline",
+        "image"
     ],
     "fields": [
         {
@@ -115,6 +129,83 @@
             "fieldtype": "Text",
             "label": "Feature Bullets",
             "description": "One feature per line — used on website Membership page"
+        },
+        {
+            "fieldname": "section_break_activation",
+            "fieldtype": "Section Break",
+            "label": "ACTIVATION"
+        },
+        {
+            "default": "1",
+            "fieldname": "is_active",
+            "fieldtype": "Check",
+            "label": "Is Active",
+            "reqd": 1
+        },
+        {
+            "fieldname": "section_break_ordering",
+            "fieldtype": "Section Break",
+            "label": "ORDERING"
+        },
+        {
+            "default": "0",
+            "fieldname": "tier_order",
+            "fieldtype": "Int",
+            "label": "Tier Order (sort)",
+            "reqd": 1
+        },
+        {
+            "fieldname": "section_break_pricing",
+            "fieldtype": "Section Break",
+            "label": "PRICING"
+        },
+        {
+            "default": "EGP",
+            "fieldname": "currency",
+            "fieldtype": "Link",
+            "label": "Currency",
+            "options": "Currency"
+        },
+        {
+            "default": "14",
+            "fieldname": "vat_pct",
+            "fieldtype": "Percent",
+            "label": "VAT %"
+        },
+        {
+            "fieldname": "section_break_eligibility",
+            "fieldtype": "Section Break",
+            "label": "ELIGIBILITY"
+        },
+        {
+            "fieldname": "eligible_services",
+            "fieldtype": "Table",
+            "label": "Eligible Services",
+            "options": "Service Master"
+        },
+        {
+            "fieldname": "section_break_marketing",
+            "fieldtype": "Section Break",
+            "label": "MARKETING"
+        },
+        {
+            "fieldname": "discount_pct",
+            "fieldtype": "Percent",
+            "label": "Discount %"
+        },
+        {
+            "fieldname": "column_break_mktg",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "tagline",
+            "fieldtype": "Small Text",
+            "label": "Tagline"
+        },
+        {
+            "fieldname": "image",
+            "fieldtype": "Attach Image",
+            "label": "Image"
         }
     ],
     "index_web_pages_for_search": 0,

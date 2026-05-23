@@ -14,6 +14,21 @@ frappe.ui.form.on('Label Print Settings', {
 				[frm.doc.label_width, frm.doc.label_height]), 'blue');
 		}
 		
+		// Printers count
+		if (frm.doc.printers && frm.doc.printers.length > 0) {
+			frm.dashboard.add_indicator(__('Printers: {0}', [frm.doc.printers.length]), 'orange');
+		}
+		
+		// Stock profiles count
+		if (frm.doc.stock_profiles && frm.doc.stock_profiles.length > 0) {
+			frm.dashboard.add_indicator(__('Stock Profiles: {0}', [frm.doc.stock_profiles.length]), 'purple');
+		}
+		
+		// Queue strategy
+		if (frm.doc.queue_strategy) {
+			frm.dashboard.add_indicator(__('Queue: {0}', [frm.doc.queue_strategy]), 'blue');
+		}
+		
 		// Test print button
 		if (frm.doc.default_printer) {
 			frm.add_custom_button(__('Test Print'), function() {

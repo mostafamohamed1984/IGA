@@ -1,0 +1,65 @@
+{
+    "actions": [],
+    "creation": "2026-05-17 00:00:00.000000",
+    "doctype": "DocType",
+    "editable_grid": 1,
+    "engine": "InnoDB",
+    "field_order": [
+        "profile_name",
+        "holder_size",
+        "width_mm",
+        "height_mm",
+        "supports_nfc",
+        "is_default"
+    ],
+    "fields": [
+        {
+            "fieldname": "profile_name",
+            "fieldtype": "Data",
+            "in_list_view": 1,
+            "label": "Profile Name",
+            "reqd": 1
+        },
+        {
+            "fieldname": "holder_size",
+            "fieldtype": "Select",
+            "in_list_view": 1,
+            "label": "Holder Size",
+            "options": "Standard\nOversize\nMini\nEdge-View\nMulti-Coin"
+        },
+        {
+            "fieldname": "width_mm",
+            "fieldtype": "Float",
+            "label": "Width (mm)"
+        },
+        {
+            "fieldname": "height_mm",
+            "fieldtype": "Float",
+            "label": "Height (mm)"
+        },
+        {
+            "default": 1,
+            "fieldname": "supports_nfc",
+            "fieldtype": "Check",
+            "label": "Supports NFC"
+        },
+        {
+            "fieldname": "is_default",
+            "fieldtype": "Check",
+            "label": "Is Default"
+        }
+    ],
+    "index_web_pages_for_search": 0,
+    "istable": 1,
+    "links": [],
+    "modified": "2026-05-17 00:00:00.000000",
+    "modified_by": "Administrator",
+    "module": "International Grading Agency",
+    "name": "Stock Profile",
+    "owner": "Administrator",
+    "permissions": [],
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "states": [],
+    "track_changes": 0
+}

@@ -17,7 +17,17 @@
         "font_set",
         "status",
         "section_break_layout",
-        "layout_json"
+        "layout_json",
+        "section_break_template_info",
+        "template_name",
+        "column_break_template_info",
+        "version",
+        "variant",
+        "section_break_configuration",
+        "is_default_for_pair",
+        "column_break_configuration",
+        "color_profile",
+        "preview_image"
     ],
     "fields": [
         {
@@ -88,6 +98,57 @@
             "label": "Layout JSON",
             "options": "JSON",
             "description": "Print layout definition for this label template"
+        },
+        {
+            "fieldname": "section_break_template_info",
+            "fieldtype": "Section Break",
+            "label": "TEMPLATE INFO"
+        },
+        {
+            "fieldname": "template_name",
+            "fieldtype": "Data",
+            "label": "Template Name",
+            "reqd": 1
+        },
+        {
+            "fieldname": "column_break_template_info",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "version",
+            "fieldtype": "Data",
+            "label": "Version",
+            "reqd": 1
+        },
+        {
+            "fieldname": "variant",
+            "fieldtype": "Select",
+            "label": "Variant",
+            "options": "Standard\nPremium\nAnniversary\nSigned\nEvent"
+        },
+        {
+            "fieldname": "section_break_configuration",
+            "fieldtype": "Section Break",
+            "label": "CONFIGURATION"
+        },
+        {
+            "fieldname": "is_default_for_pair",
+            "fieldtype": "Check",
+            "label": "Is Default for Pair"
+        },
+        {
+            "fieldname": "column_break_configuration",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "color_profile",
+            "fieldtype": "Data",
+            "label": "Color Profile"
+        },
+        {
+            "fieldname": "preview_image",
+            "fieldtype": "Attach Image",
+            "label": "Preview Image"
         }
     ],
     "index_web_pages_for_search": 0,

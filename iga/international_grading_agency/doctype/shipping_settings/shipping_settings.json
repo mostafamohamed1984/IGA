@@ -1,0 +1,144 @@
+{
+    "actions": [],
+    "creation": "2026-05-17 00:00:00.000000",
+    "doctype": "DocType",
+    "editable_grid": 1,
+    "engine": "InnoDB",
+    "field_order": [
+        "default_carrier",
+        "carrier_api_endpoint",
+        "carrier_api_key",
+        "shipping_zones",
+        "carriers_sb",
+        "carrier_overrides_per_tier_cb",
+        "carrier_overrides_per_tier",
+        "insurance_sb",
+        "insurance_tiers",
+        "auto_select_tier_cb",
+        "auto_select_tier",
+        "packaging_sb",
+        "packaging_rules",
+        "restrictions_sb",
+        "restricted_countries",
+        "high_value_country_review_cb",
+        "high_value_country_review"
+    ],
+    "fields": [
+        {
+            "fieldname": "default_carrier",
+            "fieldtype": "Link",
+            "label": "Default Carrier",
+            "options": "Carrier Master",
+            "reqd": 1
+        },
+        {
+            "fieldname": "carrier_api_endpoint",
+            "fieldtype": "Data",
+            "label": "Carrier API Endpoint"
+        },
+        {
+            "fieldname": "carrier_api_key",
+            "fieldtype": "Password",
+            "label": "Carrier API Key"
+        },
+        {
+            "fieldname": "shipping_zones",
+            "fieldtype": "Table",
+            "label": "Shipping Zones",
+            "options": "Shipping Zone"
+        },
+        {
+            "fieldname": "carriers_sb",
+            "fieldtype": "Section Break",
+            "label": "CARRIERS"
+        },
+        {
+            "fieldname": "carrier_overrides_per_tier_cb",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "carrier_overrides_per_tier",
+            "fieldtype": "Table",
+            "label": "Carrier Overrides per Tier",
+            "options": "Carrier Override Per Tier"
+        },
+        {
+            "fieldname": "insurance_sb",
+            "fieldtype": "Section Break",
+            "label": "INSURANCE"
+        },
+        {
+            "fieldname": "insurance_tiers",
+            "fieldtype": "Table",
+            "label": "Insurance Tiers",
+            "options": "Insurance Tier",
+            "reqd": 1
+        },
+        {
+            "fieldname": "auto_select_tier_cb",
+            "fieldtype": "Column Break"
+        },
+        {
+            "default": 1,
+            "fieldname": "auto_select_tier",
+            "fieldtype": "Check",
+            "label": "Auto-Select Tier"
+        },
+        {
+            "fieldname": "packaging_sb",
+            "fieldtype": "Section Break",
+            "label": "PACKAGING"
+        },
+        {
+            "fieldname": "packaging_rules",
+            "fieldtype": "Table",
+            "label": "Packaging Rules",
+            "options": "Packaging Rule",
+            "reqd": 1
+        },
+        {
+            "fieldname": "restrictions_sb",
+            "fieldtype": "Section Break",
+            "label": "RESTRICTIONS"
+        },
+        {
+            "fieldname": "restricted_countries",
+            "fieldtype": "Table",
+            "label": "Restricted Countries",
+            "options": "Country Master"
+        },
+        {
+            "fieldname": "high_value_country_review_cb",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "high_value_country_review",
+            "fieldtype": "Table",
+            "label": "High-Value Country Review",
+            "options": "Country Master"
+        }
+    ],
+    "index_web_pages_for_search": 0,
+    "issingle": 1,
+    "links": [],
+    "modified": "2026-05-17 00:00:00.000000",
+    "modified_by": "Administrator",
+    "module": "International Grading Agency",
+    "name": "Shipping Settings",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "create": 1,
+            "delete": 0,
+            "email": 1,
+            "read": 1,
+            "role": "System Manager",
+            "share": 1,
+            "write": 1
+        }
+    ],
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "states": [],
+    "track_changes": 1
+}

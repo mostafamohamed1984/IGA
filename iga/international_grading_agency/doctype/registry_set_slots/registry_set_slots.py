@@ -3,4 +3,7 @@ from frappe.model.document import Document
 
 
 class RegistrySetSlots(Document):
-    pass
+
+    def validate(self):
+        if self.year and self.year < 0:
+            frappe.throw("Year cannot be negative.")

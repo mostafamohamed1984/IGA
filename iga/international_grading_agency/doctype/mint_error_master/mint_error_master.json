@@ -15,7 +15,22 @@
         "section_break_desc",
         "description",
         "column_break_img",
-        "image"
+        "image",
+        "section_break_localization",
+        "error_name_arabic",
+        "section_break_classification",
+        "category",
+        "result",
+        "column_break_classification",
+        "recoverable",
+        "section_break_diagnostics",
+        "diagnostic_notes",
+        "common_lookalikes",
+        "column_break_diagnostics",
+        "description_arabic",
+        "section_break_crosswalk",
+        "ngc_term",
+        "pcgs_term"
     ],
     "fields": [
         {
@@ -70,6 +85,82 @@
             "fieldname": "image",
             "fieldtype": "Attach Image",
             "label": "Reference Image"
+        },
+        {
+            "fieldname": "section_break_localization",
+            "fieldtype": "Section Break",
+            "label": "LOCALIZATION"
+        },
+        {
+            "fieldname": "error_name_arabic",
+            "fieldtype": "Data",
+            "label": "Error Name (Arabic)"
+        },
+        {
+            "fieldname": "section_break_classification",
+            "fieldtype": "Section Break",
+            "label": "CLASSIFICATION"
+        },
+        {
+            "fieldname": "category",
+            "fieldtype": "Select",
+            "label": "Category",
+            "options": "Planchet\nDie\nStriking\nOther"
+        },
+        {
+            "fieldname": "result",
+            "fieldtype": "Select",
+            "label": "Result",
+            "options": "Mint Error\nDetails\nNo Grade"
+        },
+        {
+            "fieldname": "column_break_classification",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "recoverable",
+            "fieldtype": "Select",
+            "label": "Recoverable",
+            "options": "Yes\nNo\nSometimes"
+        },
+        {
+            "fieldname": "section_break_diagnostics",
+            "fieldtype": "Section Break",
+            "label": "DIAGNOSTICS"
+        },
+        {
+            "fieldname": "diagnostic_notes",
+            "fieldtype": "Text Editor",
+            "label": "Diagnostic Notes"
+        },
+        {
+            "fieldname": "common_lookalikes",
+            "fieldtype": "Small Text",
+            "label": "Common Lookalikes"
+        },
+        {
+            "fieldname": "column_break_diagnostics",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "description_arabic",
+            "fieldtype": "Text Editor",
+            "label": "Description (Arabic)"
+        },
+        {
+            "fieldname": "section_break_crosswalk",
+            "fieldtype": "Section Break",
+            "label": "INDUSTRY CROSSWALK"
+        },
+        {
+            "fieldname": "ngc_term",
+            "fieldtype": "Data",
+            "label": "NGC Term"
+        },
+        {
+            "fieldname": "pcgs_term",
+            "fieldtype": "Data",
+            "label": "PCGS Term"
         }
     ],
     "index_web_pages_for_search": 0,

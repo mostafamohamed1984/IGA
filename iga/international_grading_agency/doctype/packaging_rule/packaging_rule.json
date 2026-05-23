@@ -1,0 +1,66 @@
+{
+    "actions": [],
+    "creation": "2026-05-17 00:00:00.000000",
+    "doctype": "DocType",
+    "editable_grid": 1,
+    "engine": "InnoDB",
+    "field_order": [
+        "rule_name",
+        "min_item_count",
+        "max_item_count",
+        "box_type",
+        "padding_spec",
+        "sort_order"
+    ],
+    "fields": [
+        {
+            "fieldname": "rule_name",
+            "fieldtype": "Data",
+            "in_list_view": 1,
+            "label": "Rule Name",
+            "reqd": 1
+        },
+        {
+            "fieldname": "min_item_count",
+            "fieldtype": "Int",
+            "in_list_view": 1,
+            "label": "Min Item Count",
+            "reqd": 1
+        },
+        {
+            "fieldname": "max_item_count",
+            "fieldtype": "Int",
+            "in_list_view": 1,
+            "label": "Max Item Count",
+            "reqd": 1
+        },
+        {
+            "fieldname": "box_type",
+            "fieldtype": "Data",
+            "label": "Box Type"
+        },
+        {
+            "fieldname": "padding_spec",
+            "fieldtype": "Data",
+            "label": "Padding Spec"
+        },
+        {
+            "fieldname": "sort_order",
+            "fieldtype": "Int",
+            "label": "Sort Order"
+        }
+    ],
+    "index_web_pages_for_search": 0,
+    "istable": 1,
+    "links": [],
+    "modified": "2026-05-17 00:00:00.000000",
+    "modified_by": "Administrator",
+    "module": "International Grading Agency",
+    "name": "Packaging Rule",
+    "owner": "Administrator",
+    "permissions": [],
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "states": [],
+    "track_changes": 0
+}

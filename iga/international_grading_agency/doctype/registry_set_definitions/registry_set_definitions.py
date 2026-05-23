@@ -9,6 +9,8 @@ class RegistrySetDefinitions(Document):
             frappe.throw("Registry Set Definitions must have at least one slot.")
         self._compute_derived_fields()
         self._validate_slot_nos()
+        if not self.version:
+            self.version = frappe.utils.now_datetime().strftime("%Y%m%d%H%M%S")
 
     def _compute_derived_fields(self):
         self.slot_count = len(self.slots)

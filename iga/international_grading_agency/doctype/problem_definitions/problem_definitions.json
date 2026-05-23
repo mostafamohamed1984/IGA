@@ -14,7 +14,25 @@
         "results_in_no_grade",
         "status",
         "section_break_desc",
-        "description"
+        "description",
+        "section_break_localization",
+        "name_arabic",
+        "section_break_classification",
+        "category",
+        "result",
+        "column_break_classification",
+        "recoverable",
+        "section_break_details_behavior",
+        "is_details_reason",
+        "details_reason_label",
+        "column_break_details_behavior",
+        "details_reason_priority",
+        "is_disqualifying",
+        "section_break_explanations",
+        "explanation_en",
+        "column_break_explanations",
+        "explanation_arabic",
+        "operational_notes"
     ],
     "fields": [
         {
@@ -66,6 +84,101 @@
             "fieldname": "description",
             "fieldtype": "Text",
             "label": "Description"
+        },
+        {
+            "fieldname": "section_break_localization",
+            "fieldtype": "Section Break",
+            "label": "LOCALIZATION"
+        },
+        {
+            "fieldname": "name_arabic",
+            "fieldtype": "Data",
+            "label": "Name (Arabic)",
+            "reqd": 1
+        },
+        {
+            "fieldname": "section_break_classification",
+            "fieldtype": "Section Break",
+            "label": "CLASSIFICATION"
+        },
+        {
+            "fieldname": "category",
+            "fieldtype": "Select",
+            "label": "Category",
+            "options": "Environmental\nCleaning\nMechanical\nManufacturing\nOther"
+        },
+        {
+            "fieldname": "result",
+            "fieldtype": "Select",
+            "label": "Result",
+            "options": "Details\nNo Grade"
+        },
+        {
+            "fieldname": "column_break_classification",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "recoverable",
+            "fieldtype": "Select",
+            "label": "Recoverable",
+            "options": "Yes\nNo\nSometimes"
+        },
+        {
+            "fieldname": "section_break_details_behavior",
+            "fieldtype": "Section Break",
+            "label": "DETAILS BEHAVIOR"
+        },
+        {
+            "fieldname": "is_details_reason",
+            "fieldtype": "Check",
+            "label": "Is Details Reason"
+        },
+        {
+            "depends_on": "eval:doc.is_details_reason==1",
+            "fieldname": "details_reason_label",
+            "fieldtype": "Data",
+            "label": "Details Reason Label"
+        },
+        {
+            "fieldname": "column_break_details_behavior",
+            "fieldtype": "Column Break"
+        },
+        {
+            "default": 50,
+            "fieldname": "details_reason_priority",
+            "fieldtype": "Int",
+            "label": "Details Reason Priority"
+        },
+        {
+            "fieldname": "is_disqualifying",
+            "fieldtype": "Check",
+            "label": "Is Disqualifying"
+        },
+        {
+            "fieldname": "section_break_explanations",
+            "fieldtype": "Section Break",
+            "label": "EXPLANATIONS"
+        },
+        {
+            "fieldname": "explanation_en",
+            "fieldtype": "Text Editor",
+            "label": "Explanation (EN)",
+            "reqd": 1
+        },
+        {
+            "fieldname": "column_break_explanations",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "explanation_arabic",
+            "fieldtype": "Text Editor",
+            "label": "Explanation (Arabic)",
+            "reqd": 1
+        },
+        {
+            "fieldname": "operational_notes",
+            "fieldtype": "Text Editor",
+            "label": "Operational Notes"
         }
     ],
     "index_web_pages_for_search": 0,

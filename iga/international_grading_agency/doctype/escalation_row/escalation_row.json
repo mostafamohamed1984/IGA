@@ -1,0 +1,63 @@
+{
+    "actions": [],
+    "creation": "2026-05-17 00:00:00.000000",
+    "doctype": "DocType",
+    "editable_grid": 1,
+    "engine": "InnoDB",
+    "field_order": [
+        "rule_name",
+        "trigger_after_hours",
+        "notify_role",
+        "reroute_to_station",
+        "is_active"
+    ],
+    "fields": [
+        {
+            "fieldname": "rule_name",
+            "fieldtype": "Data",
+            "in_list_view": 1,
+            "label": "Rule Name",
+            "reqd": 1
+        },
+        {
+            "fieldname": "trigger_after_hours",
+            "fieldtype": "Int",
+            "in_list_view": 1,
+            "label": "Trigger After Hours",
+            "reqd": 1
+        },
+        {
+            "fieldname": "notify_role",
+            "fieldtype": "Link",
+            "in_list_view": 1,
+            "label": "Notify Role",
+            "options": "Role",
+            "reqd": 1
+        },
+        {
+            "fieldname": "reroute_to_station",
+            "fieldtype": "Link",
+            "label": "Reroute To Station",
+            "options": "Production Station"
+        },
+        {
+            "default": 1,
+            "fieldname": "is_active",
+            "fieldtype": "Check",
+            "label": "Is Active"
+        }
+    ],
+    "index_web_pages_for_search": 0,
+    "istable": 1,
+    "links": [],
+    "modified": "2026-05-17 00:00:00.000000",
+    "modified_by": "Administrator",
+    "module": "International Grading Agency",
+    "name": "Escalation Row",
+    "owner": "Administrator",
+    "permissions": [],
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "states": [],
+    "track_changes": 0
+}

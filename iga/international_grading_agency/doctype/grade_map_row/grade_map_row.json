@@ -1,0 +1,60 @@
+{
+ "actions": [],
+ "creation": "2026-05-23 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "grade_name",
+  "min_score",
+  "column_break_1",
+  "max_score",
+  "is_proof"
+ ],
+ "fields": [
+  {
+   "fieldname": "grade_name",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Grade",
+   "options": "Grade Scale Master",
+   "reqd": 1
+  },
+  {
+   "fieldname": "min_score",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Min Score",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "max_score",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Max Score",
+   "reqd": 1
+  },
+  {
+   "fieldname": "is_proof",
+   "fieldtype": "Check",
+   "label": "Is Proof"
+  }
+ ],
+ "index_web_pages_for_search": 0,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-05-23 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "International Grading Agency",
+ "name": "Grade Map Row",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 0
+}

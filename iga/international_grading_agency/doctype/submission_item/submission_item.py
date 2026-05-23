@@ -11,11 +11,9 @@ class SubmissionItem(Document):
 
     def _generate_certificate_number(self):
         if not self.certificate_number:
-            # Get the submission_no from parent Submission
             submission_no = frappe.db.get_value("Submission", self.parent_submission, "submission_no")
             if not submission_no:
                 frappe.throw(_("Parent Submission has no submission_no"))
-            # Count existing items for this submission to get seq
             seq = frappe.db.count(
                 "Submission Item",
                 {"parent_submission": self.parent_submission}
@@ -25,9 +23,10 @@ class SubmissionItem(Document):
     def validate(self):
         self._validate_result_consistency()
         self._auto_detect_result_type()
+        self._validate_blocked_item()
+        self._validate_qc_conditions()
 
     def _validate_result_consistency(self):
-        """If any problem results_in_no_grade, result_type must not be Encapsulated."""
         disqualifying = any(
             p.results_in_no_grade for p in (self.problems or [])
         )
@@ -38,29 +37,34 @@ class SubmissionItem(Document):
             ).format(self.certificate_number))
 
     def _auto_detect_result_type(self):
-        """Auto-set result_type to Details when any problem forces no grade."""
         if not self.result_type:
             has_disqualifying = any(p.results_in_no_grade for p in (self.problems or []))
             if has_disqualifying:
                 self.result_type = "Details"
 
+    def _validate_blocked_item(self):
+        if self.is_blocked and not self.blocking_reason:
+            frappe.throw(_("Blocking Reason is required when item is blocked."))
+
+    def _validate_qc_conditions(self):
+        if self.qc_status == "Failed" and not self.qc_failure_reason:
+            frappe.throw(_("QC Failure Reason is required when QC status is 'Failed'."))
+        if self.qc_status == "Rework" and not self.qc_rework_to:
+            frappe.throw(_("QC Rework To is required when QC status is 'Rework'."))
+
     def record_grading(self, grade, graded_by=None):
-        """Set final grade and audit fields. Called by grading station."""
         self.final_grade = grade
         self.graded_on = now_datetime()
         self.graded_by = graded_by or frappe.session.user
         self.station = "Grading"
         self.save(ignore_permissions=True)
-        # Cascade: update parent submission after grading
         frappe.get_doc("Submission", self.parent_submission).on_update()
 
     def is_gradeable(self):
-        """Return True if this item can receive a final numeric grade."""
         has_disqualifying = any(p.results_in_no_grade for p in (self.problems or []))
         return not has_disqualifying
 
     def is_public_visible(self):
-        """Return True if this item should be accessible via the Verify public API."""
         if self.result_type not in ("Encapsulated", "Details"):
             return False
         parent_status = frappe.db.get_value("Submission", self.parent_submission, "status")

@@ -1,0 +1,63 @@
+{
+    "actions": [],
+    "creation": "2026-05-17 00:00:00.000000",
+    "doctype": "DocType",
+    "editable_grid": 1,
+    "engine": "InnoDB",
+    "field_order": [
+        "transition_name",
+        "from_station",
+        "to_station",
+        "allowed_role",
+        "requires_note"
+    ],
+    "fields": [
+        {
+            "fieldname": "transition_name",
+            "fieldtype": "Data",
+            "in_list_view": 1,
+            "label": "Transition Name",
+            "reqd": 1
+        },
+        {
+            "fieldname": "from_station",
+            "fieldtype": "Link",
+            "in_list_view": 1,
+            "label": "From Station",
+            "options": "Production Station",
+            "reqd": 1
+        },
+        {
+            "fieldname": "to_station",
+            "fieldtype": "Link",
+            "in_list_view": 1,
+            "label": "To Station",
+            "options": "Production Station",
+            "reqd": 1
+        },
+        {
+            "fieldname": "allowed_role",
+            "fieldtype": "Link",
+            "label": "Allowed Role",
+            "options": "Role"
+        },
+        {
+            "fieldname": "requires_note",
+            "fieldtype": "Check",
+            "label": "Requires Note"
+        }
+    ],
+    "index_web_pages_for_search": 0,
+    "istable": 1,
+    "links": [],
+    "modified": "2026-05-17 00:00:00.000000",
+    "modified_by": "Administrator",
+    "module": "International Grading Agency",
+    "name": "Workflow Transition",
+    "owner": "Administrator",
+    "permissions": [],
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "states": [],
+    "track_changes": 0
+}

@@ -11,12 +11,48 @@
         "grade_map",
         "column_break_gm",
         "penalty_rules",
+        "details_blocks_grade",
         "section_system",
         "vat_rate",
         "certificate_prefix",
         "column_break_sys",
         "tracking_id_prefix",
-        "bulk_min_items_default"
+        "bulk_min_items_default",
+        "section_title",
+        "title",
+        "column_break_title",
+        "version",
+        "section_scoring_weights_unc",
+        "weight_wear_unc",
+        "column_break_unc1",
+        "weight_surface_unc",
+        "weight_strike_unc",
+        "column_break_unc2",
+        "weight_luster_unc",
+        "weight_eye_appeal_unc",
+        "weight_rim_edge_unc",
+        "section_scoring_weights_circ",
+        "weight_wear_circ",
+        "column_break_circ1",
+        "weight_surface_circ",
+        "weight_strike_circ",
+        "column_break_circ2",
+        "weight_luster_circ",
+        "weight_eye_appeal_circ",
+        "weight_rim_edge_circ",
+        "section_weight_validation",
+        "weights_must_sum_to",
+        "section_observations",
+        "track_originality_observation",
+        "section_grade_thresholds",
+        "min_score_for_ms",
+        "column_break_grade_th",
+        "min_score_for_pf",
+        "section_review",
+        "require_final_reviewer",
+        "allow_grader_override",
+        "column_break_rev",
+        "max_grader_override"
     ],
     "fields": [
         {
@@ -38,10 +74,9 @@
         },
         {
             "fieldname": "grade_map",
-            "fieldtype": "Code",
-            "label": "Grade Map (JSON)",
-            "options": "JSON",
-            "description": "Maps score ranges to numeric grade (1–70)"
+            "fieldtype": "Table",
+            "label": "Grade Map",
+            "options": "Grade Map Row"
         },
         {
             "fieldname": "column_break_gm",
@@ -49,10 +84,16 @@
         },
         {
             "fieldname": "penalty_rules",
-            "fieldtype": "Code",
-            "label": "Penalty Rules (JSON)",
-            "options": "JSON",
-            "description": "Deductions applied for problems or mint errors"
+            "fieldtype": "Table",
+            "label": "Penalty Rules",
+            "options": "Penalty Rule"
+        },
+        {
+            "default": "1",
+            "fieldname": "details_blocks_grade",
+            "fieldtype": "Check",
+            "label": "Details Blocks Grade",
+            "reqd": 1
         },
         {
             "fieldname": "section_system",
@@ -87,12 +128,222 @@
             "fieldname": "bulk_min_items_default",
             "fieldtype": "Int",
             "label": "Default Bulk Minimum Items"
+        },
+        {
+            "fieldname": "section_title",
+            "fieldtype": "Section Break",
+            "label": "TITLE"
+        },
+        {
+            "fieldname": "title",
+            "fieldtype": "Data",
+            "label": "Title",
+            "read_only": 1,
+            "reqd": 1
+        },
+        {
+            "fieldname": "column_break_title",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "version",
+            "fieldtype": "Data",
+            "label": "Version",
+            "reqd": 1
+        },
+        {
+            "fieldname": "section_scoring_weights_unc",
+            "fieldtype": "Section Break",
+            "label": "SCORING WEIGHTS \u2014 UNCIRCULATED"
+        },
+        {
+            "default": "20",
+            "fieldname": "weight_wear_unc",
+            "fieldtype": "Percent",
+            "label": "Wear (UNC)",
+            "reqd": 1
+        },
+        {
+            "fieldname": "column_break_unc1",
+            "fieldtype": "Column Break"
+        },
+        {
+            "default": "25",
+            "fieldname": "weight_surface_unc",
+            "fieldtype": "Percent",
+            "label": "Surface (UNC)",
+            "reqd": 1
+        },
+        {
+            "default": "20",
+            "fieldname": "weight_strike_unc",
+            "fieldtype": "Percent",
+            "label": "Strike (UNC)",
+            "reqd": 1
+        },
+        {
+            "fieldname": "column_break_unc2",
+            "fieldtype": "Column Break"
+        },
+        {
+            "default": "20",
+            "fieldname": "weight_luster_unc",
+            "fieldtype": "Percent",
+            "label": "Luster (UNC)",
+            "reqd": 1
+        },
+        {
+            "default": "10",
+            "fieldname": "weight_eye_appeal_unc",
+            "fieldtype": "Percent",
+            "label": "Eye Appeal (UNC)",
+            "reqd": 1
+        },
+        {
+            "default": "5",
+            "fieldname": "weight_rim_edge_unc",
+            "fieldtype": "Percent",
+            "label": "Rim/Edge (UNC)",
+            "reqd": 1
+        },
+        {
+            "fieldname": "section_scoring_weights_circ",
+            "fieldtype": "Section Break",
+            "label": "SCORING WEIGHTS \u2014 CIRCULATED"
+        },
+        {
+            "default": "30",
+            "fieldname": "weight_wear_circ",
+            "fieldtype": "Percent",
+            "label": "Wear (Circ)",
+            "reqd": 1
+        },
+        {
+            "fieldname": "column_break_circ1",
+            "fieldtype": "Column Break"
+        },
+        {
+            "default": "20",
+            "fieldname": "weight_surface_circ",
+            "fieldtype": "Percent",
+            "label": "Surface (Circ)",
+            "reqd": 1
+        },
+        {
+            "default": "15",
+            "fieldname": "weight_strike_circ",
+            "fieldtype": "Percent",
+            "label": "Strike (Circ)",
+            "reqd": 1
+        },
+        {
+            "fieldname": "column_break_circ2",
+            "fieldtype": "Column Break"
+        },
+        {
+            "default": "10",
+            "fieldname": "weight_luster_circ",
+            "fieldtype": "Percent",
+            "label": "Luster (Circ)",
+            "reqd": 1
+        },
+        {
+            "default": "15",
+            "fieldname": "weight_eye_appeal_circ",
+            "fieldtype": "Percent",
+            "label": "Eye Appeal (Circ)",
+            "reqd": 1
+        },
+        {
+            "default": "10",
+            "fieldname": "weight_rim_edge_circ",
+            "fieldtype": "Percent",
+            "label": "Rim/Edge (Circ)",
+            "reqd": 1
+        },
+        {
+            "fieldname": "section_weight_validation",
+            "fieldtype": "Section Break",
+            "label": "WEIGHT VALIDATION"
+        },
+        {
+            "default": "100",
+            "fieldname": "weights_must_sum_to",
+            "fieldtype": "Int",
+            "label": "Weights Must Sum To",
+            "read_only": 1,
+            "reqd": 1
+        },
+        {
+            "fieldname": "section_observations",
+            "fieldtype": "Section Break",
+            "label": "OBSERVATIONS"
+        },
+        {
+            "default": "1",
+            "fieldname": "track_originality_observation",
+            "fieldtype": "Check",
+            "label": "Track Originality Observation",
+            "reqd": 1
+        },
+        {
+            "fieldname": "section_grade_thresholds",
+            "fieldtype": "Section Break",
+            "label": "GRADE THRESHOLDS"
+        },
+        {
+            "default": "70",
+            "fieldname": "min_score_for_ms",
+            "fieldtype": "Int",
+            "label": "Min Score for MS",
+            "reqd": 1
+        },
+        {
+            "fieldname": "column_break_grade_th",
+            "fieldtype": "Column Break"
+        },
+        {
+            "default": "70",
+            "fieldname": "min_score_for_pf",
+            "fieldtype": "Int",
+            "label": "Min Score for PF",
+            "reqd": 1
+        },
+        {
+            "fieldname": "section_review",
+            "fieldtype": "Section Break",
+            "label": "REVIEW"
+        },
+        {
+            "default": "1",
+            "fieldname": "require_final_reviewer",
+            "fieldtype": "Check",
+            "label": "Require Final Reviewer",
+            "reqd": 1
+        },
+        {
+            "default": "0",
+            "fieldname": "allow_grader_override",
+            "fieldtype": "Check",
+            "label": "Allow Grader Override",
+            "reqd": 1
+        },
+        {
+            "fieldname": "column_break_rev",
+            "fieldtype": "Column Break"
+        },
+        {
+            "default": "1",
+            "fieldname": "max_grader_override",
+            "fieldtype": "Int",
+            "label": "Max Grader Override",
+            "reqd": 1
         }
     ],
     "index_web_pages_for_search": 0,
     "issingle": 1,
     "links": [],
-    "modified": "2026-05-17 00:00:00.000000",
+    "modified": "2026-05-23 00:00:00.000000",
     "modified_by": "Administrator",
     "module": "International Grading Agency",
     "name": "IGA Grading Settings",

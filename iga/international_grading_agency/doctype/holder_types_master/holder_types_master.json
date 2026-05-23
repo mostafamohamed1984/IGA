@@ -16,7 +16,19 @@
         "supports_nfc",
         "status",
         "section_break_img",
-        "image"
+        "image",
+        "section_break_dimensions",
+        "outer_width_mm",
+        "column_break_dimensions",
+        "outer_height_mm",
+        "max_coin_diameter_mm",
+        "column_break_dimensions_2",
+        "min_coin_diameter_mm",
+        "section_break_features",
+        "supports_edge_view",
+        "is_multi_coin",
+        "column_break_features",
+        "max_coins"
     ],
     "fields": [
         {
@@ -75,6 +87,68 @@
             "fieldname": "image",
             "fieldtype": "Attach Image",
             "label": "Holder Image"
+        },
+        {
+            "fieldname": "section_break_dimensions",
+            "fieldtype": "Section Break",
+            "label": "DIMENSIONS"
+        },
+        {
+            "fieldname": "outer_width_mm",
+            "fieldtype": "Float",
+            "label": "Outer Width (mm)",
+            "reqd": 1
+        },
+        {
+            "fieldname": "column_break_dimensions",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "outer_height_mm",
+            "fieldtype": "Float",
+            "label": "Outer Height (mm)",
+            "reqd": 1
+        },
+        {
+            "fieldname": "max_coin_diameter_mm",
+            "fieldtype": "Float",
+            "label": "Max Coin Diameter (mm)",
+            "reqd": 1
+        },
+        {
+            "fieldname": "column_break_dimensions_2",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "min_coin_diameter_mm",
+            "fieldtype": "Float",
+            "label": "Min Coin Diameter (mm)",
+            "reqd": 1
+        },
+        {
+            "fieldname": "section_break_features",
+            "fieldtype": "Section Break",
+            "label": "FEATURES"
+        },
+        {
+            "fieldname": "supports_edge_view",
+            "fieldtype": "Check",
+            "label": "Supports Edge View"
+        },
+        {
+            "fieldname": "is_multi_coin",
+            "fieldtype": "Check",
+            "label": "Is Multi-Coin"
+        },
+        {
+            "fieldname": "column_break_features",
+            "fieldtype": "Column Break"
+        },
+        {
+            "depends_on": "eval:doc.is_multi_coin==1",
+            "fieldname": "max_coins",
+            "fieldtype": "Int",
+            "label": "Max Coins"
         }
     ],
     "index_web_pages_for_search": 0,

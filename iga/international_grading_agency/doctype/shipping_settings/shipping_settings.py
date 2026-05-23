@@ -8,6 +8,21 @@ class ShippingSettings(Document):
     
     def validate(self):
         self._validate_zones()
+        self._validate_default_carrier()
+        self._validate_insurance()
+        self._validate_packaging()
+
+    def _validate_default_carrier(self):
+        if not self.default_carrier:
+            frappe.throw(_("Default Carrier is required"))
+
+    def _validate_insurance(self):
+        if not self.insurance_tiers:
+            frappe.throw(_("At least one Insurance Tier is required"))
+
+    def _validate_packaging(self):
+        if not self.packaging_rules:
+            frappe.throw(_("At least one Packaging Rule is required"))
     
     def _validate_zones(self):
         """Validate shipping zones."""

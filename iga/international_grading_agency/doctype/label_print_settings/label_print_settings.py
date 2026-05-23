@@ -9,6 +9,18 @@ class LabelPrintSettings(Document):
     def validate(self):
         self._validate_dimensions()
         self._validate_dpi()
+        self._validate_printers()
+        self._validate_stock()
+
+    def _validate_printers(self):
+        if not self.printers:
+            frappe.throw(_("At least one Printer is required"))
+
+    def _validate_stock(self):
+        if not self.stock_profiles:
+            frappe.throw(_("At least one Label Stock Profile is required"))
+        if not self.default_template_per_category:
+            frappe.throw(_("At least one Default Template per Category is required"))
     
     def _validate_dimensions(self):
         """Validate label dimensions."""

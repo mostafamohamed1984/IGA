@@ -15,7 +15,11 @@
         "section_break_desc",
         "description",
         "column_break_img",
-        "image"
+        "image",
+        "section_break_hierarchy",
+        "parent_category",
+        "section_break_display",
+        "icon"
     ],
     "fields": [
         {
@@ -70,6 +74,27 @@
             "fieldname": "image",
             "fieldtype": "Attach Image",
             "label": "Category Image"
+        },
+        {
+            "fieldname": "section_break_hierarchy",
+            "fieldtype": "Section Break",
+            "label": "HIERARCHY"
+        },
+        {
+            "fieldname": "parent_category",
+            "fieldtype": "Link",
+            "label": "Parent Category",
+            "options": "Registry Categories"
+        },
+        {
+            "fieldname": "section_break_display",
+            "fieldtype": "Section Break",
+            "label": "DISPLAY"
+        },
+        {
+            "fieldname": "icon",
+            "fieldtype": "Data",
+            "label": "Icon (code)"
         }
     ],
     "index_web_pages_for_search": 0,

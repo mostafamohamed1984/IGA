@@ -39,13 +39,122 @@
         "column_break_lbl",
         "label_series_line",
         "nfc_uid",
+        "label_name_line",
+        "label_grade_display",
+        "label_designation_display",
+        "column_break_label_a",
+        "label_cert_display",
+        "label_error_line",
+        "label_variety_line",
+        "column_break_label_b",
+        "label_status",
+        "label_preview",
         "section_images",
         "images_obverse",
         "column_break_img",
         "images_reverse",
         "section_audit",
         "graded_on",
-        "graded_by"
+        "graded_by",
+        "section_item_status",
+        "item_status",
+        "column_break_status",
+        "customer_status",
+        "show_on_website",
+        "section_ref_snapshot",
+        "item_type",
+        "country",
+        "denomination",
+        "column_break_ref_snap",
+        "year_ad",
+        "year_ah",
+        "metal",
+        "column_break_ref_snap2",
+        "weight_g",
+        "diameter_mm",
+        "variety_ref",
+        "column_break_ref_snap3",
+        "item_description_name",
+        "discrepancy_notes",
+        "section_auth_elig",
+        "authenticity_result",
+        "column_break_auth",
+        "eligibility_result",
+        "conservation_status",
+        "column_break_auth2",
+        "is_blocked",
+        "blocking_reason",
+        "section_mint_error_var",
+        "is_mint_error",
+        "mint_error_type",
+        "column_break_mint_var",
+        "is_variety",
+        "variety_detail",
+        "section_addon_services",
+        "addon_special_label",
+        "column_break_addon1",
+        "addon_first_releases",
+        "addon_pedigree",
+        "column_break_addon2",
+        "pedigree_name",
+        "addon_pro_lab",
+        "column_break_addon3",
+        "addon_imaging",
+        "addon_multi_insert",
+        "section_grading_scores",
+        "grading_category",
+        "strike_type",
+        "column_break_scores1",
+        "score_wear",
+        "score_surface",
+        "score_strike",
+        "column_break_scores2",
+        "score_luster",
+        "score_eye_appeal",
+        "score_rim",
+        "column_break_scores3",
+        "weighted_score",
+        "suggested_grade",
+        "column_break_scores4",
+        "grade_range_min",
+        "grade_range_max",
+        "is_details",
+        "column_break_scores5",
+        "details_suggested",
+        "details_reason",
+        "details_condition",
+        "column_break_scores6",
+        "designation",
+        "final_reviewer",
+        "override_reason",
+        "section_encapsulation",
+        "slab_size",
+        "slab_status",
+        "column_break_slab1",
+        "slabbed_by",
+        "slabbed_date",
+        "column_break_slab2",
+        "nfc_url",
+        "nfc_status",
+        "section_imaging",
+        "front_image",
+        "column_break_imaging",
+        "back_image",
+        "imaging_status",
+        "section_qc",
+        "qc_label_check",
+        "qc_grade_check",
+        "qc_slab_check",
+        "column_break_qc1",
+        "qc_nfc_check",
+        "qc_image_check",
+        "column_break_qc2",
+        "qc_status",
+        "qc_failure_reason",
+        "column_break_qc3",
+        "qc_rework_to",
+        "qc_by",
+        "qc_date"
     ],
     "fields": [
         {
@@ -237,6 +346,62 @@
             "search_index": 1
         },
         {
+            "fieldname": "label_name_line",
+            "fieldtype": "Data",
+            "label": "Label \u2014 Name Line",
+            "read_only": 1
+        },
+        {
+            "fieldname": "label_grade_display",
+            "fieldtype": "Data",
+            "label": "Label \u2014 Grade Display",
+            "read_only": 1
+        },
+        {
+            "fieldname": "label_designation_display",
+            "fieldtype": "Data",
+            "label": "Label \u2014 Designation Display",
+            "read_only": 1
+        },
+        {
+            "fieldname": "column_break_label_a",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "label_cert_display",
+            "fieldtype": "Data",
+            "label": "Label \u2014 Cert Display",
+            "read_only": 1
+        },
+        {
+            "fieldname": "label_error_line",
+            "fieldtype": "Data",
+            "label": "Label \u2014 Error Line",
+            "read_only": 1
+        },
+        {
+            "fieldname": "label_variety_line",
+            "fieldtype": "Data",
+            "label": "Label \u2014 Variety Line",
+            "read_only": 1
+        },
+        {
+            "fieldname": "column_break_label_b",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "label_status",
+            "fieldtype": "Select",
+            "label": "Label Status",
+            "options": "\nPending\nGenerated\nReprinted"
+        },
+        {
+            "fieldname": "label_preview",
+            "fieldtype": "Code",
+            "label": "Label Preview",
+            "read_only": 1
+        },
+        {
             "fieldname": "section_images",
             "fieldtype": "Section Break",
             "label": "IMAGES"
@@ -273,11 +438,524 @@
             "label": "Graded By",
             "options": "User",
             "read_only": 1
+        },
+        {
+            "fieldname": "section_item_status",
+            "fieldtype": "Section Break",
+            "label": "ITEM STATUS"
+        },
+        {
+            "fieldname": "item_status",
+            "fieldtype": "Select",
+            "label": "Item Status (Internal)",
+            "options": "\nPending\nReceived\nGraded\nQC Passed\nLabeled\nShipped\nCompleted\nRejected"
+        },
+        {
+            "fieldname": "column_break_status",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "customer_status",
+            "fieldtype": "Data",
+            "label": "Customer-Visible Status (mapped)",
+            "read_only": 1
+        },
+        {
+            "default": "1",
+            "fieldname": "show_on_website",
+            "fieldtype": "Check",
+            "label": "Show on Website"
+        },
+        {
+            "fieldname": "section_ref_snapshot",
+            "fieldtype": "Section Break",
+            "label": "REFERENCE SNAPSHOT"
+        },
+        {
+            "fieldname": "item_type",
+            "fieldtype": "Data",
+            "label": "Type (snapshot)",
+            "read_only": 1
+        },
+        {
+            "fieldname": "country",
+            "fieldtype": "Data",
+            "label": "Country (snapshot)",
+            "read_only": 1
+        },
+        {
+            "fieldname": "denomination",
+            "fieldtype": "Data",
+            "label": "Denomination (snapshot)",
+            "read_only": 1
+        },
+        {
+            "fieldname": "column_break_ref_snap",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "year_ad",
+            "fieldtype": "Int",
+            "label": "Year AD (snapshot)",
+            "read_only": 1
+        },
+        {
+            "fieldname": "year_ah",
+            "fieldtype": "Int",
+            "label": "Year AH (snapshot)",
+            "read_only": 1
+        },
+        {
+            "fieldname": "metal",
+            "fieldtype": "Data",
+            "label": "Metal (snapshot)",
+            "read_only": 1
+        },
+        {
+            "fieldname": "column_break_ref_snap2",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "weight_g",
+            "fieldtype": "Float",
+            "label": "Weight (g) (snapshot)",
+            "read_only": 1
+        },
+        {
+            "fieldname": "diameter_mm",
+            "fieldtype": "Float",
+            "label": "Diameter (mm) (snapshot)",
+            "read_only": 1
+        },
+        {
+            "fieldname": "variety_ref",
+            "fieldtype": "Data",
+            "label": "Variety (snapshot)",
+            "read_only": 1
+        },
+        {
+            "fieldname": "column_break_ref_snap3",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "item_description_name",
+            "fieldtype": "Small Text",
+            "label": "Description/Name (snapshot)",
+            "read_only": 1
+        },
+        {
+            "fieldname": "discrepancy_notes",
+            "fieldtype": "Small Text",
+            "label": "Discrepancy Notes"
+        },
+        {
+            "fieldname": "section_auth_elig",
+            "fieldtype": "Section Break",
+            "label": "AUTH & ELIGIBILITY"
+        },
+        {
+            "fieldname": "authenticity_result",
+            "fieldtype": "Select",
+            "label": "Authenticity Result",
+            "options": "\nGenuine\nQuestionable\nCounterfeit\nUnable to Determine"
+        },
+        {
+            "fieldname": "column_break_auth",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "eligibility_result",
+            "fieldtype": "Select",
+            "label": "Eligibility Result",
+            "options": "\nEligible\nIneligible\nReview Required"
+        },
+        {
+            "fieldname": "conservation_status",
+            "fieldtype": "Select",
+            "label": "Conservation Status",
+            "options": "\nNot Required\nRecommended\nPerformed\nDeclined"
+        },
+        {
+            "fieldname": "column_break_auth2",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "is_blocked",
+            "fieldtype": "Check",
+            "label": "Is Blocked"
+        },
+        {
+            "fieldname": "blocking_reason",
+            "fieldtype": "Small Text",
+            "label": "Blocking Reason"
+        },
+        {
+            "fieldname": "section_mint_error_var",
+            "fieldtype": "Section Break",
+            "label": "MINT ERROR / VARIETY"
+        },
+        {
+            "fieldname": "is_mint_error",
+            "fieldtype": "Check",
+            "label": "Is Mint Error"
+        },
+        {
+            "depends_on": "eval:doc.is_mint_error==1",
+            "fieldname": "mint_error_type",
+            "fieldtype": "Link",
+            "label": "Mint Error Type",
+            "options": "Mint Error Master"
+        },
+        {
+            "fieldname": "column_break_mint_var",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "is_variety",
+            "fieldtype": "Check",
+            "label": "Is Variety"
+        },
+        {
+            "depends_on": "eval:doc.is_variety==1",
+            "fieldname": "variety_detail",
+            "fieldtype": "Data",
+            "label": "Variety Detail"
+        },
+        {
+            "fieldname": "section_addon_services",
+            "fieldtype": "Section Break",
+            "label": "ADD-ON SERVICES"
+        },
+        {
+            "fieldname": "addon_special_label",
+            "fieldtype": "Check",
+            "label": "Special Label"
+        },
+        {
+            "fieldname": "column_break_addon1",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "addon_first_releases",
+            "fieldtype": "Check",
+            "label": "First Releases"
+        },
+        {
+            "fieldname": "addon_pedigree",
+            "fieldtype": "Check",
+            "label": "Pedigree"
+        },
+        {
+            "fieldname": "column_break_addon2",
+            "fieldtype": "Column Break"
+        },
+        {
+            "depends_on": "eval:doc.addon_pedigree==1",
+            "fieldname": "pedigree_name",
+            "fieldtype": "Data",
+            "label": "Pedigree Name"
+        },
+        {
+            "fieldname": "addon_pro_lab",
+            "fieldtype": "Check",
+            "label": "Pro Lab"
+        },
+        {
+            "fieldname": "column_break_addon3",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "addon_imaging",
+            "fieldtype": "Check",
+            "label": "Enhanced Imaging"
+        },
+        {
+            "fieldname": "addon_multi_insert",
+            "fieldtype": "Check",
+            "label": "Multi-Insert"
+        },
+        {
+            "fieldname": "section_grading_scores",
+            "fieldtype": "Section Break",
+            "label": "GRADING SCORES"
+        },
+        {
+            "fieldname": "grading_category",
+            "fieldtype": "Select",
+            "label": "Grading Category",
+            "options": "\nUncirculated\nCirculated\nProof"
+        },
+        {
+            "fieldname": "strike_type",
+            "fieldtype": "Select",
+            "label": "Strike Type",
+            "options": "\nBusiness Strike\nProof\nMatte Proof\nSpecimen"
+        },
+        {
+            "fieldname": "column_break_scores1",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "score_wear",
+            "fieldtype": "Int",
+            "label": "Score \u2014 Wear"
+        },
+        {
+            "fieldname": "score_surface",
+            "fieldtype": "Int",
+            "label": "Score \u2014 Surface"
+        },
+        {
+            "fieldname": "score_strike",
+            "fieldtype": "Int",
+            "label": "Score \u2014 Strike"
+        },
+        {
+            "fieldname": "column_break_scores2",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "score_luster",
+            "fieldtype": "Int",
+            "label": "Score \u2014 Luster"
+        },
+        {
+            "fieldname": "score_eye_appeal",
+            "fieldtype": "Int",
+            "label": "Score \u2014 Eye Appeal"
+        },
+        {
+            "fieldname": "score_rim",
+            "fieldtype": "Int",
+            "label": "Score \u2014 Rim/Edge"
+        },
+        {
+            "fieldname": "column_break_scores3",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "weighted_score",
+            "fieldtype": "Float",
+            "label": "Weighted Score",
+            "read_only": 1
+        },
+        {
+            "fieldname": "suggested_grade",
+            "fieldtype": "Link",
+            "label": "Suggested Grade",
+            "options": "Grade Scale Master"
+        },
+        {
+            "fieldname": "column_break_scores4",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "grade_range_min",
+            "fieldtype": "Link",
+            "label": "Grade Range Min",
+            "options": "Grade Scale Master"
+        },
+        {
+            "fieldname": "grade_range_max",
+            "fieldtype": "Link",
+            "label": "Grade Range Max",
+            "options": "Grade Scale Master"
+        },
+        {
+            "fieldname": "is_details",
+            "fieldtype": "Check",
+            "label": "Is Details"
+        },
+        {
+            "fieldname": "column_break_scores5",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "details_suggested",
+            "fieldtype": "Check",
+            "label": "Details Suggested"
+        },
+        {
+            "fieldname": "details_reason",
+            "fieldtype": "Link",
+            "label": "Details Reason",
+            "options": "Problem Definitions",
+            "depends_on": "eval:doc.is_details==1"
+        },
+        {
+            "fieldname": "details_condition",
+            "fieldtype": "Small Text",
+            "label": "Details Condition"
+        },
+        {
+            "fieldname": "column_break_scores6",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "designation",
+            "fieldtype": "Link",
+            "label": "Designation",
+            "options": "Designation Master"
+        },
+        {
+            "fieldname": "final_reviewer",
+            "fieldtype": "Link",
+            "label": "Final Reviewer",
+            "options": "User"
+        },
+        {
+            "fieldname": "override_reason",
+            "fieldtype": "Small Text",
+            "label": "Override Reason"
+        },
+        {
+            "fieldname": "section_encapsulation",
+            "fieldtype": "Section Break",
+            "label": "ENCAPSULATION"
+        },
+        {
+            "fieldname": "slab_size",
+            "fieldtype": "Select",
+            "label": "Slab Size",
+            "options": "\nStandard\nOversize\nMini\nEdge-View\nMulti-Coin"
+        },
+        {
+            "fieldname": "slab_status",
+            "fieldtype": "Select",
+            "label": "Slab Status",
+            "options": "\nPending\nEncapsulated\nRejected"
+        },
+        {
+            "fieldname": "column_break_slab1",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "slabbed_by",
+            "fieldtype": "Link",
+            "label": "Slabbed By",
+            "options": "User"
+        },
+        {
+            "fieldname": "slabbed_date",
+            "fieldtype": "Datetime",
+            "label": "Slabbed Date"
+        },
+        {
+            "fieldname": "column_break_slab2",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "nfc_url",
+            "fieldtype": "Data",
+            "label": "NFC URL"
+        },
+        {
+            "fieldname": "nfc_status",
+            "fieldtype": "Select",
+            "label": "NFC Status",
+            "options": "\nPending\nEncoded\nVerified\nFailed"
+        },
+        {
+            "fieldname": "section_imaging",
+            "fieldtype": "Section Break",
+            "label": "IMAGING"
+        },
+        {
+            "fieldname": "front_image",
+            "fieldtype": "Attach Image",
+            "label": "Front Image"
+        },
+        {
+            "fieldname": "column_break_imaging",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "back_image",
+            "fieldtype": "Attach Image",
+            "label": "Back Image"
+        },
+        {
+            "fieldname": "imaging_status",
+            "fieldtype": "Select",
+            "label": "Imaging Status",
+            "options": "\nPending\nCaptured\nApproved\nRejected"
+        },
+        {
+            "fieldname": "section_qc",
+            "fieldtype": "Section Break",
+            "label": "QC"
+        },
+        {
+            "fieldname": "qc_label_check",
+            "fieldtype": "Check",
+            "label": "QC \u2014 Label Check"
+        },
+        {
+            "fieldname": "qc_grade_check",
+            "fieldtype": "Check",
+            "label": "QC \u2014 Grade Check"
+        },
+        {
+            "fieldname": "qc_slab_check",
+            "fieldtype": "Check",
+            "label": "QC \u2014 Slab Check"
+        },
+        {
+            "fieldname": "column_break_qc1",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "qc_nfc_check",
+            "fieldtype": "Check",
+            "label": "QC \u2014 NFC Check"
+        },
+        {
+            "fieldname": "qc_image_check",
+            "fieldtype": "Check",
+            "label": "QC \u2014 Image Check"
+        },
+        {
+            "fieldname": "column_break_qc2",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "qc_status",
+            "fieldtype": "Select",
+            "label": "QC Status",
+            "options": "\nPending\nPassed\nFailed\nRework"
+        },
+        {
+            "depends_on": "eval:doc.qc_status=='Failed'",
+            "fieldname": "qc_failure_reason",
+            "fieldtype": "Small Text",
+            "label": "QC Failure Reason"
+        },
+        {
+            "fieldname": "column_break_qc3",
+            "fieldtype": "Column Break"
+        },
+        {
+            "depends_on": "eval:doc.qc_status=='Rework'",
+            "fieldname": "qc_rework_to",
+            "fieldtype": "Link",
+            "label": "QC Rework To",
+            "options": "Production Station"
+        },
+        {
+            "fieldname": "qc_by",
+            "fieldtype": "Link",
+            "label": "QC By",
+            "options": "User"
+        },
+        {
+            "fieldname": "qc_date",
+            "fieldtype": "Datetime",
+            "label": "QC Date"
         }
     ],
     "index_web_pages_for_search": 0,
     "links": [],
-    "modified": "2026-05-17 00:00:00.000000",
+    "modified": "2026-05-23 00:00:00.000000",
     "modified_by": "Administrator",
     "module": "International Grading Agency",
     "name": "Submission Item",

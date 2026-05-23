@@ -14,7 +14,24 @@
         "pcgs_equivalent",
         "status",
         "section_break_desc",
-        "description"
+        "description",
+        "section_break_localization",
+        "name_arabic",
+        "section_break_crosswalk",
+        "ngc_code",
+        "pcgs_code",
+        "column_break_crosswalk",
+        "ngc_url",
+        "pcgs_url",
+        "section_break_classification",
+        "is_official",
+        "designation_type",
+        "column_break_classification",
+        "label_print_order",
+        "short_label",
+        "section_break_descriptions",
+        "description_arabic",
+        "source_url"
     ],
     "fields": [
         {
@@ -64,6 +81,93 @@
             "fieldname": "description",
             "fieldtype": "Text",
             "label": "Description"
+        },
+        {
+            "fieldname": "section_break_localization",
+            "fieldtype": "Section Break",
+            "label": "LOCALIZATION"
+        },
+        {
+            "fieldname": "name_arabic",
+            "fieldtype": "Data",
+            "label": "Name (Arabic)"
+        },
+        {
+            "fieldname": "section_break_crosswalk",
+            "fieldtype": "Section Break",
+            "label": "INDUSTRY CROSSWALK"
+        },
+        {
+            "fieldname": "ngc_code",
+            "fieldtype": "Data",
+            "label": "NGC Code"
+        },
+        {
+            "fieldname": "pcgs_code",
+            "fieldtype": "Data",
+            "label": "PCGS Code"
+        },
+        {
+            "fieldname": "column_break_crosswalk",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "ngc_url",
+            "fieldtype": "Data",
+            "label": "NGC URL"
+        },
+        {
+            "fieldname": "pcgs_url",
+            "fieldtype": "Data",
+            "label": "PCGS URL"
+        },
+        {
+            "fieldname": "section_break_classification",
+            "fieldtype": "Section Break",
+            "label": "CLASSIFICATION"
+        },
+        {
+            "default": 1,
+            "fieldname": "is_official",
+            "fieldtype": "Check",
+            "label": "Is Official IGA Designation"
+        },
+        {
+            "fieldname": "designation_type",
+            "fieldtype": "Select",
+            "label": "Designation Type",
+            "options": "Grade Prefix\nSurface\nStrike\nEye Appeal\nOther"
+        },
+        {
+            "fieldname": "column_break_classification",
+            "fieldtype": "Column Break"
+        },
+        {
+            "default": 0,
+            "fieldname": "label_print_order",
+            "fieldtype": "Int",
+            "label": "Label Print Order",
+            "reqd": 1
+        },
+        {
+            "fieldname": "short_label",
+            "fieldtype": "Data",
+            "label": "Short Label (slab)"
+        },
+        {
+            "fieldname": "section_break_descriptions",
+            "fieldtype": "Section Break",
+            "label": "DESCRIPTIONS"
+        },
+        {
+            "fieldname": "description_arabic",
+            "fieldtype": "Text Editor",
+            "label": "Description (Arabic)"
+        },
+        {
+            "fieldname": "source_url",
+            "fieldtype": "Data",
+            "label": "Source URL"
         }
     ],
     "index_web_pages_for_search": 0,

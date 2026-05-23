@@ -1,0 +1,66 @@
+{
+ "actions": [],
+ "creation": "2026-05-23 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "tier_name",
+  "max_declared_value",
+  "base_fee",
+  "column_break_1",
+  "premium_pct",
+  "sort_order"
+ ],
+ "fields": [
+  {
+   "fieldname": "tier_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Tier Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "max_declared_value",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Max Declared Value",
+   "reqd": 1
+  },
+  {
+   "fieldname": "base_fee",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Base Fee",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "premium_pct",
+   "fieldtype": "Percent",
+   "in_list_view": 1,
+   "label": "Premium %"
+  },
+  {
+   "fieldname": "sort_order",
+   "fieldtype": "Int",
+   "label": "Sort Order"
+  }
+ ],
+ "index_web_pages_for_search": 0,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-05-23 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "International Grading Agency",
+ "name": "Shipping Insurance Tier",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 0
+}

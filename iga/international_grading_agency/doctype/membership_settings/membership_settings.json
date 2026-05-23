@@ -11,7 +11,18 @@
         "point_expiry_months",
         "downgrade_grace_days",
         "column_break_2",
-        "min_redeem_points"
+        "min_redeem_points",
+        "section_break_eligibility",
+        "qualifying_doctypes",
+        "section_break_redemption",
+        "max_redeem_pct",
+        "expire_on_cancel",
+        "section_break_downgrade",
+        "downgrade_target_plan",
+        "section_break_reminders",
+        "renewal_reminder_days",
+        "column_break_3",
+        "expiry_reminder_days"
     ],
     "fields": [
         {
@@ -58,6 +69,66 @@
             "fieldtype": "Int",
             "label": "Minimum Points to Redeem",
             "reqd": 1
+        },
+        {
+            "fieldname": "section_break_eligibility",
+            "fieldtype": "Section Break",
+            "label": "ELIGIBILITY"
+        },
+        {
+            "default": "Sales Invoice, Submission",
+            "fieldname": "qualifying_doctypes",
+            "fieldtype": "Small Text",
+            "label": "Qualifying DocTypes (CSV)"
+        },
+        {
+            "fieldname": "section_break_redemption",
+            "fieldtype": "Section Break",
+            "label": "REDEMPTION"
+        },
+        {
+            "default": "50",
+            "fieldname": "max_redeem_pct",
+            "fieldtype": "Percent",
+            "label": "Max Redeem %"
+        },
+        {
+            "default": "0",
+            "fieldname": "expire_on_cancel",
+            "fieldtype": "Check",
+            "label": "Expire Points on Cancel"
+        },
+        {
+            "fieldname": "section_break_downgrade",
+            "fieldtype": "Section Break",
+            "label": "DOWNGRADE"
+        },
+        {
+            "fieldname": "downgrade_target_plan",
+            "fieldtype": "Link",
+            "label": "Downgrade Target Plan",
+            "options": "Membership Plans"
+        },
+        {
+            "fieldname": "section_break_reminders",
+            "fieldtype": "Section Break",
+            "label": "REMINDERS"
+        },
+        {
+            "default": "7",
+            "fieldname": "renewal_reminder_days",
+            "fieldtype": "Int",
+            "label": "Renewal Reminder (days)"
+        },
+        {
+            "fieldname": "column_break_3",
+            "fieldtype": "Column Break"
+        },
+        {
+            "default": "30",
+            "fieldname": "expiry_reminder_days",
+            "fieldtype": "Int",
+            "label": "Expiry Reminder (days)"
         }
     ],
     "index_web_pages_for_search": 0,

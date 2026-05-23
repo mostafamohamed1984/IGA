@@ -27,7 +27,15 @@
         "section_break_bulk",
         "is_bulk_eligible",
         "bulk_min_items",
-        "bulk_discount_pct"
+        "bulk_discount_pct",
+        "section_break_tat",
+        "tat_basis",
+        "column_break_tat",
+        "is_member_only",
+        "requires_high_value_review",
+        "section_break_limits",
+        "max_pieces_per_submission",
+        "description"
     ],
     "fields": [
         {
@@ -150,6 +158,51 @@
             "fieldtype": "Percent",
             "label": "Bulk Discount %",
             "default": "10"
+        },
+        {
+            "fieldname": "section_break_tat",
+            "fieldtype": "Section Break",
+            "label": "TURNAROUND"
+        },
+        {
+            "default": "Calendar",
+            "fieldname": "tat_basis",
+            "fieldtype": "Select",
+            "label": "TAT Basis",
+            "options": "Calendar\nBusiness",
+            "reqd": 1
+        },
+        {
+            "fieldname": "column_break_tat",
+            "fieldtype": "Column Break"
+        },
+        {
+            "default": 1,
+            "fieldname": "is_member_only",
+            "fieldtype": "Check",
+            "label": "Members Only",
+            "reqd": 1
+        },
+        {
+            "default": 0,
+            "fieldname": "requires_high_value_review",
+            "fieldtype": "Check",
+            "label": "Requires High-Value Review"
+        },
+        {
+            "fieldname": "section_break_limits",
+            "fieldtype": "Section Break",
+            "label": "LIMITS"
+        },
+        {
+            "fieldname": "max_pieces_per_submission",
+            "fieldtype": "Int",
+            "label": "Max Pieces per Submission"
+        },
+        {
+            "fieldname": "description",
+            "fieldtype": "Text Editor",
+            "label": "Description (Customer-Facing)"
         }
     ],
     "index_web_pages_for_search": 0,

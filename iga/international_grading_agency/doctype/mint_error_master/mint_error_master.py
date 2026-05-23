@@ -3,4 +3,6 @@ from frappe.model.document import Document
 
 
 class MintErrorMaster(Document):
-    pass
+    def validate(self):
+        if not self.get("error_code"):
+            frappe.throw("Error Code is required.")

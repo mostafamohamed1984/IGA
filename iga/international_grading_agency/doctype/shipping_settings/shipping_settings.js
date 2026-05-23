@@ -13,6 +13,16 @@ frappe.ui.form.on('Shipping Settings', {
 			frm.dashboard.add_indicator(__('Zones: {0}', [frm.doc.shipping_zones.length]), 'orange');
 		}
 		
+		// Insurance tiers count
+		if (frm.doc.insurance_tiers && frm.doc.insurance_tiers.length > 0) {
+			frm.dashboard.add_indicator(__('Insurance Tiers: {0}', [frm.doc.insurance_tiers.length]), 'purple');
+		}
+		
+		// Packaging rules count
+		if (frm.doc.packaging_rules && frm.doc.packaging_rules.length > 0) {
+			frm.dashboard.add_indicator(__('Packaging Rules: {0}', [frm.doc.packaging_rules.length]), 'blue');
+		}
+		
 		// Test carrier API button
 		if (frm.doc.carrier_api_endpoint) {
 			frm.add_custom_button(__('Test Carrier API'), function() {

@@ -1,0 +1,132 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "Prompt",
+ "creation": "2026-05-23 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "pattern_section",
+  "code_pattern",
+  "separator",
+  "column_break_pattern",
+  "padding",
+  "increment_strategy",
+  "increment_section",
+  "starting_seq",
+  "submission_codes_section",
+  "submission_pattern",
+  "column_break_submission",
+  "cert_separator",
+  "item_no_padding"
+ ],
+ "fields": [
+  {
+   "fieldname": "pattern_section",
+   "fieldtype": "Section Break",
+   "label": "PATTERN"
+  },
+  {
+   "fieldname": "code_pattern",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Code Pattern",
+   "reqd": 1
+  },
+  {
+   "default": "-",
+   "fieldname": "separator",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Separator",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_pattern",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "4",
+   "fieldname": "padding",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Sequence Padding",
+   "reqd": 1
+  },
+  {
+   "fieldname": "increment_strategy",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Increment Strategy",
+   "options": "Global\nPer-Category\nPer-Country-Year",
+   "reqd": 1
+  },
+  {
+   "fieldname": "increment_section",
+   "fieldtype": "Section Break",
+   "label": "INCREMENT"
+  },
+  {
+   "default": "1",
+   "fieldname": "starting_seq",
+   "fieldtype": "Int",
+   "label": "Starting Sequence",
+   "reqd": 1
+  },
+  {
+   "fieldname": "submission_codes_section",
+   "fieldtype": "Section Break",
+   "label": "SUBMISSION CODES"
+  },
+  {
+   "default": "AA#####",
+   "fieldname": "submission_pattern",
+   "fieldtype": "Data",
+   "label": "Submission Code Pattern",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_submission",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "-",
+   "fieldname": "cert_separator",
+   "fieldtype": "Data",
+   "label": "Cert/Item Separator",
+   "reqd": 1
+  },
+  {
+   "default": "2",
+   "fieldname": "item_no_padding",
+   "fieldtype": "Int",
+   "label": "Item No. Padding",
+   "reqd": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2026-05-23 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "International Grading Agency",
+ "name": "Reference Code Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

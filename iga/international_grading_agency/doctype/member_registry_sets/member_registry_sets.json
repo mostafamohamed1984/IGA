@@ -21,7 +21,15 @@
         "last_scored_on",
         "is_public",
         "section_break_slots",
-        "slots"
+        "slots",
+        "section_break_versioning",
+        "definition_version",
+        "section_break_status",
+        "filled_count",
+        "column_break_2",
+        "show_owner_name",
+        "section_break_timestamps",
+        "last_updated"
     ],
     "fields": [
         {
@@ -120,6 +128,49 @@
             "fieldtype": "Table",
             "label": "Slots",
             "options": "Member Registry Set Slot"
+        },
+        {
+            "fieldname": "section_break_versioning",
+            "fieldtype": "Section Break",
+            "label": "VERSIONING"
+        },
+        {
+            "fieldname": "definition_version",
+            "fieldtype": "Data",
+            "label": "Definition Version (snapshot)",
+            "read_only": 1
+        },
+        {
+            "fieldname": "section_break_status",
+            "fieldtype": "Section Break",
+            "label": "STATUS"
+        },
+        {
+            "fieldname": "filled_count",
+            "fieldtype": "Int",
+            "label": "Filled Slots Count",
+            "read_only": 1
+        },
+        {
+            "fieldname": "column_break_2",
+            "fieldtype": "Column Break"
+        },
+        {
+            "default": "1",
+            "fieldname": "show_owner_name",
+            "fieldtype": "Check",
+            "label": "Show Owner Name"
+        },
+        {
+            "fieldname": "section_break_timestamps",
+            "fieldtype": "Section Break",
+            "label": "TIMESTAMPS"
+        },
+        {
+            "fieldname": "last_updated",
+            "fieldtype": "Datetime",
+            "label": "Last Updated (auto)",
+            "read_only": 1
         }
     ],
     "index_web_pages_for_search": 0,

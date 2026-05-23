@@ -5,7 +5,7 @@ import frappe
 from frappe.model.document import Document
 import re
 
-class IGAPewsArticle(Document):
+class IGANewsArticle(Document):
     def validate(self):
         # Auto-generate slug if not provided or clean it up
         if not self.slug:
